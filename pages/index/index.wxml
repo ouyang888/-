@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <!-- <image src="../../images/appshare.png" mode="widthFix"></image> -->
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击获取啡池</button>
+    <block wx:else>
+      <open-data type="userAvatarUrl"></open-data>
+      <open-data type="userNickName"></open-data>
+    </block>
+  </view>
+</view>
