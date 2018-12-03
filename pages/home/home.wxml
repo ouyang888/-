@@ -1,0 +1,34 @@
+<!--pages/home/home.wxml-->
+<swiper class="swiperHome" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+     <block wx:for="{{imgUrls}}">
+          <swiper-item>
+               <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+     </block>
+</swiper>
+<view class="homeNav">
+     <navigator>关于我们</navigator>
+     <navigator>组织架构</navigator>
+     <navigator>活动回顾</navigator>
+     <navigator>大爱一元</navigator>
+</view>
+
+<view class="homecs">
+     <view class="csTop">
+          <text>慈善活动</text>
+          <navigator>查看更多 > </navigator>
+     </view>
+     <view class="csList">
+          <view class='csCont'>
+               <image></image>
+               <text>“冬天暖童心”让乡校孩子温暖过冬让爱循环，衣衣情深</text>
+               <view class='cssDateBtn'>
+                    <view>
+                         <text>地点：河南 郑州</text>
+                         <text>开始时间：2018-3-20</text>
+                    </view>
+                    <button>立即报名</button>
+               </view>
+          </view>
+     </view> 
+</view>

@@ -1,0 +1,78 @@
+/* pages/home/home.wxss */
+page{
+     background:#ececec
+}
+.swiperHome image{
+     width: 100%;
+}
+
+.homeNav{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     padding:30rpx 20rpx;
+     background:#fff;
+}
+
+.homeNav navigator{
+     font-size:32rpx;
+}
+
+.homecs{
+     margin-top:20rpx;
+     background:#fff;
+}
+
+.csTop{
+     font-size:30rpx;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding:20rpx 30rpx;
+     border-bottom:1px solid #ececec
+}
+
+.csTop text{
+     font-size:32rpx;
+}
+
+.csTop navigator{
+     font-size:24rpx;
+}
+
+.csList{
+     padding:40rpx;
+}
+
+.csCont{
+     padding-bottom:20rpx;
+     border-bottom:1px solid #ececec
+}
+
+.csCont image{
+     width: 100%
+}
+
+.csCont text{
+     font-size:32rpx;
+}
+
+.cssDateBtn{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top:20rpx;
+}
+
+.cssDateBtn text{
+     font-size:24rpx;
+     display:table;
+     color:#a0a0a0
+}
+
+.cssDateBtn button{
+     font-size:28rpx;
+     margin:0;
+     background:#ffa200;
+     color:#fff;
+}
