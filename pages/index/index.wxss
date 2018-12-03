@@ -1,4 +1,5 @@
 /**index.wxss**/
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -19,14 +20,43 @@
 .usermotto {
   margin-top: 200px;
 }
-.bg-box{
-    position: relative; 
-    width : 100%;
-    height : auto;
-    box-sizing: border-box;
+
+.bg-box {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
 }
 
-.bg-box img{
-    display:block;
-    max-width: 100%;
+.bg-box img {
+  display: block;
+  max-width: 100%;
+}
+
+.shoubT{
+  width: 685rpx;
+  padding-top: 100rpx;
+}
+
+.shoubT button {
+  background-color:#18AC18;
+  color: #fff;
+}
+.logoIng{
+  width: 200rpx;
+  height: 200rpx;
+  margin:0 auto;
+  text-align: center;
+}
+
+.logoIng image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:200px;
+}
+.fontData{
+  text-align: center;
+  font-size: 16px;
+  color: #9C9C9F;
+  padding-bottom: 50rpx;
 }

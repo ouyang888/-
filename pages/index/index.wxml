@@ -1,11 +1,23 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
-    <!-- <image src="../../images/appshare.png" mode="widthFix"></image> -->
+    <image src="../../images/appshare.png" mode="widthFix"></image>
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击获取啡池</button>
     <block wx:else>
       <open-data type="userAvatarUrl"></open-data>
       <open-data type="userNickName"></open-data>
     </block>
+  </view>
+</view> -->
+
+
+
+<view class="container">
+  <view class="userinfo" open-type="getUserInfo">
+    <view wx:if="{{!hasUserInfo && canIUse}}">
+      <view class="logoIng"><image mode="aspectFill" src="../../images/cishanLogon.png"></image></view>
+      <view class="fontData">请先授权登录</view>
+      <view class="shoubT"><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button></view>
+    </view>
   </view>
 </view>

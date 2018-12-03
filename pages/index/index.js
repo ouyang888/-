@@ -46,18 +46,17 @@ Page({
     }
   },
 
+
+//点击允许后的用户信息
   getUserInfo: function(e) {
-    console.log(e)
+    console.log("eweeee",e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    //点击授权后跳转的页面
+    
   },
 
-  View: function () {
-    wx.navigateTo({
-      url: '../webView/webView',
-    })
-  }
 })
