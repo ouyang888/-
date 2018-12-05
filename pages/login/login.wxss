@@ -46,22 +46,52 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f3f3f3;
-  padding:20rpx 10rpx;
+  padding: 20rpx 10rpx;
+  justify-content: start;
 }
-.inputBox ul li text{
+
+.inputBox ul li text {
   width: 100rpx;
 }
 
 .inputBox ul li input {
   margin-left: 30rpx;
 }
-.code{
-  width: 180rpx;
+
+.code {
+  width: 160rpx;
   height: 67rpx;
   font-size: 24rpx;
-  border: 1px solid #FFEBD1;
-  color:#FBB75B;
+  border: 1px solid #ffebd1;
+  color: #fbb75b;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+}
+
+.loginDownFont {
+  font-size: 26rpx;
+  color: #878787;
+  margin-left: 40rpx;
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.tanhao {
+  background: #fea330;
+  border-radius: 50%;
+  width: 33rpx;
+  color: #ffff;
+  text-align: center;
+  margin-right: 10rpx;
+  font-size: 25rpx;
+}
+.loginBtn{
+  background: #ccc;
+  height: 80rpx;
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
 }

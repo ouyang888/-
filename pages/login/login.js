@@ -28,7 +28,7 @@ Page({
 
     if (phone == '') {
       wx.showToast({
-        title: '号码不能为空',
+        title: '手机号码不能为空',
         icon: 'none',
         duration: 2000
       });
@@ -50,7 +50,7 @@ Page({
       var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
-          text: currentTime + 's', //按钮文字变成倒计时对应秒数
+          text: currentTime + '秒', //按钮文字变成倒计时对应秒数
 
         })
         //如果当秒数小于等于0时 停止计时器 且按钮文字变成重新发送 且按钮变成可用状态 倒计时的秒数也要恢复成默认秒数 即让获取验证码的按钮恢复到初始化状态只改变按钮文字
@@ -68,19 +68,19 @@ Page({
     };
 
     //判断 当提示错误信息文字不为空 即手机号输入有问题时提示用户错误信息 并且提示完之后一定要让按钮为可用状态 因为点击按钮时设置了只要点击了按钮就让按钮禁用的情况
-    if (warn != null) {
-      wx.showModal({
-        title: '提示',
-        content: warn
-      })
+    // if (warn != null) {
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: warn
+    //   })
 
-      that.setData({
-        disabled: false,
-        color: '#929fff'
-      })
-      return;
+    //   that.setData({
+    //     disabled: false,
+    //     color: '#929fff'
+    //   })
+    //   return;
 
-    };
+    // };
   },
 
 

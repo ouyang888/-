@@ -12,4 +12,6 @@
         <li><text>验证码</text> <input type='text' placeholder='输入验证码'/><view disabled='{{disabled}}' bindtap="bindButtonTap" class="code">{{text}}</view></li>
       </ul>
   </view>
+  <view class="loginDownFont"><view class="tanhao">!</view>请填写真实姓名用于慈善活动报名</view>
+  <view class="loginBtn">登录</view>
 </view>
