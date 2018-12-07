@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/me/me",
+   
     "pages/editPhone/editPhone",
+    "pages/me/me",
     "pages/about/about",
     "pages/login/login",
     "pages/home/home",
