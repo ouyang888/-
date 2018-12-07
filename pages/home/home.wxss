@@ -1,78 +1,97 @@
 /* pages/home/home.wxss */
-page{
-     background:#ececec
-}
-.swiperHome image{
-     width: 100%;
+
+page {
+  background:rgb(247,247,247);
 }
 
-.homeNav{
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     padding:30rpx 20rpx;
-     background:#fff;
+.swiperHome image {
+  width: 100%;
+  height: 100%;
 }
 
-.homeNav navigator{
-     font-size:32rpx;
+.homeNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  background: #fff;
 }
 
-.homecs{
-     margin-top:20rpx;
-     background:#fff;
+.homeNav navigator {
+  font-size: 32rpx;
+  width: 23%;
+  text-align: center;
 }
 
-.csTop{
-     font-size:30rpx;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding:20rpx 30rpx;
-     border-bottom:1px solid #ececec
+.homeNav navigator image {
+  width: 110rpx;
+  height: 110rpx;
 }
 
-.csTop text{
-     font-size:32rpx;
+.homeNav navigator view {
+  margin-top: 20rpx;
 }
 
-.csTop navigator{
-     font-size:24rpx;
+.homecs {
+  margin-top: 20rpx;
+  background: #fff;
 }
 
-.csList{
-     padding:40rpx;
+.csTop {
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ececec;
 }
 
-.csCont{
-     padding-bottom:20rpx;
-     border-bottom:1px solid #ececec
+.csTop text {
+  font-size: 32rpx;
 }
 
-.csCont image{
-     width: 100%
+.csTop navigator {
+  font-size: 24rpx;
 }
 
-.csCont text{
-     font-size:32rpx;
+.csList {
+  padding: 40rpx;
 }
 
-.cssDateBtn{
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     margin-top:20rpx;
+.csCont {
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #ececec;
 }
 
-.cssDateBtn text{
-     font-size:24rpx;
-     display:table;
-     color:#a0a0a0
+.csCont image {
+  width: 100%;
+  height: 400rpx;
 }
 
-.cssDateBtn button{
-     font-size:28rpx;
-     margin:0;
-     background:#ffa200;
-     color:#fff;
+.csCont text {
+  font-size: 32rpx;
+}
+
+.cssDateBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.cssDateBtn text {
+  font-size: 26rpx;
+  display: table;
+  color: #a0a0a0;
+}
+
+.cssDateBtn button {
+  font-size: 28rpx;
+  margin: 0;
+  background: #ffa200;
+  color: #fff;
+}
+
+swiper {
+  height: 400rpx;
 }
