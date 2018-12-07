@@ -1,0 +1,8 @@
+<view class="aboutBox">
+  <image mode="" src='/images/avout1.jpg'></image>
+  <image mode="" src='/images/about2.jpg'></image>
+  <image mode="" src='/images/about3.jpg'></image>
+  <image mode="" src='/images/about4.jpg'></image>
+  <image mode="" src='/images/about5.jpg'></image>
+  <image mode="" src='/images/about6.jpg'></image>
+</view>

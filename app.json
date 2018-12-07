@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/me/me",
-    "pages/home/home",
+    "pages/editPhone/editPhone",
+    "pages/about/about",
     "pages/login/login",
+    "pages/home/home",
     "pages/index/index"
   ],
   "window": {
