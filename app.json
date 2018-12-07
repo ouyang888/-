@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/applyForm/applyForm",
     "pages/me/me",
     "pages/home/home",
     "pages/login/login",

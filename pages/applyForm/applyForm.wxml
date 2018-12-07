@@ -1,0 +1,115 @@
+<!--pages/applyForm/applyForm.wxml-->
+<view class='applyTit'>基础信息</view>
+
+<view class='appForm'>
+  <view class='appList'>
+    <view class="section">
+      <text class='must'>姓名</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text>性别</text>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label wx:key="" class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color='#FFA42F' />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text class='must'>手机号</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text class='must'>单位</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text class='must'>职务</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text>邮箱</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text>身份证</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text>出生日期</text>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text>地址信息</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text></text>
+      <input placeholder="详细地址信息" auto-focus/>
+    </view>
+  </view>
+  <view class='appList'>
+    <view class="section">
+      <text class='must'>所属智工团</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+      <image src='../../images/back.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='applyTit'>慈善活动经验</view>
+
+<view class='appForm'>
+  <view class='appList applong'>
+    <view class="section">
+      <text>参加过的慈善活动</text>
+      <input placeholder="请输入内容" auto-focus/>
+    </view>
+  </view>
+  <view class='appList applong'>
+    <view class="section">
+      <text>希望参加的慈善活动</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{cisanArr}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+      <image src='../../images/back.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='applyTit'>备注信息</view>
+<view class="section">
+  <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" />
+</view>
+
+<view class='appBtn'>
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 提交 </button>
+</view>
