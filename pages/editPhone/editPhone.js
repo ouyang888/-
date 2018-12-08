@@ -7,20 +7,27 @@ Page({
   data: {
     text: '获取验证码', //按钮文字
     currentTime: 60, //倒计时
-    phone: '', //获取到的手机栏中的值
     isClick: false,
+    isLength: false,
+    code: "", 
+    phone:""
   },
-  phoneInput: function (e) {
+
+  codeInput: function (e) {
+    this.setData({
+      code: e.detail.value
+    })
+  },
+
+
+  phoneInput: function(e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  bindButtonTap: function () {
+  bindButtonTap: function() {
     var that = this;
-    that.setData({
-      isClick: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
-      color: '#ccc',
-    })
+   
     var phone = that.data.phone;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
 
@@ -35,7 +42,7 @@ Page({
       wx.showToast({
         title: '手机号格式不正确',
         icon: 'none',
-        duration: 2000, 
+        duration: 2000,
         color: '#929fff'
       });
     } else {
@@ -45,8 +52,12 @@ Page({
         icon: 'none',
         duration: 2000
       });
+      that.setData({
+        isClick: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
+        color: '#ccc',
+      })
       //设置一分钟的倒计时
-      var interval = setInterval(function () {
+      var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
           text: currentTime + '秒后重发', //按钮文字变成倒计时对应秒数
@@ -83,59 +94,66 @@ Page({
     // };
   },
 
+  //下一步
+  next: function() {
+    wx.navigateTo({
+      url: '../bindingphone/bindingphone'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

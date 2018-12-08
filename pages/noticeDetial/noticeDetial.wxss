@@ -1,0 +1,32 @@
+/* pages/noticeDetial/noticeDetial.wxss */
+
+.bgColor {
+  background: rgb(247, 247, 247);
+  width: 100%;
+  height: 100vh;
+}
+
+.detailBox {
+  width: 100%;
+  padding: 30rpx;
+  background: #fff;
+}
+
+.title {
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+}
+
+.time {
+  font-size: 22rpx;
+  color: rgb(109, 109, 109);
+  margin-top: 22rpx;
+}
+
+.content {
+  font-size: 26rpx;
+  color: rgb(128, 128, 128);
+  width: 92%;
+  margin-top: 10rpx;
+  line-height: 46rpx;
+}

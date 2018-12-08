@@ -1,0 +1,31 @@
+<view class="notice" bindtap='noticeDetial'>
+  <view class="noticeBox">
+    <image mode="aspectFit" src='/images/tongzhi.png'></image>
+  </view>
+  <view class="rightBox">
+    <view class="conBox">
+      <view class="mas">系统通知</view>
+      <view class="content">张三购买您推荐的领袖密码课程，获得推荐奖62元。</view>
+      <view class="time">12-02 10:32</view>
+    </view>
+    <view class="icon">
+      <image src='/images/back.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class="notice" bindtap='noticeDetial'>
+  <view class="noticeBox">
+    <image mode="aspectFit" src='/images/tongzhi.png'></image>
+  </view>
+  <view class="rightBox">
+    <view class="conBox">
+      <view class="mas">系统通知</view>
+      <view class="content">张三购买您推荐的领袖密码课程，获得推荐奖62元。张三购买您推荐的领袖密码课程，获得推荐奖62元。</view>
+      <view class="time">12-02 10:32</view>
+    </view>
+    <view class="icon">
+      <image src='/images/back.png'></image>
+    </view>
+  </view>
+</view>

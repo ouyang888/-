@@ -1,12 +1,15 @@
 {
   "pages": [
-   
-    "pages/editPhone/editPhone",
-    "pages/me/me",
-    "pages/about/about",
     "pages/login/login",
-    "pages/home/home",
-    "pages/index/index"
+    "pages/addPeople/addPeople",
+    "pages/notice/notice",
+    "pages/noticeDetial/noticeDetial",
+    "pages/me/me",
+    "pages/bindingphone/bindingphone",
+    "pages/editPhone/editPhone",
+    "pages/about/about",
+    "pages/index/index",
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "light",

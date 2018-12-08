@@ -9,6 +9,13 @@ Page({
     currentTime: 60, //倒计时
     phone: '', //获取到的手机栏中的值
     isClick: false,
+    name:"",
+  },
+
+  nameInput: function (e) {
+    this.setData({
+      name: e.detail.value
+    })
   },
   //获取手机栏input中的值
   phoneInput: function(e) {
@@ -18,10 +25,7 @@ Page({
   },
   bindButtonTap: function() {
     var that = this;
-    that.setData({
-      isClick: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
-      color: '#ccc',
-    })
+   
     var phone = that.data.phone;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
 
@@ -44,6 +48,10 @@ Page({
         icon: 'none',
         duration: 2000
       });
+      that.setData({
+        isClick: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
+        color: '#ccc',
+      })
       //设置一分钟的倒计时
       var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一

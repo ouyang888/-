@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10rpx;
-  font-size: 36rpx;
+  font-size: 32rpx;
   margin: 0 auto;
   margin-top: 60rpx;
   color: #fff;
@@ -35,7 +35,7 @@
 }
 
 .inputBox ul li text {
-  width: 159rpx;
+  width: 185rpx;
 }
 
 .inputBox ul li input {
@@ -55,4 +55,14 @@
 .btnView {
   width: 150rpx;
   white-space: nowrap;
+}
+.subMit{
+  background: rgb(255, 165, 47);
+  font-size: 32rpx;
+}
+.bangding{
+  text-align:right;
+  width:65%;
+  font-size: 34rpx;
+  color: rgb(102, 102, 102)
 }

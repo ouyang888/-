@@ -1,0 +1,17 @@
+<view class="inputBox">
+  <ul>
+    <li>
+      <text>新的手机号码</text>
+      <input type='number'  maxlength='11' bindinput="phoneInput" placeholder='请输入手机号码'  />
+    </li>
+    <li>
+      <text>验证码</text>
+      <input type='text' bindinput="codeInput" placeholder='请输入验证码' />
+      <view class="btnView">
+        <button disabled='{{isClick}}' bindtap="bindButtonTap" class="code">{{text}}</button>
+      </view>
+    </li>
+  </ul>
+  <view class="loginBtn" wx:if="{{code == ''}}">下一步</view>
+  <view class="loginBtn" wx:if="{{code!=''}}" style='background: rgb(255, 165, 47)' bindtap='next'>下一步</view>
+</view>
