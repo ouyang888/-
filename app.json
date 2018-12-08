@@ -7,17 +7,15 @@
     "pages/donationReg/donationReg",
     "pages/organization/organization",
     "pages/activityList/activityList",
-
     "pages/applyForm/applyForm",
     "pages/me/me",
-    "pages/login/login",
     "pages/addPeople/addPeople",
+    "pages/login/login",
     "pages/notice/notice",
     "pages/noticeDetial/noticeDetial",
     "pages/bindingphone/bindingphone",
     "pages/editPhone/editPhone",
     "pages/about/about",
-    "pages/index/index",
     "pages/home/home"
   ],
   "window": {
