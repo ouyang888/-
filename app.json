@@ -1,5 +1,12 @@
 {
   "pages": [
+    "pages/applyAgreement/applyAgreement",
+    "pages/donationReg/donationReg",
+    "pages/organization/organization",
+    "pages/loveExample/loveExample",
+    "pages/donationRecord/donationRecord",
+    "pages/activityApplyDetail/activityApplyDetail",
+    "pages/activityList/activityList",
     "pages/applyForm/applyForm",
     "pages/me/me",
     "pages/login/login",
