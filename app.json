@@ -1,13 +1,14 @@
 {
   "pages": [
+    "pages/activityList/activityList",
+    "pages/applyForm/applyForm",
+    "pages/index/index",
     "pages/applyAgreement/applyAgreement",
     "pages/donationReg/donationReg",
     "pages/organization/organization",
     "pages/loveExample/loveExample",
     "pages/donationRecord/donationRecord",
     "pages/activityApplyDetail/activityApplyDetail",
-    "pages/activityList/activityList",
-    "pages/applyForm/applyForm",
     "pages/me/me",
     "pages/addPeople/addPeople",
     "pages/login/login",
@@ -16,7 +17,6 @@
     "pages/bindingphone/bindingphone",
     "pages/editPhone/editPhone",
     "pages/about/about",
-    "pages/index/index",
     "pages/home/home"
   ],
   "window": {
