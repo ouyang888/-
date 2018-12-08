@@ -2,9 +2,15 @@
   "pages": [
     "pages/applyForm/applyForm",
     "pages/me/me",
-    "pages/home/home",
     "pages/login/login",
-    "pages/index/index"
+    "pages/addPeople/addPeople",
+    "pages/notice/notice",
+    "pages/noticeDetial/noticeDetial",
+    "pages/bindingphone/bindingphone",
+    "pages/editPhone/editPhone",
+    "pages/about/about",
+    "pages/index/index",
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "light",

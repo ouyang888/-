@@ -1,0 +1,7 @@
+<view class="bgColor">
+  <view class="detailBox">
+    <view class="title">系统通知内容标题</view>
+    <view class="time">12-02 10:32</view>
+    <view class="content">通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字</view>
+  </view>
+</view>

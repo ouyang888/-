@@ -1,0 +1,24 @@
+<wxs module="phone">
+  var toHide = function(array) {
+    var mphone = array.substring(0, 3) + '****' + array.substring(7);
+    return mphone;
+  }
+  module.exports.toHide = toHide;
+</wxs>
+<view class="inputBox">
+  <ul>
+    <li>
+      <text>当前绑定号码</text>
+      <input type='number' class="bangding" maxlength='11' disabled='false' bindinput="phoneInput" value="{{phone.toHide('13888888888')}}" />
+    </li>
+    <li>
+      <text>验证码</text>
+      <input type='text' bindinput="codeInput" placeholder='请输入验证码' />
+      <view class="btnView">
+        <button disabled='{{isClick}}' bindtap="bindButtonTap" class="code">{{text}}</button>
+      </view>
+    </li>
+  </ul>
+  <view class="loginBtn" wx:if="{{code == ''}}">下一步</view>
+  <view class="loginBtn" wx:if="{{code!=''}}" style='background: rgb(255, 165, 47)' bindtap='next'>下一步</view>
+</view>

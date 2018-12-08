@@ -7,8 +7,15 @@ Page({
   data: {
     text: '获取验证码', //按钮文字
     currentTime: 60, //倒计时
-    disabled: false, //按钮是否禁用
-    phone: '' //获取到的手机栏中的值
+    phone: '', //获取到的手机栏中的值
+    isClick: false,
+    name:"",
+  },
+
+  nameInput: function (e) {
+    this.setData({
+      name: e.detail.value
+    })
   },
   //获取手机栏input中的值
   phoneInput: function(e) {
@@ -18,11 +25,7 @@ Page({
   },
   bindButtonTap: function() {
     var that = this;
-    that.setData({
-      disabled: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
-      color: '#ccc',
-    })
-
+   
     var phone = that.data.phone;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
 
@@ -45,13 +48,15 @@ Page({
         icon: 'none',
         duration: 2000
       });
-
+      that.setData({
+        isClick: true, //只要点击了按钮就让按钮禁用 （避免正常情况下多次触发定时器事件）
+        color: '#ccc',
+      })
       //设置一分钟的倒计时
       var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
-          text: currentTime + '秒', //按钮文字变成倒计时对应秒数
-
+          text: currentTime + '秒后重发', //按钮文字变成倒计时对应秒数
         })
         //如果当秒数小于等于0时 停止计时器 且按钮文字变成重新发送 且按钮变成可用状态 倒计时的秒数也要恢复成默认秒数 即让获取验证码的按钮恢复到初始化状态只改变按钮文字
         if (currentTime <= 0) { 
@@ -59,11 +64,13 @@ Page({
           that.setData({
             text: '重新发送',
             currentTime: 61,
-            disabled: false,
+            isClick: false,
             color: '#929fff'
           })
         }
       }, 1000);
+
+      //请求接口
 
     };
 
