@@ -1,2 +1,92 @@
 <!--pages/loveExample/loveExample.wxml-->
-<text>pages/loveExample/loveExample.wxml</text>
+<view class='loveHead'>
+  <view class='vipBg'>
+    <image src='../../images/bangyangBg.jpg'></image>
+  </view>
+  <view class='vipjy'>
+    <image src='../../images/aixinBig.png'></image>
+    <image hidden='hidden' src='../../images/darenBig.png'></image>
+    <image hidden='hidden' src='../../images/mingxingBig.png'></image>
+    <image hidden='hidden' src='../../images/dashiBig.png'></image>
+    <view class='vipJyz'>我的经验值：260分</view>
+  </view>
+  <view class='vipLevel'>
+    <view class='vipTxt'>
+      <view>LV1</view>
+      <view>LV2</view>
+      <view>LV3</view>
+      <view>LV4</view>
+    </view>
+    <progress percent="80" color='#FEA432' border-radius='12px' backgroundColor='#4D5667' />
+    <view class='vipTxt'>
+      <view>爱心智工</view>
+      <view>达人智工</view>
+      <view>明星智工</view>
+      <view>大使智工</view>
+    </view>
+  </view>
+  <view class='levFen'>您还差181分到达LV2</view>
+</view>
+
+<view class='loveCont'>
+  <view class='vipTit'>什么是爱的榜样?</view>
+  <text>传承大精神，用心体验生活，为慈善事业付出再付出，成为爱的海洋，爱的引领者，赢取更多人参与慈善，让更多人体验丰盛、平静与喜悦,我是无限富有的通道</text>
+  <view class='vipLevTable'>
+    <view class='tablehead'>
+      <view>等级</view>
+      <view>荣誉称号</view>
+      <view>经验值</view>
+    </view>
+    <view class='tablecont'>
+      <view>LV1</view>
+      <view>爱心智工</view>
+      <view>1~300</view>
+    </view>
+    <view class='tablecont'>
+      <view>LV2</view>
+      <view>达人智工</view>
+      <view>301~600</view>
+    </view>
+    <view class='tablecont'>
+      <view>LV3</view>
+      <view>明星智工</view>
+      <view>601~900</view>
+    </view>
+    <view class='tablecont'>
+      <view>LV4</view>
+      <view>大使智工</view>
+      <view>901~1200</view>
+    </view>
+  </view>
+</view>
+
+<view class='loveCont'>
+  <view class='vipTit'>智工如何实现晋级</view>
+  <text>慈善的阶段与智工的经验值直接相关,操作不同的任务可获得不同的分值</text>
+  <view class='vipLevTable'>
+    <view class='tablehead tableCont2'>
+      <view>任务项</view>
+      <view>增加分值</view>
+    </view>
+    <view class='tablecont tableCont2'>
+      <view>报名慈善活动1次</view>
+      <view>+30</view>
+    </view>
+    <view class='tablecont tableCont2'>
+      <view>发表分享评论1次</view>
+      <view>+5</view>
+    </view>
+    <view class='tablecont tableCont2'>
+      <view>新用户手机登录验证</view>
+      <view>+30</view>
+    </view>
+    <view class='tablecont tableCont2'>
+      <view>捐款的会员数量加1个</view>
+      <view>+10</view>
+    </view>
+    <view class='tablecont tableCont2'>
+      <view>每月维持10个爱心人士捐款</view>
+      <view>+30</view>
+    </view>
+  </view>
+</view>

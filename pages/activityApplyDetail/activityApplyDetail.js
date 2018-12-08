@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    defaultSize: 'default',
+    disabled: false,
+    plain: false,
+    loading: false
   },
 
   /**

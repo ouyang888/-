@@ -1,1 +1,59 @@
 /* pages/donationRecord/donationRecord.wxss */
+page {
+  background:rgb(247,247,247);
+}
+
+.donahead{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding:40rpx 40rpx;
+}
+
+.donarig image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.donaleft{
+  font-size:28rpx;
+}
+
+.donaJk text{
+  font-size:22rpx;
+  color:rgb(185, 184, 184);
+  margin-right: 30rpx;
+  margin-top:20rpx;
+}
+
+.donaList{
+  background:#fff;
+  margin-top:20rpx;
+  padding:0 35rpx;
+  margin-bottom: 80rpx;
+}
+
+.donaCont{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:40rpx 0;
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.donacontLeft{
+  font-size:34rpx;
+  
+}
+
+.donacontLeft text{
+  font-size:30rpx;
+  color:#BDBDBD;
+  margin-top: 20rpx;
+  display: table;
+}
+
+.donacontRig{
+  color:#F2610F;
+}

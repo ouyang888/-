@@ -1,2 +1,43 @@
 <!--pages/activityApplyDetail/activityApplyDetail.wxml-->
-<text>pages/activityApplyDetail/activityApplyDetail.wxml</text>
+<view class='activhead'>
+  <view class='activImg'>
+    <image src='../../images/banner01.png'></image>
+  </view>
+  <view class='activTit'>
+    走访国家贫困县封丘县李庄镇第一小学中心小学贫寒学子之家
+  </view>
+  <view class='activTxt'>
+    <view>
+      <text>2018-3-30</text>
+      <text>新乡智工团</text>
+    </view>
+    <view>
+      <text style='color:#FEA432'>活动进行中</text>
+    </view>
+  </view>
+</view>
+
+<view class='activJs'>
+  <view class='actJsTit'>活动介绍</view>
+  <view>
+    <text>如果有一天，我的理想被风雨淋湿，你是否愿意，回头扶我一把。如果有一天，我无力前行，你是否愿意,陪我一个温暖和午后。如果这是一个国家的未来，你是否让他酣睡不再彷徨......</text>
+  </view>
+</view>
+
+<view class='activMsg'>
+  <view class='activTitle'>
+    活动信息
+  </view>
+  <view class='actMsgCont'>
+    <text>活动类型：育暖</text>
+    <text>主办智工团:郑州智工团</text>
+    <text>活动负责人：张三</text>
+    <text>开始时间：2018-03-31</text>
+    <text>开始时间：2018-04-31</text>
+    <text>活动地址：河南新乡封丘县李庄镇第一小学、中心小学</text>
+  </view>
+</view>
+
+<view class='activBtn'>
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 立即报名 </button>
+</view>

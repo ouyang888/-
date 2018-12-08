@@ -1,2 +1,66 @@
 <!--pages/donationRecord/donationRecord.wxml-->
-<text>pages/donationRecord/donationRecord.wxml</text>
+<view class='donahead'>
+  <view class='donaleft'>
+    <text>2018年2月</text>
+    <view class='donaJk'>
+      <text>次数：23</text>
+      <text>捐款额：¥530</text>
+      <text>总捐款额：¥1080</text>
+    </view>
+  </view>
+  <view class='donarig'>
+    <image src='../../images/date.png'></image>
+    <!-- <view class="section">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          <image src='../../images/date.png'></image> {{date}}
+        </view>
+      </picker>
+    </view> -->
+  </view>
+</view>
+
+<view class='donaList'>
+  <view class='donaCont'>
+    <view class='donacontLeft'>
+      <view>慈善成功</view>
+      <text>2018-02-03 08:52</text>
+    </view>
+    <view class='donacontRig'>+1.0</view>
+  </view>
+  <view class='donaCont'>
+    <view class='donacontLeft'>
+      <view>慈善成功</view>
+      <text>2018-02-03 08:52</text>
+    </view>
+    <view class='donacontRig'>+1.0</view>
+  </view>
+  <view class='donaCont'>
+    <view class='donacontLeft'>
+      <view>慈善成功</view>
+      <text>2018-02-03 08:52</text>
+    </view>
+    <view class='donacontRig'>+1.0</view>
+  </view>
+  <view class='donaCont'>
+    <view class='donacontLeft'>
+      <view>慈善成功</view>
+      <text>2018-02-03 08:52</text>
+    </view>
+    <view class='donacontRig'>+1.0</view>
+  </view>
+  <view class='donaCont'>
+    <view class='donacontLeft'>
+      <view>慈善成功</view>
+      <text>2018-02-03 08:52</text>
+    </view>
+    <view class='donacontRig'>+1.0</view>
+  </view>
+  <view class='donaCont'>
+    <view class='donacontLeft'>
+      <view>慈善成功</view>
+      <text>2018-02-03 08:52</text>
+    </view>
+    <view class='donacontRig'>+1.0</view>
+  </view>
+</view>
