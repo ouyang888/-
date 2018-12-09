@@ -1,2 +1,58 @@
 <!--pages/organization/organization.wxml-->
-<text>pages/organization/organization.wxml</text>
+<view class='organSearch'>
+  <view class='organSea'>
+    <image src='../../images/search.png'></image>
+    <view class="section">
+      <input placeholder="请输入姓名" auto-focus/>
+    </view>
+  </view>
+  <view class='searBtn'>搜索</view>
+</view>
+
+<view class='organList'>
+  <view class='organCont'>
+    <view class='organImg'>
+      <image src='../../images/zz4.png'></image>
+    </view>
+    <view class='organTxt'>
+      <view>彭国梅</view>
+      <text>理事</text>
+    </view>
+  </view>
+  <view class='organCont'>
+    <view class='organImg'>
+      <image src='../../images/zz4.png'></image>
+    </view>
+    <view class='organTxt'>
+      <view>彭国梅</view>
+      <text>理事</text>
+    </view>
+  </view>
+  <view class='organCont'>
+    <view class='organImg'>
+      <image src='../../images/zz4.png'></image>
+    </view>
+    <view class='organTxt'>
+      <view>彭国梅</view>
+      <text>理事</text>
+    </view>
+  </view>
+  <view class='organCont'>
+    <view class='organImg'>
+      <image src='../../images/zz4.png'></image>
+    </view>
+    <view class='organTxt'>
+      <view>彭国梅</view>
+      <text>理事</text>
+    </view>
+  </view>
+  <view class='organCont'>
+    <view class='organImg'>
+      <image src='../../images/zz4.png'></image>
+    </view>
+    <view class='organTxt'>
+      <view>彭国梅</view>
+      <text>理事</text>
+    </view>
+  </view>
+</view>

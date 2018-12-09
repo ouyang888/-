@@ -1,1 +1,71 @@
 /* pages/organization/organization.wxss */
+
+page {
+  background: rgb(247, 247, 247);
+}
+
+.organSea image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}
+
+.organSea{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border:1px solid #E7E7E7;
+  padding:10rpx 20rpx;
+  border-radius:100rpx;
+  width: 75%;
+}
+
+.organSea .section input{
+  font-size:30rpx;
+}
+
+.organSearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#fff;
+  padding:30rpx 40rpx;
+}
+
+.searBtn{
+  font-size:30rpx;
+  color:#8d8d8d;
+}
+
+.organImg image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 40rpx;
+}
+
+.organList{
+  background: #fff;
+  margin-bottom: 50rpx;
+  border-top:1px solid #E7E7E7;
+}
+
+.organCont{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #E7E7E7;
+  padding:30rpx 40rpx;
+}
+
+.organTxt view{
+  font-size:34rpx;
+}
+
+.organTxt text{
+  font-size:26rpx;
+  color: #A3A3A3;
+}
+
+.organList .organCont:last-child{
+  border-bottom: none;
+}
