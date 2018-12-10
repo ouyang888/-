@@ -1,2 +1,12 @@
 <!--pages/applyAgreement/applyAgreement.wxml-->
-<text>pages/applyAgreement/applyAgreement.wxml</text>
+<view class="box">
+  <view class="title">智在行慈善基金智工公约</view>
+  <view class="fuTitle">阅读此协议大约需要2分钟</view>
+  <text class="content">“智在行慈善基金”秉承“我是传承大爱精神的赢领者”的精神，倡导每人每天捐赠一元善款(大爱一元)，致力于“教学”和“育暖”两大公益项目，缔造“造血慈善”的慈善新模式，以生生不息的爱来成就更多人加倍圆满的人生。</text>
+    <text>为更好的维护智在行慈善基金(以下简称“智在行”)长远发展，维护智在行团体形象及参与慈善活动志愿者(以下称为“智工”)的个人利益，并保持智在行慈善组织的纯粹特设定本公约，在慈善活动中共同遵守本公约。</text>
+<view class="chuming">智在行慈善基金</view>
+<view class="chumings">2018年1月1日</view>
+<view class='appBtn'>
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="agree" hover-class="other-button-hover"> 已阅读并同意 </button>
+</view>
+</view>

@@ -1,1 +1,47 @@
-/* pages/applyAgreement/applyAgreement.wxss */
+/* pages/applyAgreement/applyAgreement.wxss */ 
+.box{
+  padding: 40rpx;
+}
+.title{
+  color: rgb(51, 51, 51);
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+}
+.fuTitle{
+  color: rgb(187, 187, 187);
+  font-size: 22rpx;
+  margin-top: 30rpx;
+  width: 100%;
+  text-align: center
+}
+.content{
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+  line-height: 46rpx;
+  margin-top: 40rpx;
+}
+.chuming{
+  width: 100%;
+  text-align: right;
+  margin-right: 30rpx;
+  color: rgb(51, 51, 51);
+  font-size: 28rpx;
+  margin-top: 52rpx;
+}
+.chumings{
+  width: 100%;
+  text-align: right;
+  margin-right: 30rpx;
+  color: rgb(51, 51, 51);
+  font-size: 28rpx;
+  margin-top: 26rpx;
+}
+.appBtn{
+ margin-top: 48rpx;
+}
+
+.appBtn button{
+  background:#FFA42F;
+  color:#fff;
+}

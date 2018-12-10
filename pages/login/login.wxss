@@ -15,15 +15,11 @@
 
 .loginBox {
   margin-top: 126rpx;
-}
-
-.loginFont {
-  width: 100%;
-  text-align: center;
   color: #101010;
   font-family: STXinwei;
   font-weight: bold;
 }
+
 
 .titleImg {
   text-align: center;
