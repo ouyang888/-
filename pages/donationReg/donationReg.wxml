@@ -1,2 +1,88 @@
 <!--pages/donationReg/donationReg.wxml-->
-<text>pages/donationReg/donationReg.wxml</text>
+<view class='donatMony'>
+     <view class='donatCont'>
+          <view>2,568</view>
+          <text>历史捐款（元）</text>
+     </view>
+     <view class='donatCont'>
+          <view>352</view>
+          <text>捐款人数（人）</text>
+     </view>
+     <view class='donatCont'>
+          <view>260</view>
+          <text>今日捐款（元）</text>
+     </view>
+</view>
+
+<view class='donatPeople'>
+     <view class='organSearch'>
+          <view class='organSea'>
+               <image src='../../images/search.png'></image>
+               <view class="section">
+                    <input placeholder="请输入姓名" focus="{{focus}}" />
+               </view>
+          </view>
+          <view class='searBtn'>搜索</view>
+     </view>
+     <view class='donatTit'>
+          <view>人员列表(256)</view>
+          <view class='donatAdd'>
+               <image src='../../images/add.png'></image>
+               <text>添加</text>
+          </view>
+     </view>
+     <view class='donatPeoList'>
+          <view class='donatManCont'>
+               <view class='manMsg'>
+                    <image src='../../images/zz2.png'></image>
+                    <view>
+                         <view>李明</view>
+                         <text>最近捐款：2017-06-12</text>
+                    </view>
+               </view>
+               <view class='manEdit'>
+                    <button type="default">明细</button>
+                    <button type="primary">登记</button>
+               </view>
+          </view>
+          <view class='donatManCont'>
+               <view class='manMsg'>
+                    <image src='../../images/zz2.png'></image>
+                    <view>
+                         <view>李明</view>
+                         <text>最近捐款：2017-06-12</text>
+                    </view>
+               </view>
+               <view class='manEdit'>
+                    <button type="default">明细</button>
+                    <button type="primary">登记</button>
+               </view>
+          </view>
+          <view class='donatManCont'>
+               <view class='manMsg'>
+                    <image src='../../images/zz2.png'></image>
+                    <view>
+                         <view>李明</view>
+                         <text>最近捐款：2017-06-12</text>
+                    </view>
+               </view>
+               <view class='manEdit'>
+                    <button type="default">明细</button>
+                    <button type="primary">登记</button>
+               </view>
+          </view>
+          <view class='donatManCont'>
+               <view class='manMsg'>
+                    <image src='../../images/zz2.png'></image>
+                    <view>
+                         <view>李明</view>
+                         <text>最近捐款：2017-06-12</text>
+                    </view>
+               </view>
+               <view class='manEdit'>
+                    <button type="default">明细</button>
+                    <button type="primary">登记</button>
+               </view>
+          </view>
+     </view>
+</view>

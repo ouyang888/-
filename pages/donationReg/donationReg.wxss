@@ -1,1 +1,151 @@
 /* pages/donationReg/donationReg.wxss */
+
+page {
+     background: rgb(247, 247, 247);
+}
+
+.donatMony {
+     background: #fff;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     text-align: center;
+     padding: 40rpx 30rpx;
+     border-top:1px solid rgb(240, 240, 240);
+}
+
+.donatCont {
+     border-right: 1px solid rgb(240, 240, 240);
+     font-size: 34rpx;
+     color: rgb(219, 44, 44);
+     width: 33.3%;
+}
+
+.donatCont text {
+     font-size: 22rpx;
+     margin-top: 30rpx;
+     color: rgb(87, 87, 87);
+}
+
+.donatCont:last-child {
+     border-right: none;
+}
+
+.donatPeople {
+     margin-top: 20rpx;
+     background: #fff;
+}
+
+.organSearch {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: #fff;
+     padding: 30rpx 40rpx;
+}
+
+.searBtn {
+     font-size: 30rpx;
+     color: #8d8d8d;
+}
+
+.organImg image {
+     width: 80rpx;
+     height: 80rpx;
+     margin-right: 40rpx;
+}
+
+.organSea image {
+     width: 30rpx;
+     height: 30rpx;
+     margin-right: 30rpx;
+}
+
+.organSea {
+     display: flex;
+     justify-content: start;
+     align-items: center;
+     border: 1px solid #e7e7e7;
+     padding: 10rpx 20rpx;
+     border-radius: 100rpx;
+     width: 75%;
+}
+
+.organSea .section input {
+     font-size: 30rpx;
+}
+
+.donatTit {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size:34rpx;
+     border-top:1px solid #e7e7e7;
+     border-bottom:1px solid #e7e7e7;
+     padding:32rpx 30rpx;
+     color: rgb(87, 87, 87);
+}
+
+.donatAdd image{
+     width: 40rpx;
+     height: 40rpx;
+     margin-right: 20rpx;
+}
+
+.donatAdd{
+     font-size:31rpx;
+     display: flex;
+     align-items: center;
+}
+
+.donatPeoList{
+     padding:0 35rpx;
+}
+
+.donatManCont{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding:35rpx 0rpx;
+     border-bottom: 1px solid #e7e7e7
+}
+
+.manMsg image{
+     width: 90rpx;
+     height: 90rpx;
+     margin-right: 30rpx;
+}
+
+.manMsg{
+     font-size:32rpx;
+     display: flex;
+     align-items: center
+}
+
+.manMsg text{
+     font-size:20rpx;
+     margin-top:20rpx;
+     display: table;
+     color:#bbbbbb
+}
+
+.manEdit{
+     display: flex;
+     align-items: flex-end;
+     justify-content: right
+}
+
+.manEdit button{
+     border-radius: 40rpx;
+     font-size:22rpx;
+     border:1px solid #afafaf;
+     margin:0 15rpx;
+     /* border:none; */
+     background:#fff;
+     width: 130rpx;
+}
+
+.manEdit button:last-child{
+     background:#ffa431;
+     border:none;
+}
