@@ -7,7 +7,14 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+     imgUrls: [
+      '../../images/banner.png'
+    ],
+    indicatorDots: false,
+    autoplay: false,
+    interval: 5000,
+    duration: 1000
   },
   //事件处理函数
   bindViewTap: function() {
@@ -55,9 +62,6 @@ Page({
       hasUserInfo: true
     })
     //点击授权后跳转的页面
-    wx.navigateTo({
-      url: '../home/home'
-    })
   },
 
 })

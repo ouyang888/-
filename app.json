@@ -1,28 +1,27 @@
 {
-     "pages": [
-          "pages/donationReg/donationReg",
-          "pages/applyAgreement/applyAgreement",
-          "pages/index/index",
-          "pages/activityList/activityList",
-          "pages/bindingphone/bindingphone",
-          "pages/noticeDetial/noticeDetial",
-          "pages/notice/notice",
-          "pages/organization/organization",
-          "pages/donationRecord/donationRecord",
-          "pages/activityApplyDetail/activityApplyDetail",
-          "pages/loveExample/loveExample",
-          "pages/applyForm/applyForm",
-          "pages/me/me",
-          "pages/addPeople/addPeople",
-          "pages/login/login",
-          "pages/editPhone/editPhone",
-          "pages/about/about",
-          "pages/home/home"
-     ],
-     "window": {
-          "backgroundTextStyle": "light",
-          "navigationBarBackgroundColor": "#fff",
-          "navigationBarTitleText": "WeChat",
-          "navigationBarTextStyle": "black"
-     }
+  "pages": [
+    "pages/index/index",
+    "pages/donationReg/donationReg",
+    "pages/applyAgreement/applyAgreement",
+    "pages/activityList/activityList",
+    "pages/bindingphone/bindingphone",
+    "pages/noticeDetial/noticeDetial",
+    "pages/notice/notice",
+    "pages/organization/organization",
+    "pages/donationRecord/donationRecord",
+    "pages/activityApplyDetail/activityApplyDetail",
+    "pages/loveExample/loveExample",
+    "pages/applyForm/applyForm",
+    "pages/me/me",
+    "pages/addPeople/addPeople",
+    "pages/login/login",
+    "pages/editPhone/editPhone",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
 }
