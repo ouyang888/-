@@ -1,16 +1,13 @@
 //index.js
 //获取应用实例
-const app = getApp()
-
+var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-     imgUrls: [
-      '../../images/banner.png'
-    ],
+    imgUrls: [],
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
@@ -24,6 +21,13 @@ Page({
   },
   
   onLoad: function () {
+    //轮播图
+    app.xhr('POST', '/player/list', '', '', (res) => {
+      this.setData({ imgUrls: res.data.data }) 
+      console.log(this.data.imgUrls)
+    });
+
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

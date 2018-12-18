@@ -35,5 +35,41 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+
+//弹框
+  toast: function (title, icon, cb, duration = 1200) {
+    wx.showToast({
+      title,
+      icon,
+      duration,
+      mask: true,
+      success: () => {
+        if (typeof (cb) == "function") {
+          cb()
+        }
+      }
+    })
+  },
+
+//接口前缀封装
+  xhr: function (method, url, obj = null, token = '', cb) {
+    wx.request({
+      url: 'http://hz4i93.natappfree.cc/api' + url,
+      data: obj,
+      method,
+      header: {
+        'Content-Type': 'application/json',
+        'X-TOKEN': "kogHlvmcjmOpsgOjVa8ZbMyfvTl2mq8PSxYoB8Za"
+      },
+      success: function (res) {
+        if (typeof (cb) == "function") {
+          cb(res)
+        }
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
   }
 })
