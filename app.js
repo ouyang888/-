@@ -1,15 +1,37 @@
 //app.js
 App({
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    var that = this
+    //获取token
+    wx.request({
+      url: 'http://interface.nat300.top/api' + '/token/generate',
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+        'X-TOKEN': "IbQMozQna0yDL6nwpuP0jTLoM8XL11YLVkTbGe9K",
+        'Authorization': "Basic YWRtaW46MTIzNDU2"
+      },
+      success: function (res) {
+        that.globalData.token = res.data.data.token
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
 
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // console.log(res.code)
+        this.xhr('POST', '/member/wxLogin', {code:res.code}, '',(res) => {
+          console.log(res)
+        })
       }
     })
     // 获取用户信息
@@ -34,7 +56,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token:""
   },
 
 //弹框
@@ -54,13 +77,14 @@ App({
 
 //接口前缀封装
   xhr: function (method, url, obj = null, token = '', cb) {
+    var that = this
     wx.request({
-      url: 'http://hz4i93.natappfree.cc/api' + url,
+      url: 'http://interface.nat300.top/api' + url,
       data: obj,
       method,
       header: {
         'Content-Type': 'application/json',
-        'X-TOKEN': "kogHlvmcjmOpsgOjVa8ZbMyfvTl2mq8PSxYoB8Za"
+        'X-TOKEN': that.globalData.token
       },
       success: function (res) {
         if (typeof (cb) == "function") {
@@ -71,5 +95,5 @@ App({
         console.log(error)
       }
     })
-  }
+  },
 })

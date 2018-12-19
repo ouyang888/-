@@ -22,9 +22,8 @@ Page({
   
   onLoad: function () {
     //轮播图
-    app.xhr('POST', '/player/list', '', '', (res) => {
+    app.xhr('POST','/player/list', '', '', (res) => {
       this.setData({ imgUrls: res.data.data }) 
-      console.log(this.data.imgUrls)
     });
 
 
