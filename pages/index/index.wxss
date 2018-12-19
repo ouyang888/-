@@ -80,18 +80,17 @@ page {
   background: #fff;
 }
 
-.homeNav navigator {
+.homeNav view {
   font-size: 32rpx;
-  width: 23%;
   text-align: center;
 }
 
-.homeNav navigator image {
+.homeNav view image {
   width: 110rpx;
   height: 110rpx;
 }
 
-.homeNav navigator view {
+.homeNav view view {
   margin-top: 20rpx;
 }
 
@@ -124,6 +123,7 @@ page {
 .csCont {
   padding-bottom: 20rpx;
   border-bottom: 1px solid #ececec;
+  margin-bottom:20rpx;
 }
 
 .csCont image {

@@ -19,22 +19,22 @@
     </block>
   </swiper>
   <view class="homeNav">
-    <navigator>
+    <view>
       <image src='../../images/cishanLogon.png'></image>
       <view>关于我们</view>
-    </navigator>
-    <navigator>
+    </view>
+    <view>
       <image src='../../images/zzjg.png'></image>
       <view>组织架构</view>
-    </navigator>
-    <navigator>
+    </view>
+    <view>
       <image src='../../images/hdhg.png'></image>
       <view>活动回顾</view>
-    </navigator>
-    <navigator>
+    </view>
+    <view>
       <image src='../../images/dayy.png'></image>
       <view>大爱一元</view>
-    </navigator>
+    </view>
   </view>
 
   <view class="homecs">
