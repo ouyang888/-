@@ -20,7 +20,6 @@ Page({
                url: '../logs/logs'
           })
      },
-
      onLoad: function() {
           //轮播图
           app.xhr('POST', '/player/list', '', '', (res) => {
