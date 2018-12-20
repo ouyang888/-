@@ -19,7 +19,7 @@
     </block>
   </swiper>
   <view class="homeNav">
-    <view>
+    <view bindtap='about'>
       <image src='../../images/cishanLogon.png'></image>
       <view>关于我们</view>
     </view>
