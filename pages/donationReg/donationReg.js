@@ -1,4 +1,6 @@
 // pages/donationReg/donationReg.js
+let storage = require('../../utils/storage.js')
+var app = getApp()
 Page({
 
   /**
@@ -6,13 +8,20 @@ Page({
    */
   data: {
        focus: false,
+       donation:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.xhr('POST', '/donor/record', '', '', (res) => {
+      console.log(res)
+      this.setData({
+        donation: res.data.data
+      })
+       console.log(this.data.donation)
+    });
   },
 
   /**

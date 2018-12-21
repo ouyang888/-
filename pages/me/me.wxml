@@ -18,28 +18,28 @@
 
 <view class='meContent'>
   <view class='meListOne'>
-    <view class='oneCont'>
+    <view class='oneCont' bindtap='loveExample'>
       <view class='meLogo'>
         <image mode='widthFix' src='../../images/love.png'></image>
         <text>爱的榜样</text>
       </view>
       <image src='../../images/back.png'></image>
     </view>
-    <view class='oneCont'>
+    <view class='oneCont' bindtap='organization'>
       <view class='meLogo'>
         <image mode='widthFix' src='../../images/zzjgHei.png'></image>
         <text>组织架构</text>
       </view>
       <image src='../../images/back.png'></image>
     </view>
-    <view class='oneCont'>
+    <view class='oneCont' bindtap='notice'>
       <view class='meLogo'>
         <image mode='widthFix' src='../../images/dingling.png'></image>
         <text>通知</text>
       </view>
       <image src='../../images/back.png'></image>
     </view>
-    <view class='oneCont'>
+    <view class='oneCont' bindtap='donationReg'>
       <view class='meLogo'>
         <image mode='widthFix' src='../../images/vip.png'></image>
         <text>我的会员</text>

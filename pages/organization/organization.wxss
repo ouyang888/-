@@ -41,6 +41,7 @@ page {
   width: 80rpx;
   height: 80rpx;
   margin-right: 40rpx;
+  border-radius:100%;
 }
 
 .organList{

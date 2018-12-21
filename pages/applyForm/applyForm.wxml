@@ -51,12 +51,12 @@
   <view class='appList'>
     <view class="section">
       <text>出生日期</text>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{dateRl}}" style='width:13%'>
         <view class="picker">
-          {{array[index]}}
+          {{dateRl[index]}}
         </view>
       </picker>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange" style='width:58%'>
         <view class="picker">
           {{date}}
         </view>

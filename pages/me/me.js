@@ -13,6 +13,32 @@ Page({
       url: '../editPhone/editPhone'
     })
   },
+
+  // 爱的榜样
+  loveExample: function () {
+    wx.navigateTo({
+      url: '../loveExample/loveExample'
+    })
+  },
+  // 组织架构
+  organization: function () {
+    wx.navigateTo({
+      url: '../organization/organization'
+    })
+  },
+  // 通知
+  notice: function () {
+    wx.navigateTo({
+      url: '../notice/notice'
+    })
+  },
+  // 我的会员
+  donationReg: function () {
+    wx.navigateTo({
+      url: '../donationReg/donationReg'
+    })
+  },
+
   //清空缓存
   clearStro: function() {
     wx.showModal({

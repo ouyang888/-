@@ -1,4 +1,6 @@
 // pages/activityList/activityList.js
+let storage = require('../../utils/storage.js')
+var app = getApp()
 Page({
 
   /**
@@ -12,7 +14,8 @@ Page({
     isLength: false,
     code: "",
     phone: "",
-    name: ""
+    name: "",
+    activityList:[]
   },
   codeInput: function (e) {
     this.setData({
@@ -118,13 +121,22 @@ Page({
   onConfirm: function () {
 
     this.hideModal();
+    wx.navigateTo({
+      url: '../activityApplyDetail/activityApplyDetail'
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 首页活动展示
+    app.xhr('POST', '/activity/search', '', '', (res) => {
+      this.setData({
+        activityList: res.data.data.data
+      })
+      console.log(this.data.activityList)
+    });
   },
 
   /**

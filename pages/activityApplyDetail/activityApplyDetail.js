@@ -1,4 +1,6 @@
 // pages/activityApplyDetail/activityApplyDetail.js
+let storage = require('../../utils/storage.js')
+var app = getApp()
 Page({
 
   /**
@@ -8,14 +10,21 @@ Page({
     defaultSize: 'default',
     disabled: false,
     plain: false,
-    loading: false
+    loading: false,
+    activityDetail:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.xhr('POST', '/activity/detail', '', '', (res) => {
+      // console.log(res)
+      this.setData({
+        activityDetail: res.data.data
+      })
+      console.log(this.data.activityDetail)
+    });
   },
 
   /**

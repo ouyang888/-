@@ -128,6 +128,9 @@ Page({
   onConfirm: function () {
 
     this.hideModal();
+    wx.navigateTo({
+      url: '../activityList/activityList'
+    })
   },
   //事件处理函数
   bindViewTap: function() {
@@ -147,6 +150,19 @@ Page({
       url: '../organization/organization'
     })
   },
+  //大爱一元
+  donationReg: function () {
+    wx.navigateTo({
+      url: '../donationReg/donationReg'
+    })
+  },
+  //申请智工
+  applyAgreement: function () {
+    wx.navigateTo({
+      url: '../applyAgreement/applyAgreement'
+    })
+  },
+
 
 
   onLoad: function() {
