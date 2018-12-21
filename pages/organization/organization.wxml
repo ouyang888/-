@@ -3,56 +3,20 @@
   <view class='organSea'>
     <image src='../../images/search.png'></image>
     <view class="section">
-      <input placeholder="请输入姓名" auto-focus/>
+      <input placeholder="请输入姓名" bindinput="nameInput" auto-focus/>
     </view>
   </view>
-  <view class='searBtn'>搜索</view>
+  <view class='searBtn' bindtap="search">搜索</view>
 </view>
 
 <view class='organList'>
-  <view class='organCont'>
+  <view class='organCont' wx:for="{{organ}}" wx:key="i">
     <view class='organImg'>
-      <image src='../../images/zz4.png'></image>
+      <image src='{{item.v_avatar}}'></image>
     </view>
     <view class='organTxt'>
-      <view>彭国梅</view>
-      <text>理事</text>
-    </view>
-  </view>
-  <view class='organCont'>
-    <view class='organImg'>
-      <image src='../../images/zz4.png'></image>
-    </view>
-    <view class='organTxt'>
-      <view>彭国梅</view>
-      <text>理事</text>
-    </view>
-  </view>
-  <view class='organCont'>
-    <view class='organImg'>
-      <image src='../../images/zz4.png'></image>
-    </view>
-    <view class='organTxt'>
-      <view>彭国梅</view>
-      <text>理事</text>
-    </view>
-  </view>
-  <view class='organCont'>
-    <view class='organImg'>
-      <image src='../../images/zz4.png'></image>
-    </view>
-    <view class='organTxt'>
-      <view>彭国梅</view>
-      <text>理事</text>
-    </view>
-  </view>
-  <view class='organCont'>
-    <view class='organImg'>
-      <image src='../../images/zz4.png'></image>
-    </view>
-    <view class='organTxt'>
-      <view>彭国梅</view>
-      <text>理事</text>
+      <view>{{item.v_name}}</view>
+      <text>{{item.v_position}}</text>
     </view>
   </view>
 </view>

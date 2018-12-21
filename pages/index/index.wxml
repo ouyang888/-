@@ -23,7 +23,7 @@
       <image src='../../images/cishanLogon.png'></image>
       <view>关于我们</view>
     </view>
-    <view>
+    <view bindtap='organization'>
       <image src='../../images/zzjg.png'></image>
       <view>组织架构</view>
     </view>
@@ -42,29 +42,47 @@
       <text>慈善活动</text>
       <navigator>查看更多 > </navigator>
     </view>
-    <view class="csList">
+    <view class="csList" wx:for="{{activity}}" wx:key="i" >
       <view class='csCont'>
-        <image src='../../images/banner0.png'></image>
-        <text>“冬天暖童心”让乡校孩子温暖过冬让爱循环，衣衣情深</text>
+        <image src='{{item.act_cover}}'></image>
+        <text>{{item.act_title}}</text>
         <view class='cssDateBtn'>
           <view>
-            <text>地点：河南 郑州</text>
-            <text>开始时间：2018-3-20</text>
+            <text>地点：{{item.act_location}}</text>
+            <text>开始时间：{{item.act_etime}}</text>
           </view>
-          <button>立即报名</button>
-        </view>
-      </view>
-      <view class='csCont'>
-        <image src='../../images/banner3.png'></image>
-        <text>“冬天暖童心”让乡校孩子温暖过冬让爱循环，衣衣情深</text>
-        <view class='cssDateBtn'>
-          <view>
-            <text>地点：河南 郑州</text>
-            <text>开始时间：2018-3-20</text>
-          </view>
-          <button>立即报名</button>
+          <button bindtap="showDialogBtn">立即报名</button>
         </view>
       </view>
     </view>
+  </view>
+</view>
+
+
+<!-- 弹框 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="inputBox">
+    <ul>
+      <li>
+        <text>姓名</text>
+        <input type='number' maxlength='11' bindinput="nameInput" placeholder='请输入真实姓名' />
+      </li>
+      <li>
+        <text>手机号</text>
+        <input type='number' maxlength='11' bindinput="phoneInput" placeholder='请输入绑定手机号' />
+      </li>
+      <li>
+        <text>验证码</text>
+        <input type='text' class="codeInputs" bindinput="codeInput" placeholder='请输入验证码' />
+        <view class="btnView">
+          <button disabled='{{isClick}}' bindtap="bindButtonTap" class="code">{{text}}</button>
+        </view>
+      </li>
+    </ul>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" wx:if="{{phone=='' || name ==''}}">确定</view>
+     <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
   </view>
 </view>
