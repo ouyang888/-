@@ -88,7 +88,10 @@ Page({
         }
       }, 1000);
 
-      //请求接口
+      //获取验证码接口
+      app.xhr('POST', '/message/send', { phone: this.data.phone, type:"login"}, '', (res) => {
+        console.log(res)
+      });
 
     };
 
@@ -144,6 +147,8 @@ Page({
       url: '../organization/organization'
     })
   },
+
+
   onLoad: function() {
     //轮播图
     app.xhr('POST', '/player/list', '', '', (res) => {

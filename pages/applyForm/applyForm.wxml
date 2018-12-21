@@ -5,7 +5,7 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>姓名</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='nameInput' auto-focus/>
     </view>
   </view>
   <view class='appList'>
@@ -13,7 +13,7 @@
       <text>性别</text>
       <radio-group class="radio-group" bindchange="radioChange">
         <label wx:key="" class="radio" wx:for="{{items}}">
-          <radio value="{{item.name}}" checked="{{item.checked}}" color='#FFA42F' />{{item.value}}
+          <radio value="{{item.name}}" checked="{{item.checked}}" color='#FFA42F'  />{{item.value}}
         </label>
       </radio-group>
     </view>
@@ -21,36 +21,41 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>手机号</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='phoneInput' auto-focus/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text class='must'>单位</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='danwei' auto-focus/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text class='must'>职务</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='zhiwu' auto-focus/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>邮箱</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='email' auto-focus/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>身份证</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='idcardInput' auto-focus/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>出生日期</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
       <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
         <view class="picker">
           {{date}}
@@ -61,13 +66,13 @@
   <view class='appList'>
     <view class="section">
       <text>地址信息</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='address' auto-focus/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text></text>
-      <input placeholder="详细地址信息" auto-focus/>
+      <input placeholder="详细地址信息" bindinput='addressInfo' auto-focus/>
     </view>
   </view>
   <view class='appList'>
@@ -107,9 +112,9 @@
 
 <view class='applyTit'>备注信息</view>
 <view class="section">
-  <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入内容" />
+  <textarea bindblur="bindTextAreaBlur" bindinput='beizhu' auto-height placeholder="请输入内容" />
 </view>
 
 <view class='appBtn'>
-  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 提交 </button>
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="apply" hover-class="other-button-hover"> 提交 </button>
 </view>
