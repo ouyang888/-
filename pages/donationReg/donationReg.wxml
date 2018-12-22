@@ -26,7 +26,7 @@
      </view>
      <view class='donatTit'>
           <view>人员列表(256)</view>
-          <view class='donatAdd'>
+          <view class='donatAdd' bindtap='addPeople'>
                <image src='../../images/add.png'></image>
                <text>添加</text>
           </view>
@@ -41,7 +41,7 @@
                     </view>
                </view>
                <view class='manEdit'>
-                    <button type="default">明细</button>
+                    <button type="default" bindtap='donationRecord'>明细</button>
                     <button type="primary">登记</button>
                </view>
           </view>

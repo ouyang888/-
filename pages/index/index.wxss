@@ -112,7 +112,7 @@ page {
   font-size: 32rpx;
 }
 
-.csTop navigator {
+.csTop view {
   font-size: 24rpx;
 }
 

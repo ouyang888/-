@@ -1,11 +1,13 @@
 // Pages/notice/notice.js
+let storage = require('../../utils/storage.js')
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    notice:[]
   },
   noticeDetial:function(){
     wx.navigateTo({
@@ -17,7 +19,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.xhr('POST', '/notice/index', '', '', (res) => {
+      // console.log(res)
+      this.setData({
+        notice: res.data.data.data
+      })
+       console.log(this.data.notice)
+    });
   },
 
   /**

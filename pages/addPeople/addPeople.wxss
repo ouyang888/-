@@ -1,7 +1,7 @@
 .loginBtn {
   background: rgb(255, 165, 47);
   height: 80rpx;
-  width: 690rpx;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,9 +20,10 @@
 }
 
 .inputBox {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 60rpx;
+  padding:10rpx 20rpx;
+  box-sizing: border-box;
 }
 
 .inputBox ul li {

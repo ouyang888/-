@@ -44,7 +44,7 @@
   <view class="homecs">
     <view class="csTop">
       <text>慈善活动</text>
-      <navigator>查看更多 > </navigator>
+      <view bindtap='activityList'>查看更多 > </view>
     </view>
     <view class="csList" wx:for="{{activity}}" wx:key="i" >
       <view class='csCont'>

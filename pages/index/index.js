@@ -138,6 +138,13 @@ Page({
       url: '../logs/logs'
     })
   },
+
+  // 活动列表
+  activityList: function () {
+    wx.navigateTo({
+      url: '../activityList/activityList'
+    })
+  },
   //关于我们
   about: function () {
     wx.navigateTo({

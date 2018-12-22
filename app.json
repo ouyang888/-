@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/me/me",
-    "pages/applyAgreement/applyAgreement",
+    "pages/index/index",
     "pages/donationReg/donationReg",
+    
+    "pages/applyAgreement/applyAgreement",
+    "pages/donationRecord/donationRecord",
     "pages/applyForm/applyForm",
     "pages/activityList/activityList",
     "pages/bindingphone/bindingphone",
@@ -22,5 +24,18 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/homeIn.png",
+      "selectedIconPath": "images/homeOn.png"
+    },{
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "images/meIn.png",
+      "selectedIconPath": "images/meOn.png"
+    }]
   }
 }
