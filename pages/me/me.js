@@ -39,6 +39,12 @@ Page({
     })
   },
 
+  login: function () {
+    wx.navigateTo({
+      url: '../login/login'
+    })
+  },
+
   //清空缓存
   clearStro: function() {
     wx.showModal({

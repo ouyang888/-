@@ -48,7 +48,7 @@
     </view>
   </view>
   <view class='meListTwo'>
-    <view class='oneCont'>
+    <view class='oneCont' bindtap='login'>
       <view class='meLogo'>
         <image mode='widthFix' src='../../images/zhigong.png'></image>
         <text>我是智工</text>
