@@ -1,4 +1,4 @@
-/* pages/login/login.wxss */
+
 
 .logoIng {
   width: 200rpx;
@@ -111,3 +111,19 @@
 .loginFont{
   text-align: center
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

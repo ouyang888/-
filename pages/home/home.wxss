@@ -1,0 +1,281 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.bg-box {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.bg-box img {
+  display: block;
+  max-width: 100%;
+}
+
+.shoubT{
+  width: 685rpx;
+  padding-top: 100rpx;
+}
+
+.shoubT button {
+  background-color:#18AC18;
+  color: #fff;
+}
+.logoIng{
+  width: 200rpx;
+  height: 200rpx;
+  margin:0 auto;
+  text-align: center;
+}
+
+.logoIng image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:200px;
+}
+.fontData{
+  text-align: center;
+  font-size: 16px;
+  color: #9C9C9F;
+  padding-bottom: 50rpx;
+}
+
+/* pages/home/home.wxss */
+
+page {
+  background:rgb(247,247,247);
+}
+
+.swiperHome image {
+  width: 100%;
+  height: 100%;
+}
+
+.homeNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  background: #fff;
+}
+
+.homeNav view {
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.homeNav view image {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.homeNav view view {
+  margin-top: 20rpx;
+}
+
+.homecs {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.csTop {
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ececec;
+}
+
+.csTop text {
+  font-size: 32rpx;
+}
+
+.csTop view {
+  font-size: 24rpx;
+}
+
+.csList {
+  padding: 40rpx;
+}
+
+.csCont {
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #ececec;
+  margin-bottom:20rpx;
+}
+
+.csCont image {
+  width: 100%;
+  height: 400rpx;
+}
+
+.csCont text {
+  font-size: 32rpx;
+}
+
+.cssDateBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.cssDateBtn text {
+  font-size: 26rpx;
+  display: table;
+  color: #a0a0a0;
+}
+
+.cssDateBtn button {
+  font-size: 28rpx;
+  margin: 0;
+  background: #ffa200;
+  color: #fff;
+}
+
+swiper {
+  height: 400rpx;
+}
+/* 弹框 */
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 90%;
+  overflow: hidden;
+  position: fixed;
+  top: 27%;
+  left: 5%;
+  z-index: 9999;
+  background: #f9f9f9;
+  border-radius: 10rpx;
+  height:auto;
+
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+
+
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  font-size: 34rpx;
+  line-height: 86rpx;
+  padding-bottom: 58rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 90%;
+  color: #fff;
+  text-align: center;
+  background: rgb(204, 204, 204);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 54rpx;
+}
+.inputBox {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.inputBox ul li {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+  padding: 20rpx 10rpx;
+  justify-content: start;
+}
+
+.inputBox ul li text {
+  width: 145rpx;
+  font-size: 28rpx;
+}
+
+.inputBox ul li input {
+  font-size: 28rpx;
+}
+.code {
+  height: 67rpx;
+  font-size: 24rpx;
+  border: 1px solid #ffebd1;
+  color: #fbb75b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnView {
+  width: 150rpx;
+  white-space: nowrap;
+}
+.codeInputs{
+  margin-left: 10rpx;
+}
