@@ -20,9 +20,10 @@
 }
 
 .inputBox {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 60rpx;
+  padding:0 34rpx;
+  box-sizing: border-box
 }
 
 .inputBox ul li {
@@ -30,26 +31,28 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f3f3f3;
-  padding: 20rpx 10rpx;
-  justify-content: start;
+  padding: 40rpx 0rpx;
+  justify-content: space-between;
 }
 
 .inputBox ul li text {
   width: 185rpx;
 }
 
-.inputBox ul li input {
+/* .inputBox ul li input {
   margin-left: 30rpx;
-}
+} */
 
 .code {
-  height: 67rpx;
+  height: 64rpx;
   font-size: 24rpx;
   border: 1px solid #ffebd1;
   color: #fbb75b;
   display: flex;
   align-items: center;
   justify-content: center;
+  background:#fff;
+  width: 150rpx;
 }
 
 .btnView {
@@ -61,8 +64,7 @@
   font-size: 32rpx;
 }
 .bangding{
-  text-align:right;
-  width:65%;
   font-size: 34rpx;
-  color: rgb(102, 102, 102)
+  color: rgb(102, 102, 102);
+  text-align: right
 }

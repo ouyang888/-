@@ -1,6 +1,6 @@
 /* pages/applyAgreement/applyAgreement.wxss */ 
 .box{
-  padding: 40rpx;
+  padding: 40rpx 30rpx;
 }
 .title{
   color: rgb(51, 51, 51);
@@ -15,8 +15,11 @@
   width: 100%;
   text-align: center
 }
+text{
+font-size: 28rpx;
+}
 .content{
-  font-size: 28rpx;
+  display: table;
   color: rgb(51, 51, 51);
   line-height: 46rpx;
   margin-top: 40rpx;

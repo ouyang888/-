@@ -18,12 +18,12 @@ page {
 }
 
 .appList .section input{
-  font-size:30rpx;
+  font-size:32rpx;
   width: 72%;
 }
 
 .appList .section text{
-  font-size:30rpx;
+  font-size:32rpx;
   margin-right: 20rpx;
   width:160rpx;
 
@@ -31,7 +31,8 @@ page {
 
 .appList{
   border-bottom:1rpx solid rgb(247, 247, 247);
-  padding:20rpx 20rpx;
+  padding:30rpx 0;
+  font-size:32rpx;
 }
 
 .appForm{
@@ -40,7 +41,7 @@ page {
 }
 
 .applong .section text{
-  width: 285rpx;
+  width: 295rpx;
 }
 
 .section{
@@ -59,12 +60,14 @@ page {
 }
 
 .appBtn{
-  padding:60rpx 30rpx 50rpx 30rpx;
+  padding:55rpx 30rpx 50rpx 30rpx;
 }
 
 .appBtn button{
   background:#FFA42F;
   color:#fff;
+  border:none;
+  font-size:36rpx;
 }
 
 .appForm view:last-child{

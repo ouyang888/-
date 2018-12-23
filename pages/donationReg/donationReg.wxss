@@ -79,7 +79,7 @@ page {
      display: flex;
      justify-content: space-between;
      align-items: center;
-     font-size:34rpx;
+     font-size:32rpx;
      border-top:1px solid #e7e7e7;
      border-bottom:1px solid #e7e7e7;
      padding:32rpx 30rpx;
@@ -93,31 +93,35 @@ page {
 }
 
 .donatAdd{
-     font-size:31rpx;
+     font-size:30rpx;
      display: flex;
      align-items: center;
 }
 
+.donatAdd text{
+  font-size:30rpx;
+}
+
 .donatPeoList{
-     padding:0 35rpx;
+     padding:0 30rpx;
 }
 
 .donatManCont{
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding:35rpx 0rpx;
+     padding:40rpx 0rpx;
      border-bottom: 1px solid #e7e7e7
 }
 
 .manMsg image{
-     width: 90rpx;
-     height: 90rpx;
+     width: 70rpx;
+     height:70rpx;
      margin-right: 30rpx;
 }
 
 .manMsg{
-     font-size:32rpx;
+     font-size:30rpx;
      display: flex;
      align-items: center
 }

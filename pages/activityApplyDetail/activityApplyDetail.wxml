@@ -17,9 +17,11 @@
   </view>
 </view>
 
-<view class='activJs'>
-  <view class='actJsTit'>活动介绍</view>
-  <view>
+<view class='activMsg'>
+  <view class='activTitle'>
+    活动介绍
+  </view>
+  <view class='actMsgCont'>
     <text>如果有一天，我的理想被风雨淋湿，你是否愿意，回头扶我一把。如果有一天，我无力前行，你是否愿意,陪我一个温暖和午后。如果这是一个国家的未来，你是否让他酣睡不再彷徨......</text>
   </view>
 </view>

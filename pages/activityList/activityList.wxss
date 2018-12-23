@@ -1,5 +1,5 @@
 .homecs {
-  margin-top: 20rpx;
+  margin-top: 10rpx;
   background: rgb(247, 247, 247);
 }
 
@@ -19,24 +19,24 @@
   font-size: 24rpx;
 }
 
-.csList {
+/* .csList {
   padding: 23rpx;
-}
+} */
 
 .csCont {
   padding-bottom: 20rpx;
   background: #fff;
-  padding: 15rpx;
+  padding: 30rpx;
   margin-bottom: 20rpx;
 }
 
 .csCont image {
   width: 100%;
-  height: 400rpx;
+  height: 350rpx;
 }
 
 .csCont text {
-  font-size: 32rpx;
+  font-size: 28rpx;
 }
 
 .cssDateBtn {
@@ -71,7 +71,7 @@
 }
 
 .search {
-  width: 80%;
+  width: 100%;
 }
 
 .search_arr {
@@ -101,12 +101,14 @@
   font-size: 30rpx;
   display: flex;
   align-items: center;
-  color: rgb(102, 102, 102)
+  color: rgb(102, 102, 102);
 }
 
 .page_row {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10rpx;
+  justify-content: space-between
 }
 
 .searchcion {
@@ -119,12 +121,11 @@
   text-align: center;
 }
 
-
-
 /* 弹框 */
+
 .show-btn {
   margin-top: 100rpx;
-  color: #22cc22;
+  color: #2c2;
 }
 
 .modal-mask {
@@ -149,8 +150,7 @@
   z-index: 9999;
   background: #f9f9f9;
   border-radius: 10rpx;
-  height:auto;
-
+  height: auto;
 }
 
 .modal-title {
@@ -171,9 +171,6 @@
   border-radius: 4rpx;
   font-size: 28rpx;
 }
-
-
-
 
 input-holder {
   color: #666;
@@ -202,6 +199,7 @@ input-holder {
   margin: 0 auto;
   margin-top: 54rpx;
 }
+
 .inputBox {
   width: 90%;
   margin: 0 auto;
@@ -225,6 +223,7 @@ input-holder {
 .inputBox ul li input {
   font-size: 28rpx;
 }
+
 .code {
   height: 67rpx;
   font-size: 24rpx;
@@ -239,7 +238,7 @@ input-holder {
   width: 150rpx;
   white-space: nowrap;
 }
-.codeInputs{
+
+.codeInputs {
   margin-left: 10rpx;
 }
-

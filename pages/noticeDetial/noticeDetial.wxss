@@ -10,6 +10,7 @@
   width: 100%;
   padding: 30rpx;
   background: #fff;
+  margin-top:10rpx;
 }
 
 .title {

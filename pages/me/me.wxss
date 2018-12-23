@@ -9,12 +9,13 @@ page {
   align-items: center;
   background: linear-gradient(#FD8802, #FD9002,#FDA300,#FDA300);
   padding:70rpx 30rpx;
+  max-height: 240rpx;
 }
 
 .usertx {
-  width: 130rpx;
+  width: 120rpx;
   position: relative;
-  height: 130rpx;
+  height: 120rpx;
 }
 
 .usertx image {
@@ -28,7 +29,7 @@ page {
   border-radius: 100%;
   background: #fff;
   position: absolute;
-  right: -20rpx;
+  right: -12rpx;
   text-align: center;
   bottom:0;
   box-sizing: border-box;
@@ -69,6 +70,7 @@ page {
   color:#ffa431;
   border-radius:30rpx;
   padding:6rpx 10rpx;
+  min-width: 110rpx;
 }
 
 .meJs text{
@@ -85,7 +87,7 @@ page {
 
 .meListOne{
   background:#fff;
-  padding:0 35rpx;
+  padding:0 30rpx;
 }
 
 .oneCont{
@@ -93,7 +95,7 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:30rpx 40rpx;
+  padding:40rpx 0;
 }
 
 .oneCont image{
@@ -112,7 +114,7 @@ page {
 }
 
 .meLogo text{
-  font-size:34rpx;
+  font-size:36rpx;
   margin-left: 20rpx;
 }
 

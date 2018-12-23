@@ -24,13 +24,13 @@ page {
 }
 
 .activTit{
-  font-size:32rpx;
-  padding: 20rpx 30rpx;
+  font-size:34rpx;
+  padding: 30rpx 30rpx;
   line-height: 54rpx;
 }
 
 .activTxt {
-  font-size:28rpx;
+  font-size:30rpx;
   color:#C3C3C3;
   padding: 10rpx 30rpx;
   padding-bottom: 30rpx;
@@ -38,6 +38,7 @@ page {
 
 .activTxt text{
   margin-right: 20rpx;
+  font-size:26rpx;
 }
 
 .activJs{
@@ -75,7 +76,8 @@ page {
 .actMsgCont text{
   display: table;
   margin-bottom:15rpx;
-  color:#656565
+  color:#656565;
+  font-size:28rpx;
 }
 
 .activBtn{

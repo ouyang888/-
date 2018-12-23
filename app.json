@@ -1,22 +1,23 @@
 {
   "pages": [
-    "pages/me/me",
-    "pages/index/index",
-    "pages/donationReg/donationReg",
-    
-    "pages/applyAgreement/applyAgreement",
     "pages/donationRecord/donationRecord",
-    "pages/applyForm/applyForm",
-    "pages/activityList/activityList",
-    "pages/bindingphone/bindingphone",
-    "pages/noticeDetial/noticeDetial",
-    "pages/notice/notice",
-    "pages/organization/organization",
     "pages/activityApplyDetail/activityApplyDetail",
-    "pages/loveExample/loveExample",
+    "pages/activityList/activityList",
+    "pages/applyForm/applyForm",
+    "pages/applyAgreement/applyAgreement",
+    "pages/donationReg/donationReg",
+    "pages/me/me",
+    "pages/editPhone/editPhone",
+    "pages/notice/notice",
     "pages/addPeople/addPeople",
     "pages/login/login",
-    "pages/editPhone/editPhone",
+    "pages/index/index",
+    
+    "pages/bindingphone/bindingphone",
+    "pages/noticeDetial/noticeDetial",
+    "pages/organization/organization",
+    
+    "pages/loveExample/loveExample",
     "pages/about/about"
   ],
   "window": {
@@ -26,16 +27,19 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "images/homeIn.png",
-      "selectedIconPath": "images/homeOn.png"
-    },{
-      "pagePath": "pages/me/me",
-      "text": "我的",
-      "iconPath": "images/meIn.png",
-      "selectedIconPath": "images/meOn.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/homeIn.png",
+        "selectedIconPath": "images/homeOn.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/meIn.png",
+        "selectedIconPath": "images/meOn.png"
+      }
+    ]
   }
 }

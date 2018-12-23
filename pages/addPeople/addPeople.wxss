@@ -1,6 +1,6 @@
 .loginBtn {
   background: rgb(255, 165, 47);
-  height: 80rpx;
+  height: 95rpx;
   width: 100%;
   display: flex;
   align-items: center;
@@ -22,16 +22,16 @@
 .inputBox {
   width: 100%;
   margin: 0 auto;
-  padding:10rpx 20rpx;
+  padding:0 30rpx;
   box-sizing: border-box;
 }
 
 .inputBox ul li {
-  font-size: 30rpx;
+  font-size: 32rpx;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f3f3f3;
-  padding: 20rpx 10rpx;
+  padding: 30rpx 0;
   justify-content: start;
 }
 
@@ -39,9 +39,9 @@
   width: 185rpx;
 }
 
-.inputBox ul li input {
+/* .inputBox ul li input {
   margin-left: 30rpx;
-}
+} */
 
 .code {
   height: 67rpx;
@@ -92,7 +92,10 @@ radio .wx-radio-input.wx-radio-input-checked::before{
   width:38%;
 }
 .change radio{
-  color: rgb(102, 102, 102)
+  color: rgb(102, 102, 102);
+  margin-right: 100rpx;
 }
-
+.change radio:last-child{
+  margin-right: 0;
+}
 
