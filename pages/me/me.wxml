@@ -1,73 +1,114 @@
 <!--pages/me/me.wxml-->
-<view class='meBg'>
-  <view class='usertx'>
-    <image src='../../images/tx.png'></image>
-    <view class='level'>
-      <image src='../../images/level.png'></image>
-      <text>1</text>
-    </view>
+
+<view class="loginBox" wx:if="{{user_id}}">
+  <view class="logoIng">
+    <image mode="aspectFill" src="/images/cishanLogon.png"></image>
   </view>
-  <view class='meName'>
-    <text>小魔力</text>
-    <view class='meJs'>
-      <image src='../../images/account.png'></image>
-      <text>游客</text>
-    </view>
+  <view class="loginFont">智在行智工小程序</view>
+  <view class="titleImg">
+    <image mode="aspectFill" src="/images/title.png"></image>
   </view>
+  <view class="inputBox">
+    <ul>
+      <li>
+        <text>姓名</text>
+        <input bindinput="nameInput" type='text' placeholder='请输入真实姓名' />
+      </li>
+      <li>
+        <text>手机号</text>
+        <input type='number' maxlength='11' bindinput="phoneInput" placeholder='请输入绑定手机号' />
+      </li>
+      <li>
+        <text>验证码</text>
+        <input type='text' bindinput='codeInput' placeholder='输入验证码' />
+        <view class="btnView">
+          <button disabled='{{isClick}}' bindtap="bindButtonTap" class="code">{{text}}</button>
+        </view>
+      </li>
+    </ul>
+  </view>
+  <view class="loginDownFont">
+    <view class="tanhao">!</view>
+    请填写真实姓名用于慈善活动报名
+  </view>
+  <view class="loginBtn" wx:if="{{phone=='' || name ==''}}">登录</view>
+  <view class="loginBtn" wx:if="{{phone!='' && name!=''}}" style='background: rgb(255, 165, 47)' bindtap='loginSub'>登录</view>
 </view>
 
-<view class='meContent'>
-  <view class='meListOne'>
-    <view class='oneCont' bindtap='loveExample'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/love.png'></image>
-        <text>爱的榜样</text>
+
+
+
+<view wx:if="{{!user_id}}">
+  <view class='meBg'>
+    <view class='usertx'>
+      <image src='../../images/tx.png'></image>
+      <view class='level'>
+        <image src='../../images/level.png'></image>
+        <text>1</text>
       </view>
-      <image src='../../images/back.png'></image>
     </view>
-    <view class='oneCont' bindtap='organization'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/zzjgHei.png'></image>
-        <text>组织架构</text>
+    <view class='meName'>
+      <text>小魔力</text>
+      <view class='meJs'>
+        <image src='../../images/account.png'></image>
+        <text>游客</text>
       </view>
-      <image src='../../images/back.png'></image>
-    </view>
-    <view class='oneCont' bindtap='notice'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/dingling.png'></image>
-        <text>通知</text>
-      </view>
-      <image src='../../images/back.png'></image>
-    </view>
-    <view class='oneCont' bindtap='donationReg'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/vip.png'></image>
-        <text>我的会员</text>
-      </view>
-      <image src='../../images/back.png'></image>
     </view>
   </view>
-  <view class='meListTwo'>
-    <view class='oneCont' bindtap='login'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/zhigong.png'></image>
-        <text>我是智工</text>
+
+  <view class='meContent'>
+    <view class='meListOne'>
+      <view class='oneCont' bindtap='loveExample'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/love.png'></image>
+          <text>爱的榜样</text>
+        </view>
+        <image src='../../images/back.png'></image>
       </view>
-      <image src='../../images/back.png'></image>
+      <view class='oneCont' bindtap='organization'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/zzjgHei.png'></image>
+          <text>组织架构</text>
+        </view>
+        <image src='../../images/back.png'></image>
+      </view>
+      <view class='oneCont' bindtap='notice'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/dingling.png'></image>
+          <text>通知</text>
+        </view>
+        <image src='../../images/back.png'></image>
+      </view>
+      <view class='oneCont' bindtap='donationReg'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/vip.png'></image>
+          <text>我的会员</text>
+        </view>
+        <image src='../../images/back.png'></image>
+      </view>
     </view>
-    <view class='oneCont' bindtap='edidPhone'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/phone.png'></image>
-        <text>修改手机号</text>
+    <view class='meListTwo'>
+      <view class='oneCont' bindtap='login'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/zhigong.png'></image>
+          <text>我是智工</text>
+        </view>
+        <image src='../../images/back.png'></image>
       </view>
-      <image src='../../images/back.png'></image>
-    </view>
-    <view class='oneCont' bindtap='clearStro'>
-      <view class='meLogo'>
-        <image mode='widthFix' src='../../images/clear.png'></image>
-        <text>清空缓存</text>
+      <view class='oneCont' bindtap='edidPhone'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/phone.png'></image>
+          <text>修改手机号</text>
+        </view>
+        <image src='../../images/back.png'></image>
       </view>
-      <image src='../../images/back.png'></image>
+      <view class='oneCont' bindtap='clearStro'>
+        <view class='meLogo'>
+          <image mode='widthFix' src='../../images/clear.png'></image>
+          <text>清空缓存</text>
+        </view>
+        <image src='../../images/back.png'></image>
+      </view>
     </view>
   </view>
 </view>

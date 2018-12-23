@@ -21,39 +21,39 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>手机号</text>
-      <input placeholder="请输入内容" bindinput='phoneInput' auto-focus/>
+      <input placeholder="请输入内容" maxlength='11' bindinput='phoneInput' />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text class='must'>单位</text>
-      <input placeholder="请输入内容" bindinput='danwei' auto-focus/>
+      <input placeholder="请输入内容" bindinput='danwei' />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text class='must'>职务</text>
-      <input placeholder="请输入内容" bindinput='zhiwu' auto-focus/>
+      <input placeholder="请输入内容" bindinput='zhiwu' />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>邮箱</text>
-      <input placeholder="请输入内容" bindinput='email' auto-focus/>
+      <input placeholder="请输入内容" bindinput='email' />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>身份证</text>
-      <input placeholder="请输入内容" bindinput='idcardInput' auto-focus/>
+      <input placeholder="请输入内容" bindinput='idcardInput' />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>出生日期</text>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{dateRl}}" style='width:13%'>
+      <picker bindchange="bindPickerChange" range-key="{{'value'}}" value="{{index}}" range="{{dateRl}}" style='width:13%'>
         <view class="picker">
-          {{dateRl[index]}}
+          {{dateRl[index].value}}
         </view>
       </picker>
       <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange" style='width:58%'>
@@ -78,9 +78,9 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>所属智工团</text>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <picker bindchange="bindTeamsChange" range-key="{{'vt_name'}}" value="{{teamsindex}}" range="{{team}}">
         <view class="picker">
-          {{array[index]}}
+          {{team[teamsindex].vt_name}}
         </view>
       </picker>
       <image src='../../images/back.png'></image>
@@ -94,15 +94,15 @@
   <view class='appList applong'>
     <view class="section">
       <text>参加过的慈善活动</text>
-      <input placeholder="请输入内容" auto-focus/>
+      <input placeholder="请输入内容" bindinput='hisAcitve' auto-focus/>
     </view>
   </view>
   <view class='appList applong'>
     <view class="section">
       <text>希望参加的慈善活动</text>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{cisanArr}}">
+      <picker bindchange="bindactiveChange" range-key="{{'act_title'}}" value="{{activeindex}}" range="{{wishActivity}}">
         <view class="picker">
-          {{array[index]}}
+          {{wishActivity[activeindex].act_title}}
         </view>
       </picker>
       <image src='../../images/back.png'></image>

@@ -1,13 +1,19 @@
-// pages/activityList/activityList.js
+//index.js
+//获取应用实例
 let storage = require('../../utils/storage.js')
 var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    showModal: false,
+    motto: 'Hello World',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    imgUrls: [],
+    activity: [],
+    indicatorDots: false,
+    autoplay: false,
+    interval: 5000,
+    duration: 1000,
     text: '获取验证码', //按钮文字
     currentTime: 60, //倒计时
     isClick: false,
@@ -15,9 +21,12 @@ Page({
     code: "",
     phone: "",
     name: "",
-    activityList:[],
-    search:"",
-    eid:""
+    showModal: false,
+    phone: storage.get_s("phone"),
+    acid:"",
+    person_id: storage.get_s("person_id"),
+    showCont:true
+
   },
   codeInput: function (e) {
     this.setData({
@@ -35,15 +44,6 @@ Page({
       phone: e.detail.value
     })
   },
-
-  sea:function(e){
-    this.setData({
-      search: e.detail.value
-    })
-  },
-
-
-
   bindButtonTap: function () {
     var that = this;
 
@@ -93,7 +93,6 @@ Page({
         }
       }, 1000);
 
-      //请求接口
       //获取验证码接口
       let codeList = {
         "type": "login",
@@ -129,19 +128,20 @@ Page({
 
     // };
   },
-
   showDialogBtn: function (e) {
     this.setData({
       showModal: true,
-      eid: e.target.id
+      acid: e.target.id
     })
   },
+
   preventTouchMove: function () {
+
   },
   hideModal: function () {
     this.setData({
-      name:"",
-      phone:"",
+      name: "",
+      phone: "",
       showModal: false
     });
   },
@@ -149,7 +149,7 @@ Page({
   onConfirm: function () {
     var that = this
     let participate = {
-      "activity_id": that.data.eid,
+      "activity_id": that.data.acid,
       "person_name": that.data.name,
       "person_phone": that.data.phone,
       "yzm": that.data.code
@@ -159,7 +159,7 @@ Page({
         app.toast("报名成功")
         this.hideModal();
         storage.set("person_id", res.data.data.person_id)
-      } else {
+      }else{
         wx.showToast({
           title: res.data.msg,
           icon: 'none',
@@ -168,78 +168,105 @@ Page({
       }
     });
   },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 活动列表
+  activityList: function () {
+    wx.navigateTo({
+      url: '../activityList/activityList'
+    })
+  },
+  //关于我们
+  about: function () {
+    wx.navigateTo({
+      url: '../about/about'
+    })
+  },
+  //组织架构
+  organization: function () {
+    wx.navigateTo({
+      url: '../organization/organization'
+    })
+  },
+  //大爱一元
+  donationReg: function () {
+    wx.navigateTo({
+      url: '../donationReg/donationReg'
+    })
+  },
+  //申请智工
+  applyAgreement: function () {
+    wx.navigateTo({
+      url: '../applyAgreement/applyAgreement'
+    })
+  },
+
+
+
+  onLoad: function() {
+    //轮播图
+    app.xhr('POST', '/player/list', '', '', (res) => {
+      // console.log(res)
+      this.setData({
+        imgUrls: res.data.data
+      })
+      //  console.log(this.data.imgUrls)
+    });
+
     // 首页活动展示
-    app.xhr('POST', '/activity/search', '', '', (res) => {
+    app.xhr('POST', '/activity/home', '', '', (res) => {
       this.setData({
-        activityList: res.data.data.data
+        activity: res.data.data
       })
-      console.log(this.data.activityList)
+      //  console.log(this.data.activity)
     });
-  },
 
 
-
-  searchList:function(){
-    var that = this
-    app.xhr('POST', '/activity/search', { keyword: that.data.search}, '', (res) => {
+    if (app.globalData.userInfo) {
       this.setData({
-        activityList: res.data.data.data
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
       })
-      console.log(this.data.activityList)
-    });
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  showsignup:function(){
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //点击允许后的用户信息
+  getUserInfo: function(e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+    //点击授权后跳转的页面
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
