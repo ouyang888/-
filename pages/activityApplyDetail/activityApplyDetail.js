@@ -11,7 +11,7 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    activityDetail:'',
+    items:'',
     act:""
   },
 
@@ -34,7 +34,7 @@ Page({
         })
       }
       this.setData({
-        activityDetail: res.data.data
+        items: res.data.data
       })
     });
   },
