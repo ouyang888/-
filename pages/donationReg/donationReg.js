@@ -18,21 +18,26 @@ Page({
    */
   onLoad: function(options) {
     app.xhr('POST', '/donor/record', '', '', (res) => {
-      console.log(res)
+      // console.log(res)
       this.setData({
         donation: res.data.data
       })
+<<<<<<< HEAD
 
       console.log(this.data.donation)
+=======
+      
+      // console.log(this.data.donation)
+>>>>>>> pppp
     });
 
     // 善款统计
     app.xhr('POST', '/donor/summary', '', '', (res) => {
-      console.log(res)
+      // console.log(res)
       this.setData({
         donationTotal: res.data.data
       })
-      console.log(this.data.donationTotal)
+      // console.log(this.data.donationTotal)
     });
     
   },

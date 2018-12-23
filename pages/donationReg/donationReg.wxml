@@ -1,15 +1,15 @@
 <!--pages/donationReg/donationReg.wxml-->
-<view class='donatMony'>
+<view class='donatMony' wx:for="{{donationTotal}}" wx:key="i">
      <view class='donatCont'>
-          <view>2,568</view>
+          <view>{{item.history}}</view>
           <text>历史捐款（元）</text>
      </view>
      <view class='donatCont'>
-          <view>352</view>
+          <view>{{item.total}}</view>
           <text>捐款人数（人）</text>
      </view>
      <view class='donatCont'>
-          <view>260</view>
+          <view>{{item.today}}</view>
           <text>今日捐款（元）</text>
      </view>
 </view>
@@ -24,63 +24,24 @@
           </view>
           <view class='searBtn' bindtap="search">搜索</view>
      </view>
-     <view class='donatTit'>
-          <view>人员列表(256)</view>
+     <view class='donatTit' wx:for="{{donationTotal}}" wx:key="i">
+          <view>人员列表({{item.total}})</view>
           <view class='donatAdd' bindtap='addPeople'>
                <image src='../../images/add.png'></image>
                <text>添加</text>
           </view>
      </view>
-     <view class='donatPeoList'>
+     <view class='donatPeoList' wx:for="{{donation}}">
           <view class='donatManCont'>
                <view class='manMsg'>
-                    <image src='../../images/zz2.png'></image>
+                    <image src='{{item.m_avatar}}'></image>
                     <view>
-                         <view>李明</view>
-                         <text>最近捐款：2017-06-12</text>
+                         <view>{{item.d_name}}</view>
+                         <text>最近捐款：{{item.d_last_pay_time}}</text>
                     </view>
                </view>
                <view class='manEdit'>
-                    <button type="default" bindtap='donationRecord'>明细</button>
-                    <button type="primary">登记</button>
-               </view>
-          </view>
-          <view class='donatManCont'>
-               <view class='manMsg'>
-                    <image src='../../images/zz2.png'></image>
-                    <view>
-                         <view>李明</view>
-                         <text>最近捐款：2017-06-12</text>
-                    </view>
-               </view>
-               <view class='manEdit'>
-                    <button type="default">明细</button>
-                    <button type="primary">登记</button>
-               </view>
-          </view>
-          <view class='donatManCont'>
-               <view class='manMsg'>
-                    <image src='../../images/zz2.png'></image>
-                    <view>
-                         <view>李明</view>
-                         <text>最近捐款：2017-06-12</text>
-                    </view>
-               </view>
-               <view class='manEdit'>
-                    <button type="default">明细</button>
-                    <button type="primary">登记</button>
-               </view>
-          </view>
-          <view class='donatManCont'>
-               <view class='manMsg'>
-                    <image src='../../images/zz2.png'></image>
-                    <view>
-                         <view>李明</view>
-                         <text>最近捐款：2017-06-12</text>
-                    </view>
-               </view>
-               <view class='manEdit'>
-                    <button type="default">明细</button>
+                    <button type="default" bindtap='donationRecord' id="">明细</button>
                     <button type="primary">登记</button>
                </view>
           </view>
