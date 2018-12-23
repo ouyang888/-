@@ -1,6 +1,6 @@
 <view>
   <swiper class="swiperHome" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key="i" >
+    <block wx:for="{{imgUrls}}" wx:key="i">
       <swiper-item>
         <image src="{{item.player_img}}" class="slide-image" width="355" height="150" />
       </swiper-item>
@@ -34,19 +34,21 @@
       <text>慈善活动</text>
       <view bindtap='activityList'>查看更多 > </view>
     </view>
-    <view class="csList" wx:for="{{activity}}" wx:key="i" >
-      <view class='csCont'>
-        <image src='{{item.act_cover}}'></image>
-        <text>{{item.act_title}}</text>
-        <view class='cssDateBtn'>
-          <view>
-            <text>地点：{{item.act_location}}</text>
-            <text>开始时间：{{item.act_etime}}</text>
+    <view class="csList" wx:for="{{activity}}" wx:key="i">
+      <navigator url='../activityApplyDetail/activityApplyDetail?id={{item.act_id}}'>
+        <view class='csCont'>
+          <image src='{{item.act_cover}}'></image>
+          <text>{{item.act_title}}</text>
+          <view class='cssDateBtn'>
+            <view>
+              <text>地点：{{item.act_location}}</text>
+              <text>开始时间：{{item.act_etime}}</text>
+            </view>
+            <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id==''}}">立即报名</button>
+            <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id!=''}}">已经报名</button>
           </view>
-          <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id==''}}">立即报名</button>
-          <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id!=''}}">已经报名</button>
         </view>
-      </view>
+      </navigator>
     </view>
   </view>
 </view>
@@ -76,6 +78,6 @@
   </view>
   <view class="modal-footer">
     <view class="btn-confirm" wx:if="{{phone=='' || name ==''}}">确定</view>
-     <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
+    <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
   </view>
 </view>

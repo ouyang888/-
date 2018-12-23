@@ -1,4 +1,5 @@
 // pages/editPhone/editPhone.js
+var app = getApp()
 Page({
 
   /**
@@ -10,7 +11,8 @@ Page({
     isClick: false,
     isLength: false,
     code: "", 
-    phone:""
+    phone:"",
+    userPhone:""
   },
 
   codeInput: function (e) {
@@ -30,22 +32,6 @@ Page({
    
     var phone = that.data.phone;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
-
-    if (phone == '') {
-      wx.showToast({
-        title: '手机号码不能为空',
-        icon: 'none',
-        duration: 2000,
-        color: '#929fff'
-      });
-    } else if (phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)) {
-      wx.showToast({
-        title: '手机号格式不正确',
-        icon: 'none',
-        duration: 2000,
-        color: '#929fff'
-      });
-    } else {
       //当手机号正确的时候提示用户短信验证码已经发送
       wx.showToast({
         title: '短信验证码已发送',
@@ -75,8 +61,17 @@ Page({
       }, 1000);
 
       //请求接口
+      let codeList = {
+        "type": "login",
+        "phone": that.data.userPhone
+      }
+      app.xhr('POST', '/message/send', codeList, '', (res) => {
+        if (res.data.code == 200) {
+          app.toast("发送成功")
+        }
+      });
 
-    };
+  
 
     //判断 当提示错误信息文字不为空 即手机号输入有问题时提示用户错误信息 并且提示完之后一定要让按钮为可用状态 因为点击按钮时设置了只要点击了按钮就让按钮禁用的情况
     // if (warn != null) {
@@ -105,7 +100,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    app.xhr('POST', '/member/info', '', '', (res) => {
+      this.setData({
+        userPhone: res.data.data.m_phone
+      })
+    });
   },
 
   /**

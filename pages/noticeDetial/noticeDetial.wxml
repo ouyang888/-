@@ -1,7 +1,7 @@
 <view class="bgColor">
   <view class="detailBox">
-    <view class="title">系统通知内容标题</view>
-    <view class="time">12-02 10:32</view>
-    <view class="content">通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字通知内容文字</view>
+    <view class="title">{{list.notice_title}}</view>
+    <view class="time">{{list.notice_time}}</view>
+    <view class="content">{{list.notice_content}}</view>
   </view>
 </view>

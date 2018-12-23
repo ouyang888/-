@@ -9,7 +9,7 @@
   <ul>
     <li>
       <text>当前绑定号码</text>
-      <input type='number' class="bangding" maxlength='11' disabled='false' bindinput="phoneInput" value="{{phone.toHide('13888888888')}}" />
+      <input type='number' class="bangding" maxlength='11' disabled='false' bindinput="phoneInput" value="{{phone.toHide(userPhone)}}" />
     </li>
     <li>
       <text>验证码</text>

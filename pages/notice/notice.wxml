@@ -1,15 +1,17 @@
-<view class="notice" bindtap='noticeDetial' wx:for="{{notice}}" wx:key="i">
-  <view class="noticeBox">
-    <image mode="aspectFit" src='/images/tongzhi.png'></image>
-  </view>
-  <view class="rightBox">
-    <view class="conBox">
-      <view class="mas">{{item.notice_title}}</view>
-      <view class="content">{{item.notice_content}}</view>
-      <view class="time">{{item.notice_time}}</view>
+<view class="notice" wx:for="{{notice}}" wx:key="i">
+  <navigator url='../noticeDetial/noticeDetial?id={{item.notice_id}}'>
+    <view class="noticeBox">
+      <image mode="aspectFit" src='/images/tongzhi.png'></image>
     </view>
-    <view class="icon">
-      <image src='/images/back.png'></image>
+    <view class="rightBox">
+      <view class="conBox">
+        <view class="mas">{{item.notice_title}}</view>
+        <view class="content">{{item.notice_content}}</view>
+        <view class="time">{{item.notice_time}}</view>
+      </view>
+      <view class="icon">
+        <image src='/images/back.png'></image>
+      </view>
     </view>
-  </view>
+  </navigator>
 </view>

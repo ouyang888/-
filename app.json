@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/notice/notice",
-    "pages/index/index",
-    
     "pages/me/me",
+    "pages/notice/notice",
+    "pages/editPhone/editPhone",
+    "pages/index/index",
     "pages/applyForm/applyForm",
     "pages/donationReg/donationReg",
     "pages/applyAgreement/applyAgreement",
@@ -17,7 +17,6 @@
     "pages/loveExample/loveExample",
     "pages/addPeople/addPeople",
     "pages/login/login",
-    "pages/editPhone/editPhone",
     "pages/about/about"
   ],
   "window": {

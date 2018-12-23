@@ -14,15 +14,17 @@
 <view class="homecs">
   <view class="csList">
     <view class='csCont' wx:for="{{activityList}}" wx:key="i">
-      <image src='{{item.act_cover}}'></image>
-      <text>{{item.act_title}}</text>
-      <view class='cssDateBtn'>
-        <view>
-          <text>地点：{{item.act_location}}</text>
-          <text>开始时间：{{item.act_stime}}</text>
+      <navigator url='../activityApplyDetail/activityApplyDetail?id={{item.act_id}}'>
+        <image src='{{item.act_cover}}'></image>
+        <text>{{item.act_title}}</text>
+        <view class='cssDateBtn'>
+          <view>
+            <text>地点：{{item.act_location}}</text>
+            <text>开始时间：{{item.act_stime}}</text>
+          </view>
+          <button class="btn" bindtap="showDialogBtn" id="{{item.act_id}}">立即报名</button>
         </view>
-        <button class="btn" bindtap="showDialogBtn" id="{{item.act_id}}">立即报名</button>
-      </view>
+      </navigator>
     </view>
   </view>
 </view>
@@ -52,6 +54,6 @@
   </view>
   <view class="modal-footer">
     <view class="btn-confirm" wx:if="{{phone=='' || name ==''}}">确定</view>
-     <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
+    <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
   </view>
 </view>

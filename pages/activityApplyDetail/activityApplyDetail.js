@@ -12,18 +12,30 @@ Page({
     plain: false,
     loading: false,
     activityDetail:'',
+    act:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.xhr('POST', '/activity/detail', '', '', (res) => {
-      // console.log(res)
+    app.xhr('POST', '/activity/detail', { id: options.id}, '', (res) => {
+      if (res.data.data.act_type==1){
+        this.setData({
+          act: "教育"
+        })
+      } else if (res.data.data.act_type == 2){
+        this.setData({
+          act: "育暖"
+        })
+      } else if (res.data.data.act_type == 3) {
+        this.setData({
+          act: "随喜"
+        })
+      }
       this.setData({
         activityDetail: res.data.data
       })
-      console.log(this.data.activityDetail)
     });
   },
 

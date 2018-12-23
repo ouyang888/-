@@ -9,11 +9,13 @@ Page({
   data: {
     notice:[]
   },
-  noticeDetial:function(){
-    wx.navigateTo({
-      url: '../noticeDetial/noticeDetial'
-    })
-  },
+
+  // noticeDetial:function(e){
+  //   console.log(e)
+  //   wx.navigateTo({
+  //     url: '../noticeDetial/noticeDetial'
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面加载

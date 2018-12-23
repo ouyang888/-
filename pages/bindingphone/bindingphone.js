@@ -1,4 +1,5 @@
 // pages/editPhone/editPhone.js
+var app = getApp()
 Page({
 
   /**
@@ -94,12 +95,19 @@ Page({
     // };
   },
 
-  //下一步
-  next: function () {
-    wx.navigateTo({
-      url: '../bindingphone/bindingphone'
-    })
+  //提交手机号码
+  phoneSub:function(){
+    var that = this
+    let list = {
+      "m_phone": that.data.phone,
+      "yzm": that.data.code
+    }
+    app.xhr('POST', '/member/info', list, '', (res) => {
+      app.toast("修改成功")
+    });
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载

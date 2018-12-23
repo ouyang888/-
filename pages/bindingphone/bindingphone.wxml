@@ -12,6 +12,6 @@
       </view>
     </li>
   </ul>
-  <view class="loginBtn" wx:if="{{code == ''}}">下一步</view>
-  <view class="loginBtn" wx:if="{{code!=''}}" style='background: rgb(255, 165, 47)' bindtap='next'>下一步</view>
+  <view class="loginBtn" wx:if="{{code == ''}}">确定</view>
+  <view class="loginBtn" wx:if="{{code!=''}}" style='background: rgb(255, 165, 47)' bindtap='phoneSub'>确定</view>
 </view>
