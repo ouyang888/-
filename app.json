@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/notice/notice",
     "pages/index/index",
-    "pages/home/home",
+    
     "pages/me/me",
     "pages/applyForm/applyForm",
     "pages/donationReg/donationReg",

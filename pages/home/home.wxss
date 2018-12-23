@@ -81,17 +81,17 @@ page {
 }
 
 .homeNav view {
-  font-size: 32rpx;
+  font-size: 24rpx;
   text-align: center;
 }
 
 .homeNav view image {
-  width: 110rpx;
-  height: 110rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 
 .homeNav view view {
-  margin-top: 20rpx;
+  margin-top: 18rpx;
 }
 
 .homecs {
@@ -132,7 +132,7 @@ page {
 }
 
 .csCont text {
-  font-size: 32rpx;
+  font-size: 28rpx;
 }
 
 .cssDateBtn {
@@ -146,6 +146,7 @@ page {
   font-size: 26rpx;
   display: table;
   color: #a0a0a0;
+  margin-top:14rpx;
 }
 
 .cssDateBtn button {

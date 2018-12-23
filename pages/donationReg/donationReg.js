@@ -9,7 +9,8 @@ Page({
   data: {
     focus: false,
     donation: [],
-    donationTotal:''
+    donationTotal: '',
+    name:''
   },
 
   /**
@@ -21,10 +22,11 @@ Page({
       this.setData({
         donation: res.data.data
       })
-      
+
       console.log(this.data.donation)
     });
 
+    // 善款统计
     app.xhr('POST', '/donor/summary', '', '', (res) => {
       console.log(res)
       this.setData({
@@ -32,6 +34,13 @@ Page({
       })
       console.log(this.data.donationTotal)
     });
+    
+  },
+
+  nameInput: function (e) {
+    this.setData({
+      name: e.detail.value
+    })
   },
 
   addPeople: function() {
@@ -45,6 +54,18 @@ Page({
     wx.navigateTo({
       url: '../donationRecord/donationRecord'
     })
+  },
+
+  //搜索
+  search: function() {
+    app.xhr('POST', '/donor/record', {
+      keyword: this.data.name
+    }, '', (res) => {
+      this.setData({
+        donation: res.data.data.data
+      })
+      // console.log(this.data.organ)
+    });
   },
 
   /**

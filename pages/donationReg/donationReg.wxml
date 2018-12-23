@@ -19,10 +19,10 @@
           <view class='organSea'>
                <image src='../../images/search.png'></image>
                <view class="section">
-                    <input placeholder="请输入姓名" focus="{{focus}}" />
+                    <input placeholder="请输入姓名" bindinput="nameInput" focus="{{focus}}" />
                </view>
           </view>
-          <view class='searBtn'>搜索</view>
+          <view class='searBtn' bindtap="search">搜索</view>
      </view>
      <view class='donatTit'>
           <view>人员列表(256)</view>
