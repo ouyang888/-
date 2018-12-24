@@ -208,18 +208,21 @@ Page({
   },
 
 
+onShow:function(){
+  if (storage.get_s("phone") != '') {
+    this.setData({
+      user_id: false
+    })
+  }
+},
 
   onLoad: function() {
-    if (storage.get_s("phone") != '') {
-      this.setData({
-        user_id: false
-      })
-    }
+    
     //轮播图
     app.xhr('POST', '/player/list', '', '', (res) => {
       // console.log(res)
       this.setData({
-        imgUrls: res.data.data
+        imgUrls: res.data.data,
       })
       //  console.log(this.data.imgUrls)
     });
