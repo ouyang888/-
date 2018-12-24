@@ -2,23 +2,24 @@
   <ul>
     <li>
       <text>姓名</text>
-      <input type='number' maxlength='11' bindinput="phoneInput" placeholder='请输入姓名' />
+      <input type='number' maxlength='11' bindinput="nameInput" placeholder='请输入姓名' />
     </li>
     <li>
       <text>性别</text>
-      <radio-group class="radio-group change">
-        <radio value="0">男</radio>
-        <radio value="1">女</radio>
+     <radio-group class="radio-group" bindchange="radioChange">
+        <label wx:key="" class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color='#FFA42F'  />{{item.value}}
+        </label>
       </radio-group>
     </li>
     <li>
       <text>手机号</text>
-      <input type='text' bindinput="codeInput" placeholder='请输入手机号' />
+      <input type='text' bindinput="phoneInput" maxlength='11' placeholder='请输入手机号' />
     </li>
     <li>
       <text>职务</text>
-      <input type='text' bindinput="codeInput" placeholder='请输入职务' />
+      <input type='text' bindinput="positionInpuit" placeholder='请输入职务' />
     </li>
   </ul>
-  <view class="loginBtn">提交</view>
+  <view class="loginBtn" bindtap='subAddPeople'>提交</view>
 </view>

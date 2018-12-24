@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/donationReg/donationReg",
+    "pages/addPeople/addPeople",
+    "pages/home/home",
     "pages/me/me",
     "pages/notice/notice",
     "pages/editPhone/editPhone",
@@ -15,7 +16,6 @@
     "pages/organization/organization",
     "pages/activityApplyDetail/activityApplyDetail",
     "pages/loveExample/loveExample",
-    "pages/addPeople/addPeople",
     "pages/login/login",
     "pages/about/about"
   ],

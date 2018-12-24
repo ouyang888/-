@@ -25,7 +25,7 @@
           <view class='searBtn' bindtap="search">搜索</view>
      </view>
      <view class='donatTit' wx:for="{{donationTotal}}" wx:key="i">
-          <view>人员列表({{item.total}})</view>
+          <view>人员列表({{peoples.total}})</view>
           <view class='donatAdd' bindtap='addPeople'>
                <image src='../../images/add.png'></image>
                <text>添加</text>

@@ -10,7 +10,8 @@ Page({
     focus: false,
     donation: [],
     donationTotal: '',
-    name:''
+    name:'',
+    peoples:""
   },
 
   /**
@@ -20,15 +21,9 @@ Page({
     app.xhr('POST', '/donor/record', '', '', (res) => {
       // console.log(res)
       this.setData({
-        donation: res.data.data
+        donation: res.data.data.data,
+        peoples:res.data.data
       })
-<<<<<<< HEAD
-
-      console.log(this.data.donation)
-=======
-      
-      // console.log(this.data.donation)
->>>>>>> pppp
     });
 
     // 善款统计
@@ -47,6 +42,8 @@ Page({
       name: e.detail.value
     })
   },
+
+
 
   addPeople: function() {
     wx.navigateTo({
@@ -69,7 +66,6 @@ Page({
       this.setData({
         donation: res.data.data.data
       })
-      // console.log(this.data.organ)
     });
   },
 
