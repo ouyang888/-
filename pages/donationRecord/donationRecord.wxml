@@ -1,11 +1,11 @@
 <!--pages/donationRecord/donationRecord.wxml-->
 <view class='donahead'>
-  <view class='donaleft'>
+  <view class='donaleft' wx:for="{{summary}}" wx:key="i">
     <text>2018年2月</text>
     <view class='donaJk'>
-      <text>次数：23</text>
+      <text>次数：{{item.count}}</text>
       <text>捐款额：¥530</text>
-      <text>总捐款额：¥1080</text>
+      <text>总捐款额：¥{{item.total}}</text>
     </view>
   </view>
   <view class='donarig'>
@@ -21,46 +21,11 @@
 </view>
 
 <view class='donaList'>
-  <view class='donaCont'>
+  <view class='donaCont' wx:for="{{donationRe}}" wx:key="i"> 
     <view class='donacontLeft'>
       <view>慈善成功</view>
-      <text>2018-02-03 08:52</text>
+      <text>{{item.detail_atime}}</text>
     </view>
-    <view class='donacontRig'>+1.0</view>
-  </view>
-  <view class='donaCont'>
-    <view class='donacontLeft'>
-      <view>慈善成功</view>
-      <text>2018-02-03 08:52</text>
-    </view>
-    <view class='donacontRig'>+1.0</view>
-  </view>
-  <view class='donaCont'>
-    <view class='donacontLeft'>
-      <view>慈善成功</view>
-      <text>2018-02-03 08:52</text>
-    </view>
-    <view class='donacontRig'>+1.0</view>
-  </view>
-  <view class='donaCont'>
-    <view class='donacontLeft'>
-      <view>慈善成功</view>
-      <text>2018-02-03 08:52</text>
-    </view>
-    <view class='donacontRig'>+1.0</view>
-  </view>
-  <view class='donaCont'>
-    <view class='donacontLeft'>
-      <view>慈善成功</view>
-      <text>2018-02-03 08:52</text>
-    </view>
-    <view class='donacontRig'>+1.0</view>
-  </view>
-  <view class='donaCont'>
-    <view class='donacontLeft'>
-      <view>慈善成功</view>
-      <text>2018-02-03 08:52</text>
-    </view>
-    <view class='donacontRig'>+1.0</view>
+    <view class='donacontRig'>{{item.detail_money}}</view>
   </view>
 </view>

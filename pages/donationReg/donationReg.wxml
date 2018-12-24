@@ -41,9 +41,30 @@
                     </view>
                </view>
                <view class='manEdit'>
-                    <button type="default" bindtap='donationRecord' id="">明细</button>
-                    <button type="primary">登记</button>
+                    <button type="default" bindtap='donationRecord' id="{{item.d_id}}">明细</button>
+                    <button type="primary" bindtap='showDialogBtn' id="{{item.d_id}}">登记</button>
                </view>
           </view>
      </view>
+</view>
+
+
+<!-- 弹框 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="inputBox">
+    <ul>
+      <li>
+        <text>善款金额<text style='color:red'>*</text></text>
+        <input type='number' bindinput="moneyInput" placeholder='请输入捐款金额' />
+      </li>
+      <li>
+        <text>备注信息</text>
+        <input type='number' bindinput="beizhuInput" placeholder='请输入备注信息' />
+      </li>
+    </ul>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" style='background:rgb(255,164,49)' bindtap="subMoney">完成</view>
+  </view>
 </view>

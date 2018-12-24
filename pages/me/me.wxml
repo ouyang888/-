@@ -87,7 +87,7 @@
       </view>
     </view>
     <view class='meListTwo'>
-      <view class='oneCont' bindtap='login'>
+      <view class='oneCont' bindtap='login' wx:if="{{user_id}}">
         <view class='meLogo'>
           <image mode='widthFix' src='../../images/zhigong.png'></image>
           <text>我是智工</text>

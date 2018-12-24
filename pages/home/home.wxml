@@ -19,11 +19,11 @@
       <image src='../../images/hdhg.png'></image>
       <view>活动回顾</view>
     </view>
-    <view bindtap='donationReg' wx:if="{{phone!=''}}">
+    <view bindtap='donationReg' wx:if="{{!user_id}}">
       <image src='../../images/dayy.png'></image>
       <view>大爱一元</view>
     </view>
-    <view bindtap='applyAgreement' wx:if="{{phone==''}}">
+    <view bindtap='applyAgreement' wx:if="{{user_id}}">
       <image src='../../images/sqzg.png'></image>
       <view>申请智工</view>
     </view>

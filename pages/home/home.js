@@ -25,7 +25,8 @@ Page({
     phone: storage.get_s("phone"),
     acid:"",
     person_id: storage.get_s("person_id"),
-    showCont:true
+    showCont:true,
+    user_id:true
 
   },
   codeInput: function (e) {
@@ -209,6 +210,11 @@ Page({
 
 
   onLoad: function() {
+    if (storage.get_s("phone") != '') {
+      this.setData({
+        user_id: false
+      })
+    }
     //轮播图
     app.xhr('POST', '/player/list', '', '', (res) => {
       // console.log(res)

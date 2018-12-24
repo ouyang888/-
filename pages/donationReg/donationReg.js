@@ -11,7 +11,11 @@ Page({
     donation: [],
     donationTotal: '',
     name:'',
-    peoples:""
+    peoples:"",
+    money:"",
+    beizhu:"",
+    showModal: false,
+    donorID:""
   },
 
   /**
@@ -36,10 +40,59 @@ Page({
     });
     
   },
+  showDialogBtn: function (e) {
+    this.setData({
+      showModal: true,
+      donorID: e.currentTarget.id
+    })
+  },
+
+  subMoney:function(){
+    let that = this
+    let list = {
+      donor_id: that.data.donorID,
+      detail_money: that.data.money,
+      detail_mark: that.data.beizhu
+    }
+    app.xhr('POST', '/donor/payMoney', list, '', (res) => {
+      if(res.data.code == 200){
+        app.toast("捐款完成")
+        this.setData({
+          showModal: false,
+        })
+        wx.navigateTo({
+          url: '../donationReg/donationReg'
+        })
+      }
+      
+    });
+
+
+   
+  },
+  hideModal: function () {
+    this.setData({
+      detail_money: "",
+      detail_mark: "",
+      showModal: false
+    });
+  },
+
 
   nameInput: function (e) {
     this.setData({
       name: e.detail.value
+    })
+  },
+
+  moneyInput:function(e){
+    this.setData({
+      money: e.detail.value
+    })
+  },
+  beizhuInput: function (e) {
+    this.setData({
+      beizhu: e.detail.value
     })
   },
 
@@ -52,9 +105,9 @@ Page({
   },
 
   // 捐款记录
-  donationRecord: function() {
+  donationRecord: function(e) {
     wx.navigateTo({
-      url: '../donationRecord/donationRecord'
+      url: '../donationRecord/donationRecord?id=' + e.currentTarget.id
     })
   },
 

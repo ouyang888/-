@@ -1,4 +1,5 @@
 // pages/donationRecord/donationRecord.js
+var app = getApp()
 Page({
 
   /**
@@ -6,6 +7,8 @@ Page({
    */
   data: {
     date: '2016-09-01',
+    donationRe:[],
+    summary:[]
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -17,7 +20,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.xhr('POST', '/donor/moneylog', { donor_id: options.id}, '', (res) => {
+      console.log(res)
+      this.setData({
+        donationRe:res.data.data.list.data,
+        summary: res.data.data.summary
+      })
+    });
   },
 
   /**
