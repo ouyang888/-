@@ -35,9 +35,11 @@
       <view bindtap='activityList'>查看更多 > </view>
     </view>
     <view class="csList" wx:for="{{activity}}" wx:key="i">
-      <navigator url='../activityApplyDetail/activityApplyDetail?id={{item.act_id}}'>
+      
         <view class='csCont'>
-          <image src='{{item.act_cover}}'></image>
+          <navigator url='../activityApplyDetail/activityApplyDetail?id={{item.act_id}}'>
+               <image src='{{item.act_cover}}'></image>
+          </navigator>
           <text>{{item.act_title}}</text>
           <view class='cssDateBtn'>
             <view>
@@ -48,7 +50,7 @@
             <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id!=''}}">已经报名</button>
           </view>
         </view>
-      </navigator>
+      
     </view>
   </view>
 </view>
