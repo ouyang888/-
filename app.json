@@ -1,44 +1,46 @@
 {
-  "pages": [
-    "pages/donationReg/donationReg",
-    "pages/addPeople/addPeople",
-    "pages/home/home",
-    "pages/me/me",
-    "pages/notice/notice",
-    "pages/editPhone/editPhone",
-    "pages/index/index",
-    "pages/applyForm/applyForm",
-    "pages/applyAgreement/applyAgreement",
-    "pages/donationRecord/donationRecord",
-    "pages/activityList/activityList",
-    "pages/bindingphone/bindingphone",
-    "pages/noticeDetial/noticeDetial",
-    "pages/organization/organization",
-    "pages/activityApplyDetail/activityApplyDetail",
-    "pages/loveExample/loveExample",
-    "pages/login/login",
-    "pages/about/about"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "images/homeIn.png",
-        "selectedIconPath": "images/homeOn.png"
-      },
-      {
-        "pagePath": "pages/me/me",
-        "text": "我的",
-        "iconPath": "images/meIn.png",
-        "selectedIconPath": "images/meOn.png"
-      }
-    ]
-  }
+     "pages": [
+          "pages/notice/notice",
+          "pages/activityList/activityList",
+          "pages/home/home",
+          "pages/donationReg/donationReg",
+          "pages/addPeople/addPeople",
+          "pages/me/me",
+          
+          "pages/editPhone/editPhone",
+          "pages/index/index",
+          "pages/applyForm/applyForm",
+          "pages/applyAgreement/applyAgreement",
+          "pages/donationRecord/donationRecord",
+          
+          "pages/bindingphone/bindingphone",
+          "pages/noticeDetial/noticeDetial",
+          "pages/organization/organization",
+          "pages/activityApplyDetail/activityApplyDetail",
+          "pages/loveExample/loveExample",
+          "pages/login/login",
+          "pages/about/about"
+     ],
+     "window": {
+          "backgroundTextStyle": "light",
+          "navigationBarBackgroundColor": "#fff",
+          "navigationBarTitleText": "WeChat",
+          "navigationBarTextStyle": "black"
+     },
+     "tabBar": {
+          "list": [
+               {
+                    "pagePath": "pages/home/home",
+                    "text": "首页",
+                    "iconPath": "images/homeIn.png",
+                    "selectedIconPath": "images/homeOn.png"
+               },
+               {
+                    "pagePath": "pages/me/me",
+                    "text": "我的",
+                    "iconPath": "images/meIn.png",
+                    "selectedIconPath": "images/meOn.png"
+               }
+          ]
+     }
 }

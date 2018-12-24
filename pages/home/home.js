@@ -223,7 +223,7 @@ Page({
       this.setData({
         activity: res.data.data
       })
-      //  console.log(this.data.activity)
+       console.log(this.data.activity)
     });
 
 

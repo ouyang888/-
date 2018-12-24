@@ -31,7 +31,7 @@
                <text>添加</text>
           </view>
      </view>
-     <view class='donatPeoList' wx:for="{{donation}}">
+     <view class='donatPeoList' wx:for="{{donation}}" wx:key='i'>
           <view class='donatManCont'>
                <view class='manMsg'>
                     <image src='{{item.m_avatar}}'></image>

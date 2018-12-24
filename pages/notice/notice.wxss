@@ -1,63 +1,69 @@
 /* Pages/notice/notice.wxss */
 
 .notice {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: 30rpx;
-  justify-content: center
+     width: 100%;
+     display: flex;
+     align-items: center;
+     padding-top: 30rpx;
+     justify-content: center;
+}
+
+.notice navigator {
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
 
 .noticeBox {
-  width: 80rpx;
-  text-align: left;
-  height: 80rpx;
+     width: 80rpx;
+     text-align: left;
+     height: 80rpx;
 }
 
 .noticeBox image {
-  display: initial;
-  width: 100%;
+     display: initial;
+     width: 100%;
 }
 
 .conBox {
-  margin-left: 22rpx;
-  line-height: 45rpx;
-  width: 100%;
+     margin-left: 22rpx;
+     line-height: 45rpx;
+     width: 100%;
 }
 
 .mas {
-  font-size: 28rpx;
-  color: rgb(51, 51, 51);
+     font-size: 28rpx;
+     color: rgb(51, 51, 51);
 }
 
 .content {
-  font-size: 22rpx;
-  color: rgb(128, 128, 128);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp:1;
-  overflow: hidden;
-  width: 510rpx;
+     font-size: 22rpx;
+     color: rgb(128, 128, 128);
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 1;
+     overflow: hidden;
+     width: 510rpx;
 }
 
 .time {
-  font-size: 22rpx;
-  color: rgb(189, 189, 189);
-  padding-bottom: 30rpx;
+     font-size: 22rpx;
+     color: rgb(189, 189, 189);
+     padding-bottom: 30rpx;
 }
 
 .icon {
-  display: flex;
-  align-items: center;
-  margin-left: 30rpx;
+     display: flex;
+     align-items: center;
+     margin-left: 30rpx;
 }
 
 .icon image {
-  width: 40rpx;
-  height: 40rpx;
+     width: 40rpx;
+     height: 40rpx;
 }
 
 .rightBox {
-  display: flex;
-  border-bottom: 1px solid rgb(229, 229, 229);
+     display: flex;
+     border-bottom: 1px solid rgb(229, 229, 229);
 }
