@@ -3,7 +3,7 @@
   <view class='organSea'>
     <image src='../../images/search.png'></image>
     <view class="section">
-      <input placeholder="请输入姓名" bindinput="nameInput" auto-focus/>
+      <input placeholder="请输入姓名" bindinput="nameInput" bindconfirm="search" auto-focus/>
     </view>
   </view>
   <view class='searBtn' bindtap="search">搜索</view>
@@ -16,7 +16,7 @@
     </view>
     <view class='organTxt'>
       <view>{{item.v_name}}</view>
-      <text>{{item.v_position}}</text>
+      <text>{{position}}</text>
     </view>
   </view>
 </view>

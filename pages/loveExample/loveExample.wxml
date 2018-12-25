@@ -17,7 +17,7 @@
       <view>LV3</view>
       <view>LV4</view>
     </view>
-    <progress percent="80" color='#FEA432' border-radius='12px' backgroundColor='#4D5667' />
+    <progress percent="10" color='#FEA432' border-radius='12px' backgroundColor='#4D5667' />
     <view class='vipTxt'>
       <view>爱心智工</view>
       <view>达人智工</view>

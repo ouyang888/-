@@ -8,6 +8,7 @@ Page({
   data: {
     organ: [],
     name: "",
+    position:""
   },
 
   /**
@@ -19,7 +20,37 @@ Page({
       this.setData({
         organ: res.data.data.data
       })
-      // console.log(this.data.organ)
+      for (let i = 0; i < this.data.organ.length; ++i) {
+        if (this.data.organ[i].v_position == 0){
+          this.setData({
+            position :"普通智工"
+          })
+        } else if (this.data.organ[i].v_position == 10){
+          this.setData({
+            position: "副团长"
+          })
+        } else if (this.data.organ[i].v_position == 20) {
+          this.setData({
+            position: "团长"
+          })
+        } else if (this.data.organ[i].v_position == 30) {
+          this.setData({
+            position: "秘书"
+          })
+        } else if (this.data.organ[i].v_position == 40) {
+          this.setData({
+            position: "秘书长"
+          })
+        } else if (this.data.organ[i].v_position == 50) {
+          this.setData({
+            position: "董事"
+          })
+        } else if (this.data.organ[i].v_position == 60) {
+          this.setData({
+            position: "董事长"
+          })
+        }
+      }
     });
   },
   nameInput: function (e) {
@@ -34,7 +65,6 @@ Page({
       this.setData({
         organ: res.data.data.data
       })
-      // console.log(this.data.organ)
     });
   },
 

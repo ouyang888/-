@@ -63,7 +63,7 @@
     <ul>
       <li>
         <text>姓名</text>
-        <input type='number' maxlength='11' bindinput="nameInput" placeholder='请输入真实姓名' />
+        <input type='text' maxlength='11' bindinput="nameInput" placeholder='请输入真实姓名' />
       </li>
       <li>
         <text>手机号</text>

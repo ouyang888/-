@@ -1,6 +1,6 @@
 <!--pages/me/me.wxml-->
 
-<view class="loginBox" wx:if="{{user_id}}">
+<view class="loginBox" wx:if="{{!user_id}}">
   <view class="logoIng">
     <image mode="aspectFill" src="/images/logo.png"></image>
   </view>
@@ -37,7 +37,7 @@
 
 
 
-<view wx:if="{{!user_id}}">
+<view wx:if="{{user_id}}">
   <view class='meBg'>
     <view class='usertx'>
       <image src='../../images/tx.png'></image>
@@ -87,7 +87,7 @@
       </view>
     </view>
     <view class='meListTwo'>
-      <view class='oneCont' bindtap='login' wx:if="{{user_id}}">
+      <view class='oneCont' bindtap='unLogin' wx:if="{{!showZG}}">
         <view class='meLogo'>
           <image mode='widthFix' src='../../images/zhigong.png'></image>
           <text>我是智工</text>

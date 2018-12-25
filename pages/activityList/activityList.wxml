@@ -3,10 +3,10 @@
   <view class="search">
     <view class="df search_arr">
       <icon class="searchcion" size='16' type='search'></icon>
-      <input bindinput='sea' placeholder="搜索活动标题" />
+      <input bindinput='sea' bindconfirm="searchList" placeholder="搜索活动标题" />
     </view>
   </view>
-  <view class='sousuo' bindtap='searchList'>搜索</view>
+  <view class='sousuo' bindtap='searchList' >搜索</view>
 </view>
 
 

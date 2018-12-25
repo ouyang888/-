@@ -15,7 +15,8 @@ Page({
     user_id: true,
     code: "",
     showBtn:true,
-    strLogin: storage.get_s("phone")
+    strLogin: storage.get_s("phone"),
+    showZG:false
   },
   //修改手机号码
   edidPhone: function() {
@@ -106,7 +107,8 @@ Page({
         app.toast("登录成功")
         storage.set("phone", res.data.data.m_phone)
         that.setData({
-          user_id: false
+          user_id: true,
+          showZG: true
         })
       }else{
         wx.showToast({
@@ -172,12 +174,15 @@ Page({
       app.xhr('POST', '/message/send', codeList, '', (res) => {
         if (res.data.code == 200) {
           app.toast("发送成功")
-          that.setData({
-            user_id: false
-          })
         }
       });
     };
+  },
+
+  unLogin:function(){
+    this.setData({
+      user_id: false,
+    })
   },
 
   /**
@@ -186,7 +191,8 @@ Page({
   onLoad: function(options) {
     if (storage.get_s("phone") != ''){
       this.setData({
-        user_id: false
+        user_id: true,
+        showZG:true
       })
     }
   },

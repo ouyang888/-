@@ -141,7 +141,7 @@ page {
 .loginBox {
   padding-top: 126rpx;
   color: #101010;
-  font-family: STXinwei;
+  font-family: PingFang SC;
   font-weight: bold;
   background:#fff;
   padding-bottom:30px;
