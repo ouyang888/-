@@ -53,6 +53,13 @@
         <image src='../../images/account.png'></image>
         <text>游客</text>
       </view>
+      <view class='meJs' wx:if="{{showZG}}">
+        <image src='../../images/aixingSmall.png'></image>
+        <text>爱心智工</text>
+      </view>
+    </view>
+    <view class="meJyz" wx:if="{{showZG}}">
+      经验值：260
     </view>
   </view>
 
@@ -79,7 +86,7 @@
         </view>
         <image src='../../images/back.png'></image>
       </view>
-      <view class='oneCont' bindtap='donationReg'>
+      <view class='oneCont' bindtap='donationReg' wx:if="{{showZG}}">
         <view class='meLogo'>
           <image mode='widthFix' src='../../images/vip.png'></image>
           <text>我的会员</text>
@@ -95,7 +102,7 @@
         </view>
         <image src='../../images/back.png'></image>
       </view>
-      <view class='oneCont' bindtap='edidPhone'>
+      <view class='oneCont' bindtap='edidPhone' wx:if="{{showZG}}">
         <view class='meLogo'>
           <image mode='widthFix' src='../../images/phone.png'></image>
           <text>修改手机号</text>
