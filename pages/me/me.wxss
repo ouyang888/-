@@ -175,10 +175,12 @@ page {
 
 .inputBox ul li text {
   width: 100rpx;
+  font-size:34rpx;
 }
 
 .inputBox ul li input {
   margin-left: 30rpx;
+  font-weight: normal;
 }
 
 .code {
