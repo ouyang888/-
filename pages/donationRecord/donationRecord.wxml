@@ -1,27 +1,29 @@
 <!--pages/donationRecord/donationRecord.wxml-->
 <view class='donahead'>
   <view class='donaleft' wx:for="{{summary}}" wx:key="i">
-    <text>2018年2月</text>
+    <!-- <text>2018年2月</text> -->
+    <view class='donarig'>
+      <!-- <image src='../../images/date.png'></image> -->
+      <view class="section">
+        <picker mode="date" fields="month" value="{{date}}" start="2015-09" bindchange="bindDateChange">
+          <view class="picker">
+            <text>{{date}}</text>
+            <image src='../../images/date.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
     <view class='donaJk'>
       <text>次数：{{item.count}}</text>
       <text>捐款额：¥530</text>
       <text>总捐款额：¥{{item.total}}</text>
     </view>
   </view>
-  <view class='donarig'>
-    <image src='../../images/date.png'></image>
-    <!-- <view class="section">
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-        <view class="picker">
-          <image src='../../images/date.png'></image> {{date}}
-        </view>
-      </picker>
-    </view> -->
-  </view>
+
 </view>
 
 <view class='donaList'>
-  <view class='donaCont' wx:for="{{donationRe}}" wx:key="i"> 
+  <view class='donaCont' wx:for="{{donationRe}}" wx:key="i">
     <view class='donacontLeft'>
       <view>慈善成功</view>
       <text>{{item.detail_atime}}</text>

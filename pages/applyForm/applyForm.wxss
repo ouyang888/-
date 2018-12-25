@@ -25,7 +25,7 @@ page {
 .appList .section text{
   font-size:32rpx;
   margin-right: 20rpx;
-  width:160rpx;
+  width:170rpx;
 
 }
 

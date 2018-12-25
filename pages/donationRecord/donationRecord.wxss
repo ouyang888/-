@@ -14,10 +14,20 @@ page {
 .donarig image{
   width: 50rpx;
   height: 50rpx;
+  position: relative;
+  top:18rpx;
+}
+
+.donarig .section picker view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .donaleft{
   font-size:26rpx;
+  width: 100%;
 }
 
 .donaJk text{

@@ -74,7 +74,7 @@ page {
 
 .homeNav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 30rpx 20rpx;
   background: #fff;
