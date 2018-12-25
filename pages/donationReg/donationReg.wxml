@@ -19,7 +19,7 @@
           <view class='organSea'>
                <image src='../../images/search.png'></image>
                <view class="section">
-                    <input placeholder="请输入姓名" bindinput="nameInput" focus="{{focus}}" />
+                    <input placeholder="请输入姓名" bindconfirm="search" bindinput="nameInput" focus="{{focus}}" />
                </view>
           </view>
           <view class='searBtn' bindtap="search">搜索</view>
@@ -68,3 +68,5 @@
     <view class="btn-confirm" style='background:rgb(255,164,49)' bindtap="subMoney">完成</view>
   </view>
 </view>
+
+<view class="showNothing" wx:if="{{showcon}}">{{msg}}</view>

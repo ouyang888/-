@@ -278,3 +278,11 @@ input-holder {
 .codeInputs{
   margin-left: 10rpx;
 }
+
+
+.showNothing{
+  font-size: 15px;
+  color: #8D8D8D;
+  text-align: center;
+  margin-top: 20px;
+}

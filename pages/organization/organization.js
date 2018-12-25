@@ -8,7 +8,9 @@ Page({
   data: {
     organ: [],
     name: "",
-    position:""
+    position:"",
+    msg:"",
+    showcon:false
   },
 
   /**
@@ -65,6 +67,16 @@ Page({
       this.setData({
         organ: res.data.data.data
       })
+      if (res.data.data.data.length == 0){
+        this.setData({
+          showcon:true,
+          msg:"无该用户信息，请输入正确姓名"
+        })
+      }else{
+        this.setData({
+          showcon: false
+        })
+      }
     });
   },
 

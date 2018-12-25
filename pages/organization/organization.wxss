@@ -70,3 +70,8 @@ page {
 .organList .organCont:last-child{
   border-bottom: none;
 }
+.showNothing{
+  font-size: 15px;
+  color: #8D8D8D;
+  text-align: center
+}

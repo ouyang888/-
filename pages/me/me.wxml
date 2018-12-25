@@ -47,8 +47,9 @@
       </view>
     </view>
     <view class='meName'>
-      <text>小魔力</text>
-      <view class='meJs'>
+      <text wx:if="{{showZG}}">{{userName}}</text>
+      <text wx:if="{{!showZG}}">游客</text>
+      <view class='meJs' wx:if="{{!showZG}}">
         <image src='../../images/account.png'></image>
         <text>游客</text>
       </view>

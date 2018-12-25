@@ -15,7 +15,9 @@ Page({
     money:"",
     beizhu:"",
     showModal: false,
-    donorID:""
+    donorID:"",
+    msg: "",
+    showcon: false
   },
 
   /**
@@ -113,12 +115,20 @@ Page({
 
   //搜索
   search: function() {
-    app.xhr('POST', '/donor/record', {
-      keyword: this.data.name
-    }, '', (res) => {
+    app.xhr('POST', '/donor/record', {keyword: this.data.name}, '', (res) => {
       this.setData({
         donation: res.data.data.data
       })
+      if (res.data.data.data.length == 0) {
+        this.setData({
+          showcon: true,
+          msg: "无该用户信息，请输入正确姓名"
+        })
+      } else {
+        this.setData({
+          showcon: false
+        })
+      }
     });
   },
 

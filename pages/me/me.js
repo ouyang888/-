@@ -106,9 +106,11 @@ Page({
       if (res.data.code == 200) {
         app.toast("登录成功")
         storage.set("phone", res.data.data.m_phone)
+        storage.set("userName", res.data.data.m_real_name)
         that.setData({
           user_id: true,
-          showZG: true
+          showZG: true,
+          userName: res.data.data.m_real_name
         })
       }else{
         wx.showToast({
@@ -195,6 +197,9 @@ Page({
         showZG:true
       })
     }
+    this.setData({
+      userName: storage.get_s("userName")
+    })
   },
 
   /**

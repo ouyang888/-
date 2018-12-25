@@ -57,3 +57,5 @@
     <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
   </view>
 </view>
+
+<view class="showNothing" wx:if="{{showcon}}">{{msg}}</view>
