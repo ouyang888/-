@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/applyForm/applyForm",
     "pages/index/index",
     "pages/organization/organization",
     "pages/me/me",
@@ -8,7 +9,6 @@
     "pages/addPeople/addPeople",
     "pages/notice/notice",
     "pages/editPhone/editPhone",
-    "pages/applyForm/applyForm",
     "pages/applyAgreement/applyAgreement",
     "pages/donationRecord/donationRecord",
     "pages/activityList/activityList",
