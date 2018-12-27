@@ -109,7 +109,7 @@ page {
 }
 
 .csTop text {
-  font-size: 32rpx;
+  font-size: 36rpx;
 }
 
 .csTop view {

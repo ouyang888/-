@@ -102,6 +102,7 @@ Page({
       if (res.data.code == 200) {
         app.toast("登录成功")
         storage.set("phone", res.data.data.m_phone)
+        storage.set("userName", res.data.data.m_real_name)
         wx.switchTab({
           url: '../me/me'
         })

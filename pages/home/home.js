@@ -196,10 +196,10 @@ Page({
     })
   },
   //组织架构
-  huigu: function () {
-    console.log(1111)
+  // 活动回顾
+  weChatPublic: function () {
     wx.navigateTo({
-      url: 'http://mp.weixin.qq.com/mp/homepage?__biz=MzAxNjc4MjE3NQ==&hid=4&sn=cdbb1d41a63549c3506f62f6b6fda470&scene=18#wechat_redirect'
+      url: '../weChatPublic/weChatPublic'
     })
   },
   //大爱一元
