@@ -9,7 +9,7 @@ page {
 
 .activImg{
   width: 100%;
-  height: 400rpx;
+  height: 380rpx;
 }
 
 .activImg image{
@@ -78,6 +78,7 @@ page {
   margin-bottom:15rpx;
   color:#656565;
   font-size:28rpx;
+  line-height:45rpx;
 }
 
 .activBtn{

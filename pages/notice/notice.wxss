@@ -1,23 +1,33 @@
 /* Pages/notice/notice.wxss */
-
+page {
+  background:rgb(247,247,247);
+}
 .notice {
      width: 100%;
      display: flex;
      align-items: center;
-     padding-top: 30rpx;
      justify-content: center;
+     background:#fff;
+     
+}
+
+.notice:last-child .rightBox{
+  border-bottom:none;
 }
 
 .notice navigator {
      display: flex;
      align-items: center;
      justify-content: center;
+     
 }
 
 .noticeBox {
      width: 80rpx;
      text-align: left;
      height: 80rpx;
+     margin-right:22rpx;
+
 }
 
 .noticeBox image {
@@ -49,7 +59,6 @@
 .time {
      font-size: 22rpx;
      color: rgb(189, 189, 189);
-     padding-bottom: 30rpx;
 }
 
 .icon {
@@ -66,4 +75,5 @@
 .rightBox {
      display: flex;
      border-bottom: 1px solid rgb(229, 229, 229);
+     padding:30rpx 0;
 }

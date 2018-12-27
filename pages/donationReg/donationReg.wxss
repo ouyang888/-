@@ -38,15 +38,16 @@ page {
 
 .organSearch {
      display: flex;
-     justify-content: space-between;
+     justify-content: center;
      align-items: center;
      background: #fff;
-     padding: 30rpx 40rpx;
+     padding: 30rpx 30rpx;
 }
 
 .searBtn {
      font-size: 30rpx;
      color: #8d8d8d;
+     margin-left:28rpx;
 }
 
 .organImg image {
@@ -68,7 +69,9 @@ page {
      border: 1px solid #e7e7e7;
      padding: 10rpx 20rpx;
      border-radius: 100rpx;
-     width: 75%;
+     width: 573rpx;
+     height: 70rpx;
+     box-sizing: border-box;
 }
 
 .organSea .section input {
@@ -110,7 +113,7 @@ page {
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding:40rpx 0rpx;
+     padding:30rpx 0rpx;
      border-bottom: 1px solid #e7e7e7
 }
 
@@ -140,13 +143,15 @@ page {
 }
 
 .manEdit button{
-     border-radius: 40rpx;
-     font-size:22rpx;
+     font-size:24rpx;
      border:1px solid #afafaf;
-     margin:0 15rpx;
+     margin:0 20rpx;
      /* border:none; */
      background:#fff;
-     width: 130rpx;
+     width: 120rpx;
+     height: 50rpx;
+     line-height: 50rpx;
+     border-radius:100rpx;
 }
 
 .manEdit button:last-child{
