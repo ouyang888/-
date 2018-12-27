@@ -1,13 +1,13 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/weChatPublic/weChatPublic",
     "pages/index/index",
     "pages/me/me",
     "pages/donationReg/donationReg",
     "pages/activityList/activityList",
     "pages/organization/organization",
     "pages/applyForm/applyForm",
-    "pages/weChatPublic/weChatPublic",
-    "pages/home/home",
     "pages/addPeople/addPeople",
     "pages/notice/notice",
     "pages/editPhone/editPhone",

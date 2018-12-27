@@ -195,7 +195,6 @@ Page({
       url: '../organization/organization'
     })
   },
-  //组织架构
   // 活动回顾
   weChatPublic: function () {
     wx.navigateTo({
