@@ -26,7 +26,8 @@ Page({
     acid:"",
     person_id: storage.get_s("person_id"),
     showCont:true,
-    user_id:true
+    user_id:true,
+    token: storage.get_s("token")
 
   },
   codeInput: function (e) {
@@ -192,6 +193,13 @@ Page({
   organization: function () {
     wx.navigateTo({
       url: '../organization/organization'
+    })
+  },
+  //组织架构
+  huigu: function () {
+    console.log(1111)
+    wx.navigateTo({
+      url: 'http://mp.weixin.qq.com/mp/homepage?__biz=MzAxNjc4MjE3NQ==&hid=4&sn=cdbb1d41a63549c3506f62f6b6fda470&scene=18#wechat_redirect'
     })
   },
   //大爱一元

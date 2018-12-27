@@ -15,7 +15,7 @@
       <image src='../../images/zzjg.png'></image>
       <view>组织架构</view>
     </view>
-    <view>
+    <view bindtap='huigu'>
       <image src='../../images/hdhg.png'></image>
       <view>活动回顾</view>
     </view>
@@ -46,8 +46,8 @@
               <text>地点：{{item.act_location}}</text>
               <text>开始时间：{{item.act_etime}}</text>
             </view>
-            <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id==''}}">立即报名</button>
-            <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{person_id!=''}}">已经报名</button>
+            <button bindtap="showDialogBtn" id="{{item.act_id}}" wx:if="{{item.is_join==true}}">立即报名</button>
+            <button wx:if="{{item.is_join==false}}">已经报名</button>
           </view>
         </view>
       

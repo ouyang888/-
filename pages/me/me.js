@@ -16,7 +16,8 @@ Page({
     code: "",
     showBtn:true,
     strLogin: storage.get_s("phone"),
-    showZG:false
+    showZG:false,
+    userInfo: app.globalData.userInfo
   },
   //修改手机号码
   edidPhone: function() {
@@ -58,18 +59,25 @@ Page({
 
   //清空缓存
   clearStro: function() {
+    var that = this
     wx.showModal({
       title: '提示',
       content: '确定要清空缓存吗？',
       confirmColor: "rgb(255,164,49)",
       success(res) {
         if (res.confirm) {
-          wx.clearStorage()
+          // wx.clearStorage()
+          storage.remove("userInfo")
+          storage.remove("phone")
+          storage.remove("userName")
           wx.navigateTo({
-            url: '../index/index'
+            url: '../login/login'
           })
+          // that.setData({
+          //   user_id: false
+          // })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          // console.log('用户点击取消')
         }
       }
     })

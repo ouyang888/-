@@ -8,14 +8,19 @@ Page({
   data: {
     date: '2016-09',
     donationRe:[],
-    summary:[]
+    summary:[],
+    donor_id:""
   },
 
   bindDateChange: function (e) {
-    app.xhr('POST', '/donor/moneylog', { donor_id: e.id }, '', (res) => {
-      console.log('picker发送选择改变，携带值为', e.detail.value)
+    var that = this
+    app.xhr('POST', '/donor/moneylog', { donor_id: that.data.donor_id, month: e.detail.value}, '', (res) => {
+      // console.log('picker发送选择改变，携带值为', e.detail.value)
+      console.log(res)
       this.setData({
-        date: e.detail.value
+        date: e.detail.value,
+        donationRe: res.data.data.list.data,
+        summary: res.data.data.summary
       })
     })
    
@@ -24,8 +29,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      donor_id: options.id
+    })
     app.xhr('POST', '/donor/moneylog', { donor_id: options.id}, '', (res) => {
-      console.log(res)
+      // console.log(res)
       this.setData({
         donationRe:res.data.data.list.data,
         summary: res.data.data.summary

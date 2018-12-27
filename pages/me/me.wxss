@@ -175,7 +175,7 @@ page {
 }
 
 .inputBox ul li text {
-  width: 100rpx;
+  width: 115rpx;
   font-size:34rpx;
 }
 

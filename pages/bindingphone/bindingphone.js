@@ -104,6 +104,9 @@ Page({
     }
     app.xhr('POST', '/member/info', list, '', (res) => {
       app.toast("修改成功")
+      wx.navigateTo({
+        url: '../home/home'
+      })
     });
   },
 

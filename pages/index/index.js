@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
+let storage = require('../../utils/storage.js')
 Page({
   data: {
     motto: 'Hello World',
@@ -13,6 +14,7 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 1000,
+    token: app.globalData.token
   },
 
 
@@ -60,7 +62,7 @@ Page({
   },
   //点击允许后的用户信息
   getUserInfo: function(e) {
-    console.log(e)
+    storage.set("userInfo", e.detail.userInfo)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

@@ -28,6 +28,7 @@ Page({
     code: "",
     phone: "",
     name: "",
+    showTrue:true
   },
 
 
@@ -186,6 +187,11 @@ Page({
       } else if (res.data.data.act_type == 3) {
         this.setData({
           act: "随喜"
+        })
+      }
+      if (res.data.data.is_join == true ){
+        this.setData({
+          showTrue: false
         })
       }
       this.setData({
