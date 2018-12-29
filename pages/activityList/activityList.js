@@ -19,7 +19,6 @@ Page({
     search: "",
     eid: "",
     page: 1,
-    pageSize: 2,
     hasMoreData: true,
     contentlist: [],
     msg: "",
