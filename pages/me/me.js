@@ -63,7 +63,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确定要清空缓存吗？',
-      confirmColor: "rgb(255,164,49)",
+      confirmColor: "#FFA431",
       success(res) {
         if (res.confirm) {
           // wx.clearStorage()

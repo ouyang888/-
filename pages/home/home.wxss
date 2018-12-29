@@ -159,6 +159,11 @@ page {
 swiper {
   height: 400rpx;
 }
+
+.grey{
+  background: #cccccc !important;
+}
+
 /* 弹框 */
 .show-btn {
   margin-top: 100rpx;

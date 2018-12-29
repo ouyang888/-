@@ -23,7 +23,13 @@ Page({
     hasMoreData: true,
     contentlist: [],
     msg: "",
-    showcon: false
+    showcon: false,
+    param: null,
+    total: 0, //分页总数
+    pageNum: 1, //分页记录数
+    pageSize: 2, //分页大小
+    hasmoreData: true, //更多数据
+    hiddenloading: true //加载中
   },
 
   codeInput: function(e) {
@@ -174,22 +180,52 @@ Page({
       }
     });
   },
+  onReachBottom: function () {
+    　　　　console.log('加载更多')
+    　　　　this.setData({ hiddenloading: false })
+    　　　　this.getList()
+  　　},
+
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.getList();
     // 首页活动展示
-    app.xhr('POST', '/activity/search', '', '', (res) => {
-      this.setData({
-        activityList: res.data.data.data
-      })
-      console.log(this.data.activityList)
-    });
+    // app.xhr('POST', '/activity/search', '', '', (res) => {
+    //   this.setData({
+    //     activityList: res.data.data.data
+    //   })
+    //   console.log(this.data.activityList)
+    // });
   },
 
-
+  getList: function () {
+    　var that = this;
+    　if (that.data.hasmoreData == false) {
+      　that.setData({ hiddenloading: true })
+      　return;
+    　}
+    // 　that.data.param.pageNum = that.data.pageNum;
+    // 　that.data.param.pageSize = that.data.pageSize;
+    let listPage = {
+      current_page: that.data.pageNum,
+      total: that.data.pageSize
+    }
+    app.xhr('POST', '/activity/search', listPage, '', (res) => {
+      　that.setData({
+          total: res.data.data.total,
+          activityList: res.data.data.data,
+       　 pageNum: that.data.pageNum + 1
+      　})
+      　if (that.data.total <= 0 || that.data.pageNum * that.data.pageSize >= that.data.total) {
+       　　that.setData({ hasmoreData: false, hiddenloading: true })
+      　}
+    　})
+  　},
 
   searchList: function() {
     var that = this
@@ -202,7 +238,7 @@ Page({
       if (res.data.data.data.length == 0) {
         this.setData({
           showcon: true,
-          msg: "无该活动，请输入活动标题"
+          msg: "无该活动，请重新输入活动标题"
         })
       } else {
         this.setData({
@@ -250,32 +286,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
-    var that = this;
-    // 显示加载图标
-    wx.showLoading({
-      title: '玩命加载中',
-    })
-    // 页数+1
-    var page = this.data.page + 1;
-    app.xhr('POST', '/activity/search?page=' + page, '', '', (res) => {
 
-      // 回调函数
-      var activityList = res.data.data.data;
-
-
-      // for (var i = 0; i < res.data.data.data.length; i++) {
-      //      activityList.push(res.data.data.data[i]);
-      // }
-      // 设置数据
-      that.setData({
-        activityList: res.data.data.data
-      })
-      console.log('123', activityList)
-      // 隐藏加载框
-      wx.hideLoading();
-    })
-  },
 
   /**
    * 用户点击右上角分享

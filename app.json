@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/home/home",
     "pages/weChatPublic/weChatPublic",
-    "pages/index/index",
     "pages/me/me",
     "pages/donationReg/donationReg",
     "pages/activityList/activityList",
@@ -27,6 +27,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "selectedColor": "#FFA431",
     "list": [
       {
         "pagePath": "pages/home/home",

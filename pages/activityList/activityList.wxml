@@ -22,11 +22,19 @@
             <text>地点：{{item.act_location}}</text>
             <text>开始时间：{{item.act_stime}}</text>
           </view>
-          <button class="btn" bindtap="showDialogBtn" id="{{item.act_id}}">立即报名</button>
+          <button class="btn" bindtap="showDialogBtn" wx:if="{{item.is_join==true}}" id="{{item.act_id}}">立即报名</button>
+          <button class="btn grey" wx:if="{{item.is_join==false}}">已经报名</button>
         </view>
       </navigator>
     </view>
   </view>
+  <view class="weui-loadmore weui-loadmore_line" hidden='{{hasmoreData}}'>
+　　　　<view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无更多数据</view>
+　　</view>
+　　<view class="weui-loadmore" hidden='{{hiddenloading}}'>
+　　　　<view class="weui-loading"></view>
+　　　　<view class="weui-loadmore__tips">正在加载</view>
+　　</view>
 </view>
 
 
