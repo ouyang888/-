@@ -42,7 +42,7 @@
 
 <view class='activBtn'>
   <button type="default" wx:if="{{showTrue}}" bindtap="showDialogBtn" size="{{defaultSize}}" loading="{{loading}}" id="{{items.act_id}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 立即报名 </button>
-  <button type="default" wx:if="{{!showTrue}}" style="background:#CCCCCC" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 立即报名 </button>
+  <button type="default" wx:if="{{!showTrue}}" style="background:#CCCCCC" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" hover-class="other-button-hover"> 已经报名 </button>
 </view>
 
 

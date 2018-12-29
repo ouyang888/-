@@ -169,18 +169,6 @@ Page({
         icon: 'none',
         duration: 2000
       });
-    }else if (!(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(that.data.v_email))){
-      wx.showToast({
-        title: "邮箱输入有误",
-        icon: 'none',
-        duration: 2000
-      });
-    } else if (!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(that.data.v_idcard))){
-      wx.showToast({
-        title: "身份证号码有误",
-        icon: 'none',
-        duration: 2000
-      });
     }else{
       app.xhr('POST', '/volunteer/apply', list, '', (res) => {
         console.log(res.data.code)

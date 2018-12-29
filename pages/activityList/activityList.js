@@ -229,9 +229,16 @@ Page({
 
   searchList: function() {
     var that = this
-    app.xhr('POST', '/activity/search', {
+    if (that.data.hasmoreData == false) {
+      that.setData({ hiddenloading: true })
+      return;
+    }
+    let listPage = {
+      current_page: that.data.pageNum,
+      total: that.data.pageSize,
       keyword: that.data.search
-    }, '', (res) => {
+    }
+    app.xhr('POST', '/activity/search', listPage, '', (res) => {
       this.setData({
         activityList: res.data.data.data
       })
@@ -244,6 +251,9 @@ Page({
         this.setData({
           showcon: false
         })
+      }
+      if (that.data.total <= 0 || that.data.pageNum * that.data.pageSize >= that.data.total) {
+        that.setData({ hasmoreData: false, hiddenloading: true })
       }
     });
   },
