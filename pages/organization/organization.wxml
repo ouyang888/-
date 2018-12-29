@@ -16,7 +16,7 @@
     </view>
     <view class='organTxt'>
       <view>{{item.v_name}}</view>
-      <text>{{position}}</text>
+      <text>{{item.v_city}}{{position}}</text>
     </view>
   </view>
 </view>

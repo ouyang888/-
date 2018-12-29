@@ -193,6 +193,9 @@ Page({
     this.setData({
       user_id: false,
     })
+    // wx.navigateTo({
+    //   url: '../login/login'
+    // })
   },
 
   /**

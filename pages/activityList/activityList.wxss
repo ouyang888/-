@@ -1,9 +1,10 @@
 @import "../../style/weui.wxss";
-.homecs {
-  margin-top: 10rpx;
+page{
   background: rgb(247, 247, 247);
 }
-
+.homecs {
+  margin-top: 10rpx;
+}
 .csTop {
   font-size: 30rpx;
   display: flex;

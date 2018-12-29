@@ -229,16 +229,16 @@ Page({
 
   searchList: function() {
     var that = this
-    if (that.data.hasmoreData == false) {
-      that.setData({ hiddenloading: true })
-      return;
-    }
-    let listPage = {
-      current_page: that.data.pageNum,
-      total: that.data.pageSize,
-      keyword: that.data.search
-    }
-    app.xhr('POST', '/activity/search', listPage, '', (res) => {
+    // if (that.data.hasmoreData == false) {
+    //   that.setData({ hiddenloading: true })
+    //   return;
+    // }
+    // let listPage = {
+    //   current_page: that.data.pageNum,
+    //   total: that.data.pageSize,
+    //   keyword: that.data.search
+    // }
+    app.xhr('POST', '/activity/search', { keyword: that.data.search}, '', (res) => {
       this.setData({
         activityList: res.data.data.data
       })
@@ -252,9 +252,9 @@ Page({
           showcon: false
         })
       }
-      if (that.data.total <= 0 || that.data.pageNum * that.data.pageSize >= that.data.total) {
-        that.setData({ hasmoreData: false, hiddenloading: true })
-      }
+      // if (that.data.total <= 0 || that.data.pageNum * that.data.pageSize >= that.data.total) {
+      //   that.setData({ hasmoreData: false, hiddenloading: true })
+      // }
     });
   },
 
