@@ -6,10 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '2016-09',
     donationRe:[],
     summary:[],
-    donor_id:""
+    donor_id:"",
+    dateMon:""
   },
 
   bindDateChange: function (e) {
@@ -29,6 +29,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var myDate = new Date();
+    this.setData({
+      dateMon: myDate.getYear() + "-" + myDate.getMonth()
+    })
+    console.log(getYear())
     this.setData({
       donor_id: options.id
     })

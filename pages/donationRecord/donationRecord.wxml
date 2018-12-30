@@ -5,7 +5,7 @@
     <view class='donarig'>
       <!-- <image src='../../images/date.png'></image> -->
       <view class="section">
-        <picker mode="date" fields="month" value="{{date}}" start="2015-09" bindchange="bindDateChange">
+        <picker mode="date" fields="month" value="{{dateMon}}" bindchange="bindDateChange">
           <view class="picker">
             <text>{{date}}</text>
             <image src='../../images/date.png'></image>

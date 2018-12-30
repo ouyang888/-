@@ -27,7 +27,8 @@ Page({
     person_id: storage.get_s("person_id"),
     showCont:true,
     user_id:true,
-    token: storage.get_s("token")
+    token: storage.get_s("token"),
+    showConts:""
 
   },
   codeInput: function (e) {
@@ -221,10 +222,17 @@ onShow:function(){
       user_id: false
     })
   }
+  if (app.globalData.showHome == true){
+    this.setData({
+      user_id: true
+    })
+  }
 },
 
+
+
+
   onLoad: function() {
-    
     //轮播图
     app.xhr('POST', '/player/list', '', '', (res) => {
       // console.log(res)

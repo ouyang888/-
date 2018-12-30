@@ -14,51 +14,51 @@ Page({
     name: "",
     user_id: true,
     code: "",
-    showBtn:true,
+    showBtn: true,
     strLogin: storage.get_s("phone"),
-    showZG:false,
+    showZG: false,
     userInfo: app.globalData.userInfo
   },
   //修改手机号码
-  edidPhone: function() {
+  edidPhone: function () {
     wx.navigateTo({
       url: '../editPhone/editPhone'
     })
   },
 
   // 爱的榜样
-  loveExample: function() {
+  loveExample: function () {
     wx.navigateTo({
       url: '../loveExample/loveExample'
     })
   },
   // 组织架构
-  organization: function() {
+  organization: function () {
     wx.navigateTo({
       url: '../organization/organization'
     })
   },
   // 通知
-  notice: function() {
+  notice: function () {
     wx.navigateTo({
       url: '../notice/notice'
     })
   },
   // 我的会员
-  donationReg: function() {
+  donationReg: function () {
     wx.navigateTo({
       url: '../donationReg/donationReg'
     })
   },
 
-  login: function() {
+  login: function () {
     wx.navigateTo({
       url: '../login/login'
     })
   },
 
   //清空缓存
-  clearStro: function() {
+  clearStro: function () {
     var that = this
     wx.showModal({
       title: '提示',
@@ -70,13 +70,12 @@ Page({
           storage.remove("userInfo")
           storage.remove("phone")
           storage.remove("userName")
-          var page = getCurrentPages().pop();
-          if (page == undefined || page == null) return;
-          page.onLoad(); 
-          that.setData({
-            showZG: false,
+          wx.navigateTo({
+            url: '../login/login'
           })
-          app.globalData.showHome = true
+          // that.setData({
+          //   user_id: false
+          // })
         } else if (res.cancel) {
           // console.log('用户点击取消')
         }
@@ -85,18 +84,18 @@ Page({
   },
 
 
-  nameInput: function(e) {
+  nameInput: function (e) {
     this.setData({
       name: e.detail.value
     })
   },
   //获取手机栏input中的值
-  phoneInput: function(e) {
+  phoneInput: function (e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  codeInput: function(e) {
+  codeInput: function (e) {
     this.setData({
       code: e.detail.value
     })
@@ -104,7 +103,7 @@ Page({
 
 
 
-  loginSub: function() {
+  loginSub: function () {
     var that = this
     let loginList = {
       "m_real_name": that.data.name,
@@ -121,10 +120,7 @@ Page({
           showZG: true,
           userName: res.data.data.m_real_name
         })
-        wx.switchTab({
-          url: '../me/me'
-        })
-      }else{
+      } else {
         wx.showToast({
           title: res.data.msg,
           icon: 'none',
@@ -134,7 +130,7 @@ Page({
     });
   },
 
-  bindButtonTap: function() {
+  bindButtonTap: function () {
     var that = this;
     var phone = that.data.phone;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
@@ -163,7 +159,7 @@ Page({
         color: '#ccc',
       })
       //设置一分钟的倒计时
-      var interval = setInterval(function() {
+      var interval = setInterval(function () {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
           text: currentTime + '秒后重发', //按钮文字变成倒计时对应秒数
@@ -193,7 +189,7 @@ Page({
     };
   },
 
-  unLogin:function(){
+  unLogin: function () {
     // this.setData({
     //   user_id: false,
     // })
@@ -205,11 +201,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    if (storage.get_s("phone") != ''){
+  onLoad: function (options) {
+    // var phone = app.globalData.phone
+    console.log(app)
+    if (storage.get_s("phone") != '') {
       this.setData({
         user_id: true,
-        showZG:true
+        showZG: true
       })
     }
     this.setData({
@@ -220,49 +218,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

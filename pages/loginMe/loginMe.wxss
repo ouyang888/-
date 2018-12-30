@@ -10,6 +10,7 @@ page {
   background: linear-gradient(#FD8802, #FD9002,#FDA300,#FDA300);
   padding:70rpx 30rpx;
   max-height: 240rpx;
+  position: relative;
 }
 
 .usertx {
@@ -46,19 +47,19 @@ page {
 }
 
 .meName image{
-  width: 40rpx;
-  height: 40rpx;
+  width: 35rpx;
+  height: 35rpx;
 }
 
 .meName{
   margin-left: 40rpx;
   color:#fff;
-  text-align: center
+  text-align: left;
 }
 
 .meName text{
   font-size:36rpx;
-  margin-bottom:10rpx;
+  margin-bottom:20rpx;
   display: inline-block
 }
 
@@ -71,6 +72,7 @@ page {
   border-radius:30rpx;
   padding:6rpx 10rpx;
   min-width: 110rpx;
+  height: 42rpx;
 }
 
 .meJs text{
@@ -174,12 +176,13 @@ page {
 }
 
 .inputBox ul li text {
-  width: 100rpx;
+  width: 115rpx;
+  font-size:34rpx;
 }
 
 .inputBox ul li input {
   margin-left: 30rpx;
-  font-weight: normal
+  font-weight: normal;
 }
 
 .code {
@@ -190,7 +193,6 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
 }
 
 .btnView {
@@ -239,4 +241,19 @@ page {
 
 .loginFont{
   text-align: center
+}
+
+.meJyz{
+  font-size:28rpx;
+  background:rgba(0, 0, 0, 0.2);
+  color:#fff;
+  width:236rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+
 }

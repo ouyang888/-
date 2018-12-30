@@ -73,7 +73,8 @@ Page({
             text: '重新发送',
             currentTime: 61,
             isClick: false,
-            color: '#929fff'
+            color: '#929fff',
+            background:'#fff'
           })
         }
       }, 1000);
@@ -91,7 +92,7 @@ Page({
     };
   },
 
-  loginSub: function (e) {
+  loginSub: function (item) {
     var that = this
     let loginList = {
       "m_real_name": that.data.name,
@@ -103,8 +104,15 @@ Page({
         app.toast("登录成功")
         storage.set("phone", res.data.data.m_phone)
         storage.set("userName", res.data.data.m_real_name)
+        var active = res.data.data.m_phone
+        app.globalData.phone = active
         wx.switchTab({
-          url: '../me/me'
+          url: '../me/me',
+          success:function(e){
+            var page = getCurrentPages().pop(); 
+            if (page == undefined || page == null) return;
+            page.onLoad(); 
+          }
         })
       } else {
         wx.showToast({

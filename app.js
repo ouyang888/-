@@ -33,10 +33,13 @@ App({
               })
             }
           })
-
         },
         fail: function(error) {
-          console.log(error)
+          wx.showToast({
+            title: error,
+            icon: 'none',
+            duration: 2000
+          });
         }
       })
     } else {
@@ -67,6 +70,9 @@ App({
   globalData: { 
     userInfo: null,
     token: storage.get_s("token"),
+    phone:"",
+    userName:"",
+    showHome:false
   },
   // data:{
   //   tokens:""

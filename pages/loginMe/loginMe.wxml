@@ -1,43 +1,5 @@
 <!--pages/me/me.wxml-->
-
-<view class="loginBox" wx:if="{{!user_id}}">
-  <view class="logoIng">
-    <image mode="aspectFill" src="/images/logo.png"></image>
-  </view>
-  <view class="titleImg">
-    <image mode="aspectFill" src="/images/title.png"></image>
-  </view>
-  <view class="inputBox">
-    <ul>
-      <li>
-        <text>姓名</text>
-        <input bindinput="nameInput" type='text' placeholder='请输入真实姓名' />
-      </li>
-      <li>
-        <text>手机号</text>
-        <input type='number' maxlength='11' bindinput="phoneInput" placeholder='请输入绑定手机号' />
-      </li>
-      <li>
-        <text>验证码</text>
-        <input type='text' bindinput='codeInput' placeholder='输入验证码' />
-        <view class="btnView">
-          <button disabled='{{isClick}}' bindtap="bindButtonTap" class="code">{{text}}</button>
-        </view>
-      </li>
-    </ul>
-  </view>
-  <view class="loginDownFont">
-    <view class="tanhao">!</view>
-    请填写真实姓名用于慈善活动报名
-  </view>
-  <view class="loginBtn" wx:if="{{phone=='' || name ==''}}">登录</view>
-  <view class="loginBtn" wx:if="{{phone!='' && name!=''}}" style='background: rgb(255, 165, 47)' bindtap='loginSub'>登录</view>
-</view>
-
-
-
-
-<view wx:if="{{user_id}}">
+<view>
   <view class='meBg'>
     <view class='usertx'>
       <image src='../../images/tx.png'></image>
@@ -48,11 +10,6 @@
     </view>
     <view class='meName'>
       <text wx:if="{{showZG}}">{{userName}}</text>
-      <text wx:if="{{!showZG}}">游客</text>
-      <view class='meJs' wx:if="{{!showZG}}">
-        <image src='../../images/account.png'></image>
-        <text>游客</text>
-      </view>
       <view class='meJs' wx:if="{{showZG}}">
         <image src='../../images/aixingSmall.png'></image>
         <text>爱心智工</text>
@@ -88,20 +45,6 @@
       </view>
     </view>
     <view class='meListTwo'>
-      <view class='oneCont' bindtap='donationReg' wx:if="{{showZG}}">
-        <view class='meLogo'>
-          <image mode='widthFix' src='../../images/vip.png'></image>
-          <text>我的会员</text>
-        </view>
-        <image src='../../images/back.png'></image>
-      </view>
-      <view class='oneCont' bindtap='unLogin' wx:if="{{!showZG}}">
-        <view class='meLogo'>
-          <image mode='widthFix' src='../../images/zhigong.png'></image>
-          <text>我是智工</text>
-        </view>
-        <image src='../../images/back.png'></image>
-      </view>
       <view class='oneCont' bindtap='edidPhone' wx:if="{{showZG}}">
         <view class='meLogo'>
           <image mode='widthFix' src='../../images/phone.png'></image>
