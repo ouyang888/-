@@ -78,16 +78,18 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>所属智工团</text>
-      <picker bindchange="bindTeamsChange" range-key="{{'vt_name'}}" value="{{teamsindex}}" range="{{team}}">
+      <picker bindchange="bindTeamsChange" range-key="{{'vt_name'}}" value="{{teamsindex}}" range="{{team}}" wx:if="{{belong == false}}">
         <view class="picker">
           {{team[teamsindex].vt_name}}
         </view>
       </picker>
-      <image src='../../images/back.png'></image>
+      <image src='../../images/back.png' wx:if="{{belong == false}}"></image>
+      <text style='width:69%;' wx:if="{{belong == true}}">{{team[teamsindex].vt_name}}</text>
+      <button class="code" wx:if="{{belong == true}}">审核中</button>
     </view>
   </view>
 </view>
-
+<view class='applyTit applyJg' wx:if="{{belong == true}}"><icon type="warn" size="15" />审核通过后才能进行善款登记</view>
 <view class='applyTit'>慈善活动经验</view>
 
 <view class='appForm'>

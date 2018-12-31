@@ -106,3 +106,26 @@ page {
 .applong .section picker{
   width: 53%;
 }
+
+.code{
+  height: 60rpx;
+  font-size: 24rpx;
+  border: 1px solid #ffebd1;
+  color: #fbb75b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  position: absolute;
+  right: 30rpx;
+}
+
+.applyJg{
+  font-size:28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.applyJg icon{
+  margin-right: 15rpx;
+}

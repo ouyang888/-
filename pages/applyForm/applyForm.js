@@ -15,6 +15,7 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
+    belong:false,
     items: [{
         name: '1',
         value: '男',
@@ -195,6 +196,11 @@ Page({
    */
   onLoad: function(options) {
     app.xhr('POST', '/volunteer/detail', '', '', (res) => {
+      if (res.data.data.volunteer.v_status == '9'){
+        this.setData({
+          belong:true
+        })
+      };
       this.setData({
         team: res.data.data.teams,
         wishActivity: res.data.data.activitys,
