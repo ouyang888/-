@@ -29,25 +29,29 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>单位</text>
-      <input placeholder="请输入内容" bindinput='danwei' />
+      <input placeholder="请输入内容" bindinput='danwei' wx:if="{{v_company==''}}" />
+       <input value="{{v_company}}" disabled='false'  wx:if="{{v_company!=''}}" />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text class='must'>职务</text>
-      <input placeholder="请输入内容" bindinput='zhiwu' />
+      <input placeholder="请输入内容" bindinput='zhiwu' wx:if="{{v_company_position == ''}}" />
+       <input value='{{v_company_position}}' disabled='false' wx:if="{{v_company_position != ''}}" />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>邮箱</text>
-      <input placeholder="请输入内容" bindinput='email' />
+      <input placeholder="请输入内容" bindinput='email' wx:if="{{v_email == ''}}" />
+      <input value="{{v_email}}" disabled='false' wx:if="{{v_email != ''}}" />
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text>身份证</text>
-      <input placeholder="请输入内容" bindinput='idcardInput' />
+      <input placeholder="请输入内容" bindinput='idcardInput' wx:if="{{v_idcard == ''}}" />
+      <input value="{{v_idcard}}" disabled='false' wx:if="{{v_idcard != ''}}" />
     </view>
   </view>
   <view class='appList'>
