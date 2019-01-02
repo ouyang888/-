@@ -22,7 +22,8 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>手机号</text>
-      <input placeholder="请输入内容" maxlength='11' bindinput='phoneInput' />
+      <input placeholder="请输入内容" maxlength='11' bindinput='phoneInput' wx:if="{{v_phone==''}}" />
+       <input value="{{v_phone}}" disabled='false' wx:if="{{v_phone!=''}}" />
     </view>
   </view>
   <view class='appList'>
