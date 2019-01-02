@@ -1,5 +1,11 @@
 // pages/donationRecord/donationRecord.js
 var app = getApp()
+var timestamp = Date.parse(new Date());
+timestamp = timestamp / 1000;
+var n = timestamp * 1000;
+var date = new Date(n);
+var Y = date.getFullYear();
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
 Page({
 
   /**
@@ -9,16 +15,14 @@ Page({
     donationRe:[],
     summary:[],
     donor_id:"",
-    dateMon:""
+    dateMon: Y + "-" + M
   },
 
   bindDateChange: function (e) {
     var that = this
     app.xhr('POST', '/donor/moneylog', { donor_id: that.data.donor_id, month: e.detail.value}, '', (res) => {
-      // console.log('picker发送选择改变，携带值为', e.detail.value)
-      console.log(res)
       this.setData({
-        date: e.detail.value,
+        dateMon: e.detail.value,
         donationRe: res.data.data.list.data,
         summary: res.data.data.summary
       })
@@ -29,16 +33,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var myDate = new Date();
-    this.setData({
-      dateMon: myDate.getYear() + "-" + myDate.getMonth()
-    })
-    console.log(getYear())
+    console.log(this.data.dateMon)
     this.setData({
       donor_id: options.id
     })
-    app.xhr('POST', '/donor/moneylog', { donor_id: options.id}, '', (res) => {
-      // console.log(res)
+    app.xhr('POST', '/donor/moneylog', { donor_id: options.id, month: this.data.dateMon}, '', (res) => {
+      for (var i = 0; i < res.data.data.summary.length; i++) {
+        console.log(res.data.data.summary[i].total)
+        if (res.data.data.summary[i].total == null){
+          this.setData({
+            total:"0"
+          })
+        }
+      }
       this.setData({
         donationRe:res.data.data.list.data,
         summary: res.data.data.summary

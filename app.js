@@ -67,6 +67,7 @@ App({
       }
     })
   },
+  
   globalData: { 
     userInfo: null,
     token: storage.get_s("token"),
@@ -85,7 +86,7 @@ App({
   // },
 
   //弹框
-  toast: function(title, icon, cb, duration = 1200) {
+  toast: function(title, icon, cb, duration = 2500) {
     wx.showToast({
       title,
       icon,

@@ -5,7 +5,8 @@
   <view class='appList'>
     <view class="section">
       <text class='must'>姓名</text>
-      <input placeholder="请输入内容" bindinput='nameInput' auto-focus/>
+      <input placeholder="请输入内容" bindinput='nameInput' wx:if="{{v_name==''}}"/>
+      <input value="{{v_name}}" disabled='false' wx:if="{{v_name!=''}}" />
     </view>
   </view>
   <view class='appList'>
@@ -66,13 +67,13 @@
   <view class='appList'>
     <view class="section">
       <text>地址信息</text>
-      <input placeholder="请输入内容" bindinput='address' auto-focus/>
+      <input placeholder="请输入内容" bindinput='address'/>
     </view>
   </view>
   <view class='appList'>
     <view class="section">
       <text></text>
-      <input placeholder="详细地址信息" bindinput='addressInfo' auto-focus/>
+      <input placeholder="详细地址信息" bindinput='addressInfo'/>
     </view>
   </view>
   <view class='appList'>
@@ -94,7 +95,7 @@
   <view class='appList applong'>
     <view class="section">
       <text>参加过的慈善活动</text>
-      <input placeholder="请输入内容" bindinput='hisAcitve' auto-focus/>
+      <input placeholder="请输入内容" bindinput='hisAcitve'/>
     </view>
   </view>
   <view class='appList applong'>

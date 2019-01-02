@@ -11,7 +11,8 @@ Page({
     isClick: false,
     isLength: false,
     code: "",
-    phone: ""
+    phone: "",
+    oldPhone:""
   },
 
   codeInput: function (e) {
@@ -102,12 +103,30 @@ Page({
       "m_phone": that.data.phone,
       "yzm": that.data.code
     }
-    app.xhr('POST', '/member/info', list, '', (res) => {
-      app.toast("修改成功")
-      wx.switchTab({
-        url: '../me/me'
-      })
+    if (that.data.oldPhone == that.data.phone){
+      wx.showToast({
+        title: "手机号码与当前绑定一致",
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+
+    app.xhr('POST', '/member/changePhone', list, '', (res) => {
+      if (res.data.code == 200) {
+        app.toast("修改成功")
+        wx.switchTab({
+          url: '../me/me'
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none',
+          duration: 2000
+        });
+      }
     });
+   
   },
 
 
@@ -116,7 +135,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      oldPhone: options.phone
+    })
   },
 
   /**

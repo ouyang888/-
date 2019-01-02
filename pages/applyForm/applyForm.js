@@ -195,13 +195,27 @@ Page({
    */
   onLoad: function(options) {
     app.xhr('POST', '/volunteer/detail', '', '', (res) => {
+      console.log(res)
       this.setData({
         team: res.data.data.teams,
         wishActivity: res.data.data.activitys,
         teamsId: res.data.data.teams[0].vt_id,
         activeId: res.data.data.activitys[0].act_id,
         dateList: this.data.dateRl[0].id,
-        v_sex:this.data.items[0].name
+        v_sex:this.data.items[0].name,
+        v_name: res.data.volunteer.v_name,
+        v_idcard: res.data.volunteer.v_idcard,
+        v_phone: res.data.volunteer.v_phone,
+        v_company: res.data.volunteer.v_company,
+        v_company_position: res.data.volunteer.v_company_position,
+        v_email: res.data.volunteer.v_email,
+        v_calendar_type: res.volunteer.dateList,
+        v_birthday: res.data.volunteer.date,
+        v_address: res.data.volunteer.v_address,
+        v_team_id: res.data.volunteer.teamsId,
+        v_history_activity: res.data.volunteer.v_history_activity,
+        v_wish_activity_id: res.data.volunteer.activeId,
+        v_mark: res.data.volunteer.v_mark
       })
     });
   },

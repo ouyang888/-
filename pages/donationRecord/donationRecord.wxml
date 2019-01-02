@@ -7,7 +7,7 @@
       <view class="section">
         <picker mode="date" fields="month" value="{{dateMon}}" bindchange="bindDateChange">
           <view class="picker">
-            <text>{{date}}</text>
+            <text>{{dateMon}}</text>
             <image src='../../images/date.png'></image>
           </view>
         </picker>
@@ -15,8 +15,8 @@
     </view>
     <view class='donaJk'>
       <text>次数：{{item.count}}</text>
-      <text>捐款额：¥{{item.total}}</text>
-      <text>总捐款额：¥{{item.total}}</text>
+      <text>捐款额：¥0</text>
+      <text>总捐款额：¥{{item.total == null?'0':item.total}}</text>
     </view>
   </view>
 

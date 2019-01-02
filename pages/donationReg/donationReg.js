@@ -10,14 +10,16 @@ Page({
     focus: false,
     donation: [],
     donationTotal: '',
-    name:'',
-    peoples:"",
-    money:"",
-    beizhu:"",
+    name: '',
+    peoples: "",
+    money: "",
+    beizhu: "",
     showModal: false,
-    donorID:"",
+    donorID: "",
     msg: "",
-    showcon: false
+    showcon: false,
+    san: true,
+    i: 1,
   },
 
   /**
@@ -28,7 +30,7 @@ Page({
       // console.log(res)
       this.setData({
         donation: res.data.data.data,
-        peoples:res.data.data
+        peoples: res.data.data
       })
     });
 
@@ -40,45 +42,54 @@ Page({
       })
       // console.log(this.data.donationTotal)
     });
-    
+
   },
-  showDialogBtn: function (e) {
+  showDialogBtn: function(e) {
     this.setData({
       showModal: true,
       donorID: e.currentTarget.id
     })
   },
 
-  subMoney:function(){
+  subMoney: function() {
     let that = this
     let list = {
       donor_id: that.data.donorID,
       detail_money: that.data.money,
       detail_mark: that.data.beizhu
     }
-    app.xhr('POST', '/donor/payMoney', list, '', (res) => {
-      if(res.data.code == 200){
-        app.toast("捐款完成")
-        this.setData({
-          showModal: false,
+    if (that.data.i == 1) {
+      that.data.i = 2,
+      app.xhr('POST', '/donor/payMoney', list, '', (res) => {
+        if (res.data.code == 200) {
+          app.toast("捐款完成")
+          this.setData({
+            showModal: false,
+            san: false,
+          })
+          wx.navigateTo({
+            url: '../donationReg/donationReg'
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      });
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
         })
-        wx.navigateTo({
-          url: '../donationReg/donationReg'
-        })
-      }else{
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none',
-          duration: 2000
-        });
-      }
-      
-    });
+    }
 
 
-   
+
+
   },
-  hideModal: function () {
+  hideModal: function() {
     this.setData({
       detail_money: "",
       detail_mark: "",
@@ -87,18 +98,18 @@ Page({
   },
 
 
-  nameInput: function (e) {
+  nameInput: function(e) {
     this.setData({
       name: e.detail.value
     })
   },
 
-  moneyInput:function(e){
+  moneyInput: function(e) {
     this.setData({
       money: e.detail.value
     })
   },
-  beizhuInput: function (e) {
+  beizhuInput: function(e) {
     this.setData({
       beizhu: e.detail.value
     })
@@ -121,7 +132,9 @@ Page({
 
   //搜索
   search: function() {
-    app.xhr('POST', '/donor/record', {keyword: this.data.name}, '', (res) => {
+    app.xhr('POST', '/donor/record', {
+      keyword: this.data.name
+    }, '', (res) => {
       this.setData({
         donation: res.data.data.data
       })

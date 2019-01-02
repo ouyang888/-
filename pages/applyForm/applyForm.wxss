@@ -3,6 +3,10 @@
 page {
   background:rgb(247,247,247);
 }
+view{
+box-sizing: border-box;
+overflow-x:hidden;
+}
 .applyTit{
   background: #F7F7F7;
   font-size:34rpx;

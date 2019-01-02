@@ -23,31 +23,33 @@ Page({
     name: "",
     showModal: false,
     phone: storage.get_s("phone"),
-    acid:"",
+    acid: "",
     person_id: storage.get_s("person_id"),
-    showCont:true,
-    user_id:true,
+    showCont: true,
+    user_id: true,
     token: storage.get_s("token"),
-    showConts:""
+    showConts: "",
+    san: true,
+    i: 1,
 
   },
-  codeInput: function (e) {
+  codeInput: function(e) {
     this.setData({
       code: e.detail.value
     })
   },
-  nameInput: function (e) {
+  nameInput: function(e) {
     this.setData({
       name: e.detail.value
     })
   },
 
-  phoneInput: function (e) {
+  phoneInput: function(e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  bindButtonTap: function () {
+  bindButtonTap: function() {
     var that = this;
 
     var phone = that.data.phone;
@@ -79,7 +81,7 @@ Page({
         color: '#ccc',
       })
       //设置一分钟的倒计时
-      var interval = setInterval(function () {
+      var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
           text: currentTime + '秒后重发', //按钮文字变成倒计时对应秒数
@@ -104,7 +106,7 @@ Page({
       app.xhr('POST', '/message/send', codeList, '', (res) => {
         if (res.data.code == 200) {
           app.toast("发送成功")
-        }else{
+        } else {
           wx.showToast({
             title: res.data.msg,
             icon: 'none',
@@ -131,17 +133,17 @@ Page({
 
     // };
   },
-  showDialogBtn: function (e) {
+  showDialogBtn: function(e) {
     this.setData({
       showModal: true,
       acid: e.target.id
     })
   },
 
-  preventTouchMove: function () {
+  preventTouchMove: function() {
 
   },
-  hideModal: function () {
+  hideModal: function() {
     this.setData({
       name: "",
       phone: "",
@@ -149,7 +151,7 @@ Page({
     });
   },
 
-  onConfirm: function () {
+  onConfirm: function() {
     var that = this
     let participate = {
       "activity_id": that.data.acid,
@@ -162,7 +164,7 @@ Page({
         app.toast("报名成功")
         this.hideModal();
         storage.set("person_id", res.data.data.person_id)
-      }else{
+      } else {
         wx.showToast({
           title: res.data.msg,
           icon: 'none',
@@ -179,55 +181,67 @@ Page({
   },
 
   // 活动列表
-  activityList: function () {
-    wx.navigateTo({
-      url: '../activityList/activityList'
-    })
+  activityList: function() {
+    var that = this
+    if (that.data.i == 1) {
+      that.data.i = 2
+      wx.navigateTo({
+        url: '../activityList/activityList'
+      })
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
   },
   //关于我们
-  about: function () {
+  about: function() {
     wx.navigateTo({
       url: '../about/about'
     })
   },
   //组织架构
-  organization: function () {
+  organization: function() {
     wx.navigateTo({
       url: '../organization/organization'
     })
   },
   // 活动回顾
-  weChatPublic: function () {
+  weChatPublic: function() {
     wx.navigateTo({
       url: '../weChatPublic/weChatPublic'
     })
   },
   //大爱一元
-  donationReg: function () {
+  donationReg: function() {
     wx.navigateTo({
       url: '../donationReg/donationReg'
     })
   },
   //申请智工
-  applyAgreement: function () {
+  applyAgreement: function() {
     wx.navigateTo({
       url: '../applyAgreement/applyAgreement'
     })
   },
 
 
-onShow:function(){
-  if (storage.get_s("phone") != '') {
-    this.setData({
-      user_id: false
-    })
-  }
-  if (app.globalData.showHome == true){
-    this.setData({
-      user_id: true
-    })
-  }
-},
+  onShow: function() {
+    if (storage.get_s("phone") != '') {
+      this.setData({
+        user_id: false
+      })
+    }
+    if (app.globalData.showHome == true) {
+      this.setData({
+        user_id: true
+      })
+    }
+  },
 
 
 
@@ -247,7 +261,7 @@ onShow:function(){
       this.setData({
         activity: res.data.data
       })
-       console.log(this.data.activity)
+      console.log(this.data.activity)
     });
 
 
@@ -280,7 +294,7 @@ onShow:function(){
     }
   },
 
-  showsignup:function(){
+  showsignup: function() {
 
   },
   //点击允许后的用户信息

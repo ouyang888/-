@@ -37,7 +37,7 @@
                     <image src='{{item.m_avatar}}'></image>
                     <view>
                          <view>{{item.d_name}}</view>
-                         <text>最近捐款：{{item.d_last_pay_time}}</text>
+                         <text>最近捐款：{{item.d_last_pay_time == null?'无':item.d_last_pay_time}}</text>
                     </view>
                </view>
                <view class='manEdit'>

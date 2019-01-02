@@ -2,7 +2,7 @@
   <ul>
     <li>
       <text>姓名</text>
-      <input type='number' maxlength='11' bindinput="nameInput" placeholder='请输入姓名' />
+      <input type='text' bindinput="nameInput" placeholder='请输入姓名' />
     </li>
     <li>
       <text>性别</text>
@@ -14,7 +14,7 @@
     </li>
     <li>
       <text>手机号</text>
-      <input type='text' bindinput="phoneInput" maxlength='11' placeholder='请输入手机号' />
+      <input type='number' bindinput="phoneInput" maxlength='11' placeholder='请输入手机号' />
     </li>
     <li>
       <text>职务</text>
