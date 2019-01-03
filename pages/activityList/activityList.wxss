@@ -114,7 +114,8 @@ page{
   display: flex;
   flex-direction: row;
   margin-bottom: 10rpx;
-  justify-content: space-between
+  justify-content: space-between;
+  background: #fff
 }
 
 .searchcion {

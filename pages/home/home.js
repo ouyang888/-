@@ -31,7 +31,7 @@ Page({
     showConts: "",
     san: true,
     i: 1,
-    v_phone:""
+    v_phone: ""
 
   },
   codeInput: function(e) {
@@ -178,13 +178,13 @@ Page({
       that.setData({
         san: false,
       })
-    }else{
+    } else {
       that.data.i = 1,
         that.setData({
           san: true,
         })
     }
-   
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -213,33 +213,98 @@ Page({
   },
   //关于我们
   about: function() {
-    wx.navigateTo({
-      url: '../about/about'
-    })
+    var that = this
+    if (that.data.i == 1) {
+      that.data.i = 2
+      wx.navigateTo({
+        url: '../about/about'
+      })
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
+
   },
   //组织架构
   organization: function() {
-    wx.navigateTo({
-      url: '../organization/organization'
-    })
+    var that = this
+    if (that.data.i == 1) {
+      that.data.i = 2
+      wx.navigateTo({
+        url: '../organization/organization'
+      })
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
+
   },
   // 活动回顾
   weChatPublic: function() {
-    wx.navigateTo({
-      url: '../weChatPublic/weChatPublic'
-    })
+    var that = this
+    if (that.data.i == 1) {
+      that.data.i = 2
+      wx.navigateTo({
+        url: '../weChatPublic/weChatPublic'
+      })
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
+
   },
   //大爱一元
   donationReg: function() {
-    wx.navigateTo({
-      url: '../donationReg/donationReg'
-    })
+    var that = this
+    if (that.data.i == 1) {
+      that.data.i = 2
+      wx.navigateTo({
+        url: '../donationReg/donationReg'
+      })
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
+
   },
   //申请智工
   applyAgreement: function() {
-    wx.navigateTo({
-      url: '../applyAgreement/applyAgreement'
-    })
+    var that = this
+    if (that.data.i == 1) {
+      that.data.i = 2
+      wx.navigateTo({
+        url: '../applyAgreement/applyAgreement'
+      })
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
+
   },
 
 
