@@ -54,7 +54,7 @@
         <text>手机号</text>
         <input type='number' maxlength='11' bindinput="phoneInput" placeholder='请输入绑定手机号' />
       </li>
-      <li>
+      <li wx:if="{{v_phone == ''}}">
         <text>验证码</text>
         <input type='text' class="codeInputs" bindinput="codeInput" placeholder='请输入验证码' />
         <view class="btnView">

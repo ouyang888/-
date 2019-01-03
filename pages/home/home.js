@@ -31,6 +31,7 @@ Page({
     showConts: "",
     san: true,
     i: 1,
+    v_phone:""
 
   },
   codeInput: function(e) {
@@ -159,19 +160,31 @@ Page({
       "person_phone": that.data.phone,
       "yzm": that.data.code
     }
-    app.xhr('POST', '/activity/join', participate, '', (res) => {
-      if (res.data.code == 200) {
-        app.toast("报名成功")
-        this.hideModal();
-        storage.set("person_id", res.data.data.person_id)
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    });
+    if (that.data.i == 1) {
+      that.data.i = 2
+      app.xhr('POST', '/activity/join', participate, '', (res) => {
+        if (res.data.code == 200) {
+          app.toast("报名成功")
+          this.hideModal();
+          storage.set("person_id", res.data.data.person_id)
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      });
+      that.setData({
+        san: false,
+      })
+    }else{
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
+    }
+   
   },
   //事件处理函数
   bindViewTap: function() {
@@ -247,6 +260,13 @@ Page({
 
 
   onLoad: function() {
+
+    app.xhr('POST', '/volunteer/detail', '', '', (res) => {
+      this.setData({
+        v_phone: res.data.data.volunteer.v_phone
+      })
+    });
+
     //轮播图
     app.xhr('POST', '/player/list', '', '', (res) => {
       // console.log(res)

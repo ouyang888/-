@@ -12,22 +12,24 @@ Page({
     isLength: false,
     code: "",
     phone: "",
-    oldPhone:""
+    oldPhone: "",
+    san: true,
+    i: 1,
   },
 
-  codeInput: function (e) {
+  codeInput: function(e) {
     this.setData({
       code: e.detail.value
     })
   },
 
 
-  phoneInput: function (e) {
+  phoneInput: function(e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  bindButtonTap: function () {
+  bindButtonTap: function() {
     var that = this;
 
     var phone = that.data.phone;
@@ -59,7 +61,7 @@ Page({
         color: '#ccc',
       })
       //设置一分钟的倒计时
-      var interval = setInterval(function () {
+      var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
           text: currentTime + '秒后重发', //按钮文字变成倒计时对应秒数
@@ -97,13 +99,13 @@ Page({
   },
 
   //提交手机号码
-  phoneSub:function(){
+  phoneSub: function() {
     var that = this
     let list = {
       "m_phone": that.data.phone,
       "yzm": that.data.code
     }
-    if (that.data.oldPhone == that.data.phone){
+    if (that.data.oldPhone == that.data.phone) {
       wx.showToast({
         title: "手机号码与当前绑定一致",
         icon: 'none',
@@ -112,21 +114,34 @@ Page({
       return;
     }
 
-    app.xhr('POST', '/member/changePhone', list, '', (res) => {
-      if (res.data.code == 200) {
-        app.toast("修改成功")
-        wx.switchTab({
-          url: '../me/me'
+    if (that.data.i == 1) {
+      that.data.i = 2
+      app.xhr('POST', '/member/changePhone', list, '', (res) => {
+        if (res.data.code == 200) {
+          app.toast("修改成功")
+          wx.switchTab({
+            url: '../me/me'
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      });
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
         })
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    });
-   
+    }
+
+
+
   },
 
 
@@ -134,7 +149,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.setData({
       oldPhone: options.phone
     })
@@ -143,49 +158,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

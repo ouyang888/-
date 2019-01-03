@@ -53,7 +53,11 @@ Page({
     v_team_id: "",
     v_history_activity: "",
     v_wish_activity_id: "",
-    v_mark: ""
+    v_mark: "",
+    team_Name: "",
+    activitys_Name: "",
+    san: true,
+    i: 1,
   },
 
   //日期选择
@@ -163,28 +167,38 @@ Page({
       "v_wish_activity_id": that.data.activeId,
       "v_mark": that.data.v_mark
     }
-    if (!(/^1[34578]\d{9}$/.test(that.data.v_phone))){
-      wx.showToast({
-        title: "手机号码有误",
-        icon: 'none',
-        duration: 2000
-      });
-    }else{
-      app.xhr('POST', '/volunteer/apply', list, '', (res) => {
-        console.log(res.data.code)
-        if (res.data.code == 200) {
-          app.toast("申请成功")
-          wx.switchTab({
-            url: '../me/me'
-          })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          });
-        }
-      });
+    if (that.data.i == 1) {
+      that.data.i = 2
+      if (!(/^1[34578]\d{9}$/.test(that.data.v_phone))) {
+        wx.showToast({
+          title: "手机号码有误",
+          icon: 'none',
+          duration: 2000
+        });
+      } else {
+        app.xhr('POST', '/volunteer/apply', list, '', (res) => {
+          if (res.data.code == 200) {
+            app.toast("申请成功")
+            wx.switchTab({
+              url: '../me/me'
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            });
+          }
+        });
+      }
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
+        })
     }
   },
 
@@ -195,28 +209,43 @@ Page({
    */
   onLoad: function(options) {
     app.xhr('POST', '/volunteer/detail', '', '', (res) => {
-      console.log(res)
       this.setData({
-        team: res.data.data.teams,
-        wishActivity: res.data.data.activitys,
-        teamsId: res.data.data.teams[0].vt_id,
-        activeId: res.data.data.activitys[0].act_id,
-        dateList: this.data.dateRl[0].id,
-        v_sex:this.data.items[0].name,
+        v_sex: this.data.items[0].name,
         v_name: res.data.data.volunteer.v_name,
         v_idcard: res.data.data.volunteer.v_idcard,
         v_phone: res.data.data.volunteer.v_phone,
         v_company: res.data.data.volunteer.v_company,
         v_company_position: res.data.data.volunteer.v_company_position,
         v_email: res.data.data.volunteer.v_email,
-        v_calendar_type: res.data.data.volunteer.dateList,
-        v_birthday: res.data.data.volunteer.date,
+        v_calendar_type: res.data.data.volunteer.v_calendar_type,
+        v_birthday: res.data.data.volunteer.v_birthday,
         v_address: res.data.data.volunteer.v_address,
-        v_team_id: res.data.data.volunteer.teamsId,
+        v_team_id: res.data.data.volunteer.v_team_id,
         v_history_activity: res.data.data.volunteer.v_history_activity,
-        v_wish_activity_id: res.data.data.volunteer.activeId,
-        v_mark: res.data.data.volunteer.v_mark
+        v_wish_activity_id: res.data.data.volunteer.v_wish_activity_id,
+        v_mark: res.data.data.volunteer.v_mark,
+        team: res.data.data.teams,
+        wishActivity: res.data.data.activitys,
+        teamsId: res.data.data.teams[0].vt_id,
+        // activeId: res.data.data.activitys[0].act_id,
+        dateList: this.data.dateRl[0].id,
       })
+      for (var i = 0; i < res.data.data.teams.length; i++) {
+        if (res.data.data.teams[i].vt_id == this.data.v_team_id) {
+          this.setData({
+            team_Name: res.data.data.teams[i].vt_name
+          })
+        }
+      }
+
+      for (var i = 0; i < res.data.data.activitys.length; i++) {
+        if (res.data.data.activitys[i].act_id == this.data.v_wish_activity_id) {
+          this.setData({
+            activitys_Name: res.data.data.activitys[i].act_title
+          })
+        }
+      }
+
     });
   },
 

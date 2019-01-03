@@ -10,29 +10,31 @@ Page({
     user_id: true,
     code: "",
     showBtn: true,
-    strLogin: storage.get_s("phone")
+    strLogin: storage.get_s("phone"),
+    san: true,
+    i: 1,
   },
 
 
-  nameInput: function (e) {
+  nameInput: function(e) {
     this.setData({
       name: e.detail.value
     })
   },
   //获取手机栏input中的值
-  phoneInput: function (e) {
+  phoneInput: function(e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  codeInput: function (e) {
+  codeInput: function(e) {
     this.setData({
       code: e.detail.value
     })
   },
 
 
-  bindButtonTap: function () {
+  bindButtonTap: function() {
     var that = this;
     var phone = that.data.phone;
     var currentTime = that.data.currentTime //把手机号跟倒计时值变例成js值
@@ -61,7 +63,7 @@ Page({
         color: '#ccc',
       })
       //设置一分钟的倒计时
-      var interval = setInterval(function () {
+      var interval = setInterval(function() {
         currentTime--; //每执行一次让倒计时秒数减一
         that.setData({
           text: currentTime + '秒后重发', //按钮文字变成倒计时对应秒数
@@ -74,7 +76,7 @@ Page({
             currentTime: 61,
             isClick: false,
             color: '#929fff',
-            background:'#fff'
+            background: '#fff'
           })
         }
       }, 1000);
@@ -92,36 +94,48 @@ Page({
     };
   },
 
-  loginSub: function (item) {
+  loginSub: function(item) {
     var that = this
     let loginList = {
       "m_real_name": that.data.name,
       "m_phone": that.data.phone,
       "yzm": that.data.code
     }
-    app.xhr('POST', '/member/accountLogin', loginList, '', (res) => {
-      if (res.data.code == 200) {
-        app.toast("登录成功")
-        storage.set("phone", res.data.data.m_phone)
-        storage.set("userName", res.data.data.m_real_name)
-        var active = res.data.data.m_phone
-        app.globalData.phone = active
-        wx.switchTab({
-          url: '../me/me',
-          success:function(e){
-            var page = getCurrentPages().pop(); 
-            if (page == undefined || page == null) return;
-            page.onLoad(); 
-          }
+    if (that.data.i == 1) {
+      that.data.i = 2
+      app.xhr('POST', '/member/accountLogin', loginList, '', (res) => {
+        if (res.data.code == 200) {
+          app.toast("登录成功")
+          storage.set("phone", res.data.data.m_phone)
+          storage.set("userName", res.data.data.m_real_name)
+          var active = res.data.data.m_phone
+          app.globalData.phone = active
+          wx.switchTab({
+            url: '../me/me',
+            success: function(e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      });
+      that.setData({
+        san: false,
+      })
+    } else {
+      that.data.i = 1,
+        that.setData({
+          san: true,
         })
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    });
+    }
+
   },
 
 

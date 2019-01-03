@@ -29,7 +29,8 @@ Page({
     pageNum: 1, //分页记录数
     pageSize: 2, //分页大小
     hasmoreData: true, //更多数据
-    hiddenloading: true //加载中
+    hiddenloading: true, //加载中
+    v_phone: ""
   },
 
   codeInput: function(e) {
@@ -194,6 +195,11 @@ Page({
    */
   onLoad: function(options) {
     this.getList();
+    app.xhr('POST', '/volunteer/detail', '', '', (res) => {
+      this.setData({
+        v_phone: res.data.data.volunteer.v_phone
+      })
+    });
     // 首页活动展示
     // app.xhr('POST', '/activity/search', '', '', (res) => {
     //   this.setData({

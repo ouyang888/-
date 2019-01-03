@@ -69,8 +69,11 @@ Page({
       hasUserInfo: true
     })
     //点击授权后跳转的页面
-    wx.switchTab({
-      url: '../home/home',
+    setTimeout(function(){
+      wx.switchTab({
+        url: '../home/home',
+      },2000)
     })
+   
   },
 })

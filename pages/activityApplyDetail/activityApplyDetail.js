@@ -28,7 +28,8 @@ Page({
     code: "",
     phone: "",
     name: "",
-    showTrue:true
+    showTrue:true,
+    v_phone:""
   },
 
 
@@ -175,6 +176,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.xhr('POST', '/volunteer/detail', '', '', (res) => {
+      this.setData({
+        v_phone: res.data.data.volunteer.v_phone
+      })
+    });
+
     app.xhr('POST', '/activity/detail', { id: options.id}, '', (res) => {
       if (res.data.data.act_type==1){
         this.setData({
