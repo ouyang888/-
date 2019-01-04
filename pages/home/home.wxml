@@ -83,3 +83,6 @@
     <view class="btn-confirm" wx:if="{{phone!='' && name!=''}}" style='background:rgb(255,164,49)' bindtap="onConfirm">确定</view>
   </view>
 </view>
+
+<!--footer  -->
+<include src="../../component/footer.wxml" />

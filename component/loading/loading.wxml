@@ -1,0 +1,13 @@
+<!--component/loading/loading.wxml-->
+<view class='loading_window_bg' hidden="{{!isShow}}">
+     <view class="loadEffect">
+        <view class='loadEffect01'></view>
+        <view class='loadEffect02'></view>
+        <view class='loadEffect03'></view>
+        <view class='loadEffect04'></view>
+        <view class='loadEffect05'></view>
+        <view class='loadEffect06'></view>
+        <view class='loadEffect07'></view>
+        <view class='loadEffect08'></view>
+     </view>
+</view>

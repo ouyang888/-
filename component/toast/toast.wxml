@@ -1,0 +1,5 @@
+<!--component/toast/toast.wxml-->
+
+<view class='toast_window_bg' hidden="{{!isShow}}">
+<text class='box_toast'>{{text}}</text>
+</view>

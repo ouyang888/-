@@ -18,7 +18,9 @@
     "pages/activityApplyDetail/activityApplyDetail",
     "pages/loveExample/loveExample",
     "pages/login/login",
-    "pages/about/about"
+    "pages/about/about",
+    "component/loading/loading",
+    "component/toast/toast"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,5 +44,10 @@
         "selectedIconPath": "images/meOn.png"
       }
     ]
-  }
+  },
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true
 }

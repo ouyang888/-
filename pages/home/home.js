@@ -309,6 +309,7 @@ Page({
 
 
   onShow: function() {
+    console.log("aaaa");
     if (storage.get_s("phone") != '') {
       this.setData({
         user_id: false

@@ -1,0 +1,19 @@
+/* component/loading/loading.wxss */
+.loadEffect{width: 100rpx;height: 100rpx;position: relative; background: #666; border: 30rpx solid #666; border-radius: 20rpx; }
+.loadEffect view{ display: inline-block;width: 16rpx; height: 16rpx;border-radius: 50%; background: #fff;
+position: absolute;animation: load 1.04s ease infinite;}
+@keyframes load{
+   0%{ opacity: 1; }
+   100%{ opacity: 0.2; }
+ }
+.loadEffect view:nth-child(1){left: 0; top: 50%; margin-top:-8px; animation-delay:0.13s;}
+.loadEffect view:nth-child(2){left: 14rpx;top: 14rpx; animation-delay:0.26s;}
+.loadEffect view:nth-child(3){ left: 50%; top: 0; margin-left: -8rpx;animation-delay:0.39s;}
+.loadEffect view:nth-child(4){top: 14rpx; right:14rpx;animation-delay:0.52s;}
+.loadEffect view:nth-child(5){ right: 0; top: 50%;margin-top:-8rpx; animation-delay:0.65s; }
+.loadEffect view:nth-child(6){ right: 14rpx;bottom:14rpx; animation-delay:0.78s;}
+.loadEffect view:nth-child(7){bottom: 0;left: 50%;margin-left: -8rpx; animation-delay:0.91s;}
+.loadEffect view:nth-child(8){bottom: 14rpx;left: 14rpx;animation-delay:1.04s;}
+
+.loading_window_bg{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,.2);
+ display: flex; z-index: 3;justify-content: center; align-items: center; }

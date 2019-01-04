@@ -1,0 +1,3 @@
+<!--组件测试 -->
+<toast id="toast"></toast>
+<loading id="loading"></loading>

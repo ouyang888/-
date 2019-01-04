@@ -1,8 +1,12 @@
 //app.js
+import { Tools } from 'class/Tools.js'
+import { Basic } from 'class/Basic.js'
 let storage = require('utils/storage.js')
 App({
+  
   onLaunch: function() {
     var that = this
+    that.initData();
     //获取token
     if (that.globalData.token == "") {
       wx.request({
@@ -123,4 +127,47 @@ App({
       }
     })
   },
+  //webin  add
+  tools: null,//工具类
+  basic: null,//Basic认证类
+  initData:function(){
+    this.tools = new Tools(this)
+    this.basic = new Basic(this)
+  },
+  appData: {
+    token: '',//令牌
+    debug: true,//是否是debug模式
+    //host: 'http://interface.nat300.top/api',//局域网对外地址
+    host: 'http://www.cs.com/api',//本地开发地址
+    basicAuthCode: "Basic YWRtaW46MTIzNDU2"
+  },
+  apiUrl: {
+    //其他接口
+    volunteerOrg: '/volunteer/org',//组织架构列表+搜索
+    noticeIndex: '/notice/index',//消息列表
+    noticeDetail: '/notice/detail',//消息详情
+    //大元一爱接口
+    volunteerApply: '/volunteer/apply',//申请智工
+    volunteerDetail: '/volunteer/detail',//智工详情
+    donorJoin: '/donor/join',//智工登记会员
+    donorPayMoney: '/donor/payMoney',//会员捐善款
+    donorRecord: '/donor/record',//智工会员列表
+    donorSummary: '/donor/summary',//善款统计
+    donorMoneylog: '/donor/moneylog',//个人捐款记录
+    //活动接口
+    activitySearch: '/activity/search',//活动搜索列表
+    activityDetail: '/activity/detail',//活动详情
+    activityJoin: '/activity/join',//参加活动
+    //登录&用户接口
+    tokenGenerate: '/token/generate',//令牌token生成
+    messageSend: '/message/send',//发动短信
+    memberInfo: '/member/info',//用户个人信息
+    memberAuthInfo: '/member/authInfo',//微信认证更新头像
+    memberChangePhone: '/member/changePhone',//更改手机号
+    memberAccountLogin: '/member/accountLogin',//账户登录
+    //首页接口
+    playerList: '/player/list',//轮播图
+    memberWxLogin: '/member/wxLogin',//微信登录
+    activityHome: '/activity/home',//首页活动展示
+  }
 })
